@@ -1,0 +1,29 @@
+{% extends "admin/base.html" %}
+
+{% load static %}
+
+{% block title %}
+FleetCard | Administração
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="{% url 'admin:index' %}">
+        FleetCard
+    </a>
+</h1>
+{% endblock %}
+
+{% block userlinks %}
+<a href="{% url 'home' %}">
+    🏠 Voltar para o Site
+</a>
+
+{{ block.super }}
+{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+
+<link rel="stylesheet" href="{% static 'FleetCard/static/css/custom_admin.css' %}">
+{% endblock %}

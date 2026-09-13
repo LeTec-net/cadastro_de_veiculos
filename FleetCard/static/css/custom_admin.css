@@ -1,0 +1,451 @@
+/* FLEETCARD - PERSONALIZAÇÃO DO DJANGO ADMIN
+   Identidade visual baseada no site FleetCard */
+
+
+/*CORES PRINCIPAIS */
+
+:root {
+    --fleet-blue: #1473ea;
+    --fleet-blue-dark: #0b0220;
+    --fleet-blue-deep: #062b5c;
+    --fleet-cyan: #00d4ff;
+    --fleet-white: #ffffff;
+    --fleet-light: #f4f7fb;
+    --fleet-gray: #6c757d;
+    --fleet-dark: #1f2937;
+    --fleet-border: #dbe4ef;
+}
+
+
+
+html,
+body.login {
+    background: #1f5099 !important;
+    min-height: 100vh !important;
+}
+
+
+/* Área principal do login */
+body.login #main {
+    background: #0a1f3f !important;
+}
+
+
+/* Mantém a caixa de login separada */
+body.login #container {
+    background: #ffffff !important;
+      margin-top: 150px !important;
+}
+
+
+
+
+/* LOGO FLEETCARD - LOGIN DJANGO ADMIN */
+
+/* Área da logo */
+#fleetcard-login-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Mantém a área da logo com tamanho fixo */
+    height: 80px;
+    /* Permite a logo crescer para fora sem alterar o layout */
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+    margin-top: 60px;
+}
+
+/* Imagem da logo */
+#fleetcard-login-logo img {
+    width: 270px;
+    height: auto;
+    display: block;
+    /* Aumenta somente visualmente. NÃO aumenta o espaço ocupado pela imagem. */
+    transform: scale(1.4);
+    transition: transform 0.3s ease;
+    /* Evita que o navegador altere a posição ou o tamanho do container. */
+    transform-origin: center center;
+}
+
+/* Efeito ao passar o mouse */
+#fleetcard-login-logo img:hover {
+    transform: scale(1.5);
+}
+
+/* CABEÇALHO SUPERIOR*/
+
+#header {
+     
+
+    background: linear-gradient(90deg,
+            var(--fleet-blue-dark),
+            var(--fleet-blue-deep)) !important;
+
+    color: var(--fleet-white) !important;
+
+  
+}
+
+
+/* LOGO / NOME FLEETCARD*/
+
+#branding h1 {
+    font-weight: 100 !important;
+    letter-spacing: 1px !important;
+}
+
+#branding h1 a {
+    color: var(--fleet-white) !important;
+    text-decoration: none !important;
+    transition: 0.3s ease !important;
+}
+
+#branding h1 a:hover {
+    color: var(--fleet-cyan) !important;
+}
+
+
+/* ÁREA DO USUÁRIO */
+
+#user-tools {
+    color: var(--fleet-white) !important;
+}
+
+#user-tools a {
+    color: var(--fleet-white) !important;
+    text-decoration: none !important;
+    transition: 0.3s ease !important;
+}
+
+#user-tools a:hover {
+    color: var(--fleet-cyan) !important;
+}
+
+
+/* TÍTULOS DAS PÁGINAS */
+
+#content h1 {
+    color: var(--fleet-blue-dark) !important;
+    font-weight: 700 !important;
+}
+
+
+/* MÓDULOS / CAIXAS DO ADMIN */
+
+.module {
+    border: 1px solid var(--fleet-border) !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    background: var(--fleet-white) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06) !important;
+}
+
+
+/* CABEÇALHO DOS MÓDULOS*/
+
+.module h2,
+.module caption,
+.inline-group h2 {
+    background: linear-gradient(90deg,
+            var(--fleet-blue-dark),
+            var(--fleet-blue)) !important;
+
+    color: var(--fleet-white) !important;
+
+    font-weight: 600 !important;
+
+    padding: 12px 15px !important;
+}
+
+
+/* LINKS */
+
+a {
+    color: var(--fleet-blue) !important;
+}
+
+a:hover {
+    color: var(--fleet-blue-dark) !important;
+}
+
+
+/*  TABELAS */
+
+#result_list {
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+#result_list thead th {
+    background: var(--fleet-blue-dark) !important;
+    color: var(--fleet-white) !important;
+}
+
+#result_list thead th a {
+    color: var(--fleet-white) !important;
+}
+
+#result_list tbody tr:hover {
+    background: #eef6ff !important;
+}
+
+
+/* BOTÕES */
+
+.button,
+input[type="submit"],
+input[type="button"],
+.submit-row input {
+    background: var(--fleet-blue) !important;
+
+    border: none !important;
+
+    border-radius: 6px !important;
+
+    color: var(--fleet-white) !important;
+
+    font-weight: 600 !important;
+
+    padding: 10px 18px !important;
+
+    transition: all 0.3s ease !important;
+}
+
+
+/* Hover dos botões */
+
+.button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+.submit-row input:hover {
+    background: var(--fleet-cyan) !important;
+
+    color: var(--fleet-blue-deep) !important;
+
+    transform: translateY(-1px) !important;
+}
+
+
+/* BOTÃO DE EXCLUSÃO */
+
+.deletelink {
+    border-radius: 6px !important;
+}
+
+
+/* CAMPOS DE FORMULÁRIO */
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="url"],
+input[type="date"],
+input[type="datetime-local"],
+select,
+textarea {
+    border: 1px solid var(--fleet-border) !important;
+
+    border-radius: 6px !important;
+
+    padding: 9px 10px !important;
+
+    transition: 0.3s ease !important;
+}
+
+
+/* Campo selecionado */
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--fleet-blue) !important;
+
+    box-shadow: 0 0 0 3px rgba(20, 115, 234, 0.15) !important;
+
+    outline: none !important;
+}
+
+
+/* BREADCRUMBS */
+
+div.breadcrumbs {
+    background: var(--fleet-blue) !important;
+
+    color: var(--fleet-white) !important;
+}
+
+div.breadcrumbs a {
+    color: var(--fleet-white) !important;
+}
+
+
+/* FILTROS LATERAIS */
+
+#changelist-filter {
+    background: var(--fleet-white) !important;
+
+    border: 1px solid var(--fleet-border) !important;
+
+    border-radius: 8px !important;
+}
+
+#changelist-filter h2 {
+    background: var(--fleet-blue-dark) !important;
+
+    color: var(--fleet-white) !important;
+}
+
+#changelist-filter h3 {
+    color: var(--fleet-blue-dark) !important;
+}
+
+
+/* PAGINAÇÃO */
+
+.paginator a:link,
+.paginator a:visited {
+    background: var(--fleet-blue) !important;
+
+    color: var(--fleet-white) !important;
+
+    border-radius: 5px !important;
+}
+
+.paginator a:hover {
+    background: var(--fleet-cyan) !important;
+
+    color: var(--fleet-blue-deep) !important;
+}
+
+
+/* LOGIN DO DJANGO ADMIN */
+
+body.login {
+    background:
+        linear-gradient(rgba(6, 43, 92, 0.92),
+            rgba(11, 63, 131, 0.92)) !important;
+
+    min-height: 100vh !important;
+}
+
+
+/* Caixa de login */
+
+.login #container {
+    background: var(--fleet-white) !important;
+
+    width: 500px !important;
+    height: 700x !important;
+
+    border-radius: 14px !important;
+
+    overflow: hidden !important;
+
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Cabeçalho do login */
+
+.login #header {
+    background: linear-gradient(90deg,
+            var(--fleet-blue-dark),
+            var(--fleet-blue)) !important;
+
+    border-bottom: 4px solid var(--fleet-cyan) !important;
+
+    padding: 22px !important;
+}
+
+
+/* Título do login */
+
+.login #branding h1 {
+    color: var(--fleet-white) !important;
+
+    text-align: center !important;
+
+    font-size: 24px !important;
+}
+
+
+/* Links do login */
+
+.login #branding h1 a {
+    color: var(--fleet-white) !important;
+}
+
+
+/* Formulário */
+
+.login .form-row {
+    padding: 8px 0 !important;
+}
+
+
+/* Campos do login */
+
+.login input[type="text"],
+.login input[type="password"] {
+    width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    border: 1px solid var(--fleet-border) !important;
+
+    border-radius: 7px !important;
+
+    padding: 11px !important;
+}
+
+
+/* Botão Entrar */
+
+.login .submit-row input {
+    background: var(--fleet-blue) !important;
+
+    border-radius: 7px !important;
+
+    width: 100% !important;
+
+    padding: 12px !important;
+
+    font-size: 16px !important;
+}
+
+.login .submit-row input:hover {
+    background: var(--fleet-cyan) !important;
+
+    color: var(--fleet-blue-deep) !important;
+}
+
+
+/*  RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+
+    #header {
+        padding: 12px !important;
+    }
+
+    #branding h1 {
+        font-size: 20px !important;
+    }
+
+    #content {
+        padding: 15px !important;
+    }
+
+    .module {
+        border-radius: 7px !important;
+    }
+
+    .button,
+    input[type="submit"],
+    input[type="button"] {
+        width: 100% !important;
+        margin-bottom: 8px !important;
+    }
+
+}

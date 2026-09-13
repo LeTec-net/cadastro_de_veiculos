@@ -33,6 +33,16 @@ h3 {
     letter-spacing: -0.01em;
 }
 
+/*  FUNDO DA TELA DE LOGIN  */
+body.login {
+    background: #3f0a3f !important;
+}
+
+/*  CAIXA DE LOGIN Mantém a caixa com sua própria cor  */
+body.login #container {
+    background: #ffffff !important;
+}
+
 body {
     background: var(--cor-fundo);
 }
@@ -65,4 +75,3 @@ body {
     min-height: 450px;
     background-color: #f8f9fa;
 }
-
