@@ -1,0 +1,410 @@
+/* FLEETCARD - DJANGO ADMIN */
+
+/* CORES */
+
+:root {
+    --fleet-blue: #1473ea;
+    --fleet-blue-dark: #0b0220;
+    --fleet-blue-deep: #062b5c;
+    --fleet-cyan: #00d4ff;
+    --fleet-white: #ffffff;
+    --fleet-light: #f4f7fb;
+    --fleet-gray: #6c757d;
+    --fleet-border: #dbe4ef;
+}
+
+
+/* FUNDO */
+
+body {
+    background: var(--fleet-light) !important;
+}
+
+
+/* CABEÇALHO */
+
+#header {
+    background: linear-gradient(
+        90deg,
+        var(--fleet-blue-dark),
+        var(--fleet-blue-deep)
+    ) !important;
+
+    color: var(--fleet-white) !important;
+}
+
+
+/* LOGO */
+
+#branding h1 {
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+}
+
+#branding h1 a {
+    color: var(--fleet-white) !important;
+    text-decoration: none !important;
+}
+
+#branding h1 a:hover {
+    color: var(--fleet-cyan) !important;
+}
+
+
+/* USUÁRIO */
+
+#user-tools {
+    color: var(--fleet-white) !important;
+}
+
+#user-tools a {
+    color: var(--fleet-white) !important;
+    text-decoration: none !important;
+}
+
+#user-tools a:hover {
+    color: var(--fleet-cyan) !important;
+}
+
+
+/* CONTEÚDO */
+
+#content {
+    background: transparent !important;
+}
+
+
+/* TÍTULOS */
+
+#content h1 {
+    color: var(--fleet-blue-dark) !important;
+    font-weight: 700 !important;
+}
+
+
+/* BREADCRUMBS */
+
+div.breadcrumbs {
+    background: var(--fleet-blue) !important;
+    color: var(--fleet-white) !important;
+}
+
+div.breadcrumbs a {
+    color: var(--fleet-white) !important;
+}
+
+div.breadcrumbs a:hover {
+    color: var(--fleet-cyan) !important;
+}
+
+
+/* CAIXAS */
+
+.module {
+    background: var(--fleet-white) !important;
+
+    border: 1px solid var(--fleet-border) !important;
+
+    border-radius: 10px !important;
+
+    overflow: hidden !important;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06) !important;
+}
+
+
+/* TÍTULO DAS CAIXAS */
+
+.module h2,
+.module caption,
+.inline-group h2 {
+    background: linear-gradient(
+        90deg,
+        var(--fleet-blue-dark),
+        var(--fleet-blue)
+    ) !important;
+
+    color: var(--fleet-white) !important;
+
+    padding: 12px 15px !important;
+
+    font-weight: 600 !important;
+}
+
+
+/* LINKS */
+
+a {
+    color: var(--fleet-blue) !important;
+}
+
+a:hover {
+    color: var(--fleet-blue-dark) !important;
+}
+
+
+/* TABELA */
+
+#result_list {
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+#result_list thead th {
+    background: var(--fleet-blue-dark) !important;
+    color: var(--fleet-white) !important;
+}
+
+#result_list thead th a {
+    color: var(--fleet-white) !important;
+}
+
+#result_list tbody tr:hover {
+    background: #eef6ff !important;
+}
+
+
+/* BOTÕES */
+
+.button,
+input[type="submit"],
+input[type="button"],
+.submit-row input,
+a.button {
+    background: var(--fleet-blue) !important;
+
+    color: var(--fleet-white) !important;
+
+    border: none !important;
+
+    border-radius: 6px !important;
+
+    font-weight: 600 !important;
+
+    padding: 10px 18px !important;
+
+    transition: 0.3s ease !important;
+}
+
+.button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+.submit-row input:hover,
+a.button:hover {
+    background: var(--fleet-cyan) !important;
+
+    color: var(--fleet-blue-deep) !important;
+
+    transform: translateY(-1px) !important;
+}
+
+
+/* BOTÃO ADICIONAR */
+
+.object-tools a {
+    background: var(--fleet-blue) !important;
+
+    color: var(--fleet-white) !important;
+
+    border-radius: 6px !important;
+
+    font-weight: 600 !important;
+}
+
+.object-tools a:hover {
+    background: var(--fleet-cyan) !important;
+
+    color: var(--fleet-blue-deep) !important;
+}
+
+
+/* EXCLUIR */
+
+.deletelink {
+    background: #dc3545 !important;
+
+    color: var(--fleet-white) !important;
+
+    border-radius: 6px !important;
+}
+
+.deletelink:hover {
+    background: #b02a37 !important;
+
+    color: var(--fleet-white) !important;
+}
+
+
+/* CAMPOS */
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="url"],
+input[type="date"],
+input[type="datetime-local"],
+select,
+textarea {
+    border: 1px solid var(--fleet-border) !important;
+
+    border-radius: 6px !important;
+
+    padding: 9px 10px !important;
+
+    background: var(--fleet-white) !important;
+
+    transition: 0.3s ease !important;
+}
+
+
+/* FOCO */
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--fleet-blue) !important;
+
+    box-shadow: 0 0 0 3px rgba(20, 115, 234, 0.15) !important;
+
+    outline: none !important;
+}
+
+
+/* FILTRO */
+
+#changelist-filter {
+    background: var(--fleet-white) !important;
+
+    border: 1px solid var(--fleet-border) !important;
+
+    border-radius: 8px !important;
+}
+
+#changelist-filter h2 {
+    background: var(--fleet-blue-dark) !important;
+
+    color: var(--fleet-white) !important;
+}
+
+#changelist-filter h3 {
+    color: var(--fleet-blue-dark) !important;
+}
+
+
+/* PESQUISA */
+
+#toolbar {
+    background: var(--fleet-white) !important;
+
+    border: 1px solid var(--fleet-border) !important;
+
+    border-radius: 8px !important;
+
+    padding: 10px !important;
+}
+
+
+/* AÇÕES */
+
+.actions {
+    background: var(--fleet-white) !important;
+
+    border: 1px solid var(--fleet-border) !important;
+
+    border-radius: 6px !important;
+}
+
+
+/* FORMULÁRIO */
+
+.form-row {
+    border-bottom: 1px solid var(--fleet-border) !important;
+}
+
+
+/* PAGINAÇÃO */
+
+.paginator a:link,
+.paginator a:visited {
+    background: var(--fleet-blue) !important;
+
+    color: var(--fleet-white) !important;
+
+    border-radius: 5px !important;
+}
+
+.paginator a:hover {
+    background: var(--fleet-cyan) !important;
+
+    color: var(--fleet-blue-deep) !important;
+}
+
+
+/* MENSAGENS */
+
+ul.messagelist li.success {
+    background: #198754 !important;
+
+    color: var(--fleet-white) !important;
+
+    border-radius: 6px !important;
+}
+
+ul.messagelist li.error {
+    background: #dc3545 !important;
+
+    color: var(--fleet-white) !important;
+
+    border-radius: 6px !important;
+}
+
+
+/* RODAPÉ */
+
+#footer {
+    background: var(--fleet-blue-dark) !important;
+
+    color: var(--fleet-white) !important;
+
+    padding: 20px !important;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 768px) {
+
+    #header {
+        padding: 12px !important;
+    }
+
+    #branding h1 {
+        font-size: 20px !important;
+    }
+
+    #content {
+        padding: 15px !important;
+    }
+
+    .module {
+        border-radius: 7px !important;
+    }
+
+    .button,
+    input[type="submit"],
+    input[type="button"],
+    a.button {
+        width: 100% !important;
+
+        margin-bottom: 8px !important;
+    }
+
+    #result_list {
+        overflow-x: auto !important;
+    }
+
+    #changelist-filter {
+        margin-top: 15px !important;
+    }
+}

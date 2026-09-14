@@ -1,3 +1,4 @@
+
 {% extends "admin/login.html" %}
 
 {% load static %}
@@ -11,8 +12,22 @@
 </div>
 {% endblock %}
 
+
+{% block content %}
+    {{ block.super }}
+
+    <div class="fleetcard-voltar-site">
+    <a href="{% url 'home' %}" title="Voltar para o Site">
+        <i class="bi bi-house-fill"></i>
+        <span>Voltar para o Site</span>
+    </a>
+</div>
+{% endblock %}
+
+
 {% block extrastyle %}
     {{ block.super }}
 
     <link rel="stylesheet" href="{% static 'css/custom_admin.css' %}">
 {% endblock %}
+

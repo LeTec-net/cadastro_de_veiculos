@@ -6,7 +6,6 @@ from .models import Veiculo
 # Template personalizado da tela de login do Django Admin
 admin.site.login_template = 'admin/custom_login.html'
 
-
 @admin.register(Veiculo)
 class VeiculoAdmin(admin.ModelAdmin):
 
