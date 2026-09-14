@@ -125,10 +125,10 @@ def ver_detalhes(request, tipo, marca, modelo):
     )
 
 
-# ==================================================
-# CRUD PELO DJANGO ADMIN
-# CREATE - READ - UPDATE - DELETE
-# ==================================================
+
+# crud pelo django admin
+
+
 
 @staff_member_required(login_url='/admin/login/')
 def lista_veiculos(request):
