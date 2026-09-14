@@ -1,29 +1,146 @@
-<footer class="bg-primary text-white py-4 mt-5 border border-white">
+{% load static %}
 
-    <div class="container-fluid text-center">
+<footer class="bg-primary text-white mt-5">
+     <!-- Separador -->
+        <hr class="border-white opacity-50 my-4">
 
-        <p class="mb-1 fw-bold">
-            <i class="bi bi-car-front-fill"></i>
-            FleetCard
-        </p>
+    <div class="container py-5">
 
-        <p class="mb-0 text-info">
-            Sistema de Gestão de Veículos
-        </p>
+        <div class="row g-4">
 
-        <br>
-        <hr class="text-primary w-100 m-0 ">
+            <!-- Identidade -->
+            <div class="col-12 col-md-5 text-center text-md-start">
 
-        <small class="text-info">
-            © 2026 FleetCard - Projeto Integrador
-        </small>
+                <img
+                    src="{% static 'imagens/Logo_FleetCard_para_cadastro_de_veículos-removebg-preview.png' %}"
+                    alt="Logo FleetCard"
+                    class="img-fluid mb-3"
+                    style="max-height: 150px;"
+                >
+
+                <h5 class="fw-bold">
+                    FleetCard
+                </h5>
+
+                <p class="text-white-50 mb-0">
+                    Sistema de Gestão de Veículos
+                </p>
+
+                <p class="text-white-50 small mt-2">
+                    Organização, controle e gerenciamento de veículos
+                    em um único ambiente.
+                </p>
+
+            </div>
+
+
+            <!-- Navegação -->
+            <div class="col-6 col-md-3">
+
+                <h6 class="fw-bold mb-3">
+                    Navegação
+                </h6>
+
+                <ul class="list-unstyled">
+
+                    <li class="mb-2">
+                        <a href="{% url 'home' %}"
+                           class="text-white text-decoration-none">
+                            <i class="bi bi-house-fill me-2"></i>
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="mb-2">
+                        <a href="{% url 'pagina_veiculos' %}"
+                           class="text-white text-decoration-none">
+                            <i class="bi bi-car-front-fill me-2"></i>
+                            Veículos
+                        </a>
+                    </li>
+
+                    <li class="mb-2">
+                        <a href="{% url 'sobre' %}"
+                           class="text-white text-decoration-none">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            Sobre
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'contatos' %}"
+                           class="text-white text-decoration-none">
+                            <i class="bi bi-envelope-fill me-2"></i>
+                            Contatos
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Categorias -->
+            <div class="col-6 col-md-4">
+
+                <h6 class="fw-bold mb-3">
+                    Categorias
+                </h6>
+
+                <p class="mb-2 text-white-50">
+                    <i class="bi bi-car-front-fill me-2"></i>
+                    Carros
+                </p>
+
+                <p class="mb-2 text-white-50">
+                    <i class="bi bi-bicycle me-2"></i>
+                    Motocicletas
+                </p>
+
+                <p class="mb-2 text-white-50">
+                    <i class="bi bi-truck-front-fill me-2"></i>
+                    Caminhões
+                </p>
+
+                <p class="small text-info mb-0 mt-3">
+                    <i class="bi bi-database-fill me-2"></i>
+                    Cadastro e controle de veículos
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Separador -->
+        <hr class="border-white opacity-50 my-4">
+
+
+        <!-- Rodapé inferior -->
+        <div class="row align-items-center g-3">
+
+            <div class="col-12 col-md-6 text-center text-md-start">
+
+                <small class="text-white-50">
+                    © 2026 FleetCard
+                    - Projeto Integrador
+                </small>
+
+            </div>
+
+
+            <div class="col-12 col-md-6 text-center text-md-end">
+
+                <small class="text-white-50">
+                    Desenvolvido com
+                    <i class="bi bi-code-slash text-info"></i>
+                    Python & Django
+                </small>
+
+            </div>
+
+        </div>
 
     </div>
-
-    <!-- Linha separadora -->
-    <div class="border-top border-1 border-white mt-5"></div>
-
-
-
 
 </footer>
