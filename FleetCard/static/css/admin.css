@@ -408,3 +408,78 @@ ul.messagelist li.error {
         margin-top: 15px !important;
     }
 }
+
+/* ========================================
+   STATUS DAS ORDENS DE SERVIÇO
+   ======================================== */
+
+
+/* Bolinha do status */
+
+.status-badge {
+    display: inline-flex !important;
+
+    align-items: center !important;
+
+    gap: 7px !important;
+
+    font-weight: 600 !important;
+
+    white-space: nowrap !important;
+}
+
+
+/* Cria a bolinha */
+
+.status-badge::before {
+    content: "" !important;
+
+    width: 10px !important;
+
+    height: 10px !important;
+
+    border-radius: 50% !important;
+
+    display: inline-block !important;
+
+    flex-shrink: 0 !important;
+}
+
+
+/* Aguardando - amarelo */
+
+.status-aguardando::before {
+    background-color: #ffc107 !important;
+}
+
+
+/* Em andamento - azul */
+
+.status-andamento::before {
+    background-color: #0d6efd !important;
+}
+
+
+/* Concluído - verde */
+
+.status-concluido::before {
+    background-color: #198754 !important;
+}
+
+
+/* Cancelado - vermelho */
+
+.status-cancelado::before {
+    background-color: #dc3545 !important;
+}
+
+/* TESTE CSS */
+.status-dot {
+    display: inline-block !important;
+    width: 15px !important;
+    height: 15px !important;
+    min-width: 15px !important;
+    border-radius: 50% !important;
+    background: red !important;
+    margin-right: 8px !important;
+}

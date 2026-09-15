@@ -458,3 +458,124 @@ body.login {
         width: 165px !important;
     }
 }
+
+
+/* ========================================
+   FLEETCARD - DJANGO ADMIN
+   ======================================== */
+
+
+/* Fundo geral do Admin */
+
+body:not(.login) {
+    background: var(--fleet-light) !important;
+}
+
+
+/* Cabeçalho do Admin */
+
+#header {
+    background:
+        linear-gradient(
+            135deg,
+            var(--fleet-blue-dark),
+            var(--fleet-blue)
+        ) !important;
+}
+
+
+/* Nome FleetCard no cabeçalho */
+
+#site-name a {
+    color: var(--fleet-white) !important;
+
+    font-weight: 700 !important;
+
+    text-decoration: none !important;
+}
+
+
+/* Links do Admin */
+
+body:not(.login) a {
+    color: var(--fleet-blue) !important;
+}
+
+body:not(.login) a:hover {
+    color: var(--fleet-blue-light) !important;
+}
+
+
+/* Botões */
+
+body:not(.login) .button,
+body:not(.login) input[type="submit"],
+body:not(.login) input[type="button"] {
+    border-radius: 6px !important;
+}
+
+
+/* ========================================
+   STATUS DAS ORDENS DE SERVIÇO
+   ======================================== */
+
+
+/* Formato básico do badge */
+
+.status-badge {
+    display: inline-block !important;
+
+    padding: 5px 10px !important;
+
+    border-radius: 6px !important;
+
+    font-size: 12px !important;
+
+    font-weight: 700 !important;
+
+    white-space: nowrap !important;
+}
+
+
+/* Aguardando */
+
+.status-aguardando {
+    background-color: #fff3cd !important;
+
+    color: #856404 !important;
+
+    border: 1px solid #ffecb5 !important;
+}
+
+
+/* Em andamento */
+
+.status-andamento {
+    background-color: #cfe2ff !important;
+
+    color: #084298 !important;
+
+    border: 1px solid #9ec5fe !important;
+}
+
+
+/* Concluído */
+
+.status-concluido {
+    background-color: #d1e7dd !important;
+
+    color: #0f5132 !important;
+
+    border: 1px solid #a3cfbb !important;
+}
+
+
+/* Cancelado */
+
+.status-cancelado {
+    background-color: #f8d7da !important;
+
+    color: #842029 !important;
+
+    border: 1px solid #f1aeb5 !important;
+}
