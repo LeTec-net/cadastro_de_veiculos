@@ -290,10 +290,12 @@ main {
     font-weight: 700;
     color: var(--fleet-white);
     margin-bottom: 2px;
+    text-align: center;
 }
 
 .fleet-section-subtitle {
     color: var(--fleet-gray);
+    text-align: center;
 }
 
 /* fleet-feature agora também é usado como <a>, então precisa herdar cor */
