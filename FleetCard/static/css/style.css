@@ -62,7 +62,7 @@
 :root,
 [data-bs-theme="light"] {
     --bs-body-font-family: var(--fc-fonte-corpo);
-    --bs-body-bg: var(--fc-fundo);
+    --bs-body-bg: var(--fc-primaria-escura);
     --bs-body-color: var(--fc-texto);
     --bs-border-radius: var(--fc-raio);
     --bs-border-radius-sm: 0.5rem;
@@ -75,7 +75,7 @@
 
     --bs-primary: var(--fc-primaria);
     --bs-primary-rgb: var(--fc-primaria-rgb);
-    --bs-primary-text-emphasis: var(--fc-primaria-escura);
+    --bs-primary-text-emphasis: var(--fc-primaria);
     --bs-primary-bg-subtle: #F3DEDB;
     --bs-primary-border-subtle: #E3B8B2;
 
@@ -117,11 +117,10 @@ html {
 }
 
 body {
-    background-color: var(--fc-fundo);
+    background: var(--fc-fundo) !important;
     color: var(--fc-texto);
     font-family: var(--fc-fonte-corpo);
     line-height: 1.6;
-
 
     background-image:
         radial-gradient(circle at 12% 8%, rgba(var(--fc-primaria-rgb), 0.12), transparent 40%),
@@ -131,6 +130,12 @@ body {
 
 main {
     min-height: 60vh;
+    background: var(--fc-fundo) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+main > :last-child {
+    margin-bottom: 0 !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -153,7 +158,12 @@ a {
 }
 
 ::selection {
-    background: var(--fc-primaria);
+    background: var(--fc-fundo);
+    color: #fff;
+}
+
+::-moz-selection {
+    background: var(--fc-fundo);
     color: #fff;
 }
 
@@ -258,6 +268,11 @@ textarea:focus-visible,
 #menuFleetCard:hover {
     background-color: rgba(255, 255, 255, 0.15) !important;
 }
+
+footer {
+    margin-top: 0 !important;
+}
+
 
 
 footer.bg-primary {
@@ -423,4 +438,16 @@ form select[multiple] {
     .display-3 { font-size: 2.4rem; }
     .display-4 { font-size: 2rem; }
     .display-5 { font-size: 1.75rem; }
+}
+
+main {
+    margin-bottom: 0 !important;
+}
+
+.background {
+    margin-bottom: 0 !important;
+}
+
+footer {
+    margin-top: 0 !important;
 }
