@@ -1,0 +1,168 @@
+/* FLEETCARD - LOGIN */
+
+:root {
+    --fleet-red: #8A2A22;
+    --fleet-red-dark: #5C1A1A;
+    --fleet-red-deep: #3D0F0F;
+    --fleet-white: #ffffff;
+    --fleet-border: #e0c8c8;
+    --fleet-dark: #1f2937;
+}
+
+/* Fundo */
+body.login {
+    background: linear-gradient(135deg, var(--fleet-red), var(--fleet-red-dark)) !important;
+    min-height: 100vh !important;
+}
+
+/* Caixa de login */
+.login #container {
+    width: 480px !important;
+    max-width: 92% !important;
+    margin: 40px auto !important;
+    background: var(--fleet-white) !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Cabeçalho */
+.login #header {
+    background: linear-gradient(135deg, var(--fleet-red-deep), var(--fleet-red)) !important;
+    padding: 25px 20px !important;
+    border-bottom: 4px solid #c0392b !important;
+}
+
+/* Logo */
+#fleetcard-login-logo {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+#fleetcard-login-logo img {
+    width: 230px !important;
+    max-width: 80% !important;
+    height: auto !important;
+    transition: transform 0.3s ease !important;
+}
+
+#fleetcard-login-logo img:hover {
+    transform: scale(1.04) !important;
+}
+
+/* Conteúdo */
+.login #content {
+    padding: 35px 40px 25px 40px !important;
+}
+
+.login #content h1 {
+    color: var(--fleet-red-dark) !important;
+    font-size: 25px !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    margin-bottom: 25px !important;
+}
+
+/* Campos */
+.login label {
+    color: var(--fleet-dark) !important;
+    font-weight: 600 !important;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+    width: 100% !important;
+    min-height: 46px !important;
+    padding: 11px 13px !important;
+    margin-top: 6px !important;
+    border: 1px solid var(--fleet-border) !important;
+    border-radius: 8px !important;
+    font-size: 15px !important;
+}
+
+.login input[type="text"]:focus,
+.login input[type="password"]:focus {
+    border-color: var(--fleet-red) !important;
+    box-shadow: 0 0 0 3px rgba(138, 42, 34, 0.15) !important;
+    outline: none !important;
+}
+
+/* Botão Entrar */
+.login .submit-row {
+    padding: 15px 0 0 0 !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+.login .submit-row input[type="submit"] {
+    width: 100% !important;
+    min-height: 46px !important;
+    background: linear-gradient(90deg, var(--fleet-red), #c0392b) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    color: var(--fleet-white) !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    transition: 0.25s ease !important;
+}
+
+.login .submit-row input[type="submit"]:hover {
+    background: linear-gradient(90deg, #c0392b, var(--fleet-red-dark)) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Botão Voltar para o Site */
+.fleetcard-voltar-site {
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 40px !important;
+    margin-bottom: 25px !important;
+}
+
+.fleetcard-voltar-site a {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 9px !important;
+    padding: 10px 20px !important;
+    background: var(--fleet-red) !important;
+    border-radius: 8px !important;
+    color: var(--fleet-white) !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: 0.25s ease !important;
+}
+
+.fleetcard-voltar-site a:hover {
+    background: var(--fleet-red-dark) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Responsivo */
+@media (max-width: 576px) {
+    .login #container {
+        width: 100% !important;
+        margin: 15px auto !important;
+        border-radius: 14px !important;
+    }
+
+    .login #content {
+        padding: 25px 20px 15px 20px !important;
+    }
+
+    #fleetcard-login-logo img {
+        width: 190px !important;
+    }
+
+    .fleetcard-voltar-site a {
+        width: 46px !important;
+        height: 46px !important;
+        padding: 0 !important;
+        border-radius: 50% !important;
+    }
+
+    .fleetcard-voltar-site a span {
+        display: none !important;
+    }
+}
