@@ -1,547 +1,393 @@
 {% extends 'base.html' %}
-
 {% load static %}
 
 {% block title %}
-
-Lista de Veículos | FleetCard
-
+Veículos Cadastrados | FleetCard
 {% endblock %}
 
 {% block content %}
 
 <div class="container py-5">
 
+    <!-- Cabeçalho -->
 
-<!-- Cabeçalho -->
+    <div class="text-center mb-5">
 
-<div class="text-center mb-5">
+        <h1 class="fw-bold">
+            Veículos Cadastrados
+        </h1>
 
-    <i class="bi bi-car-front-fill display-4 text-primary"></i>
-
-    <h1 class="fw-bold mt-3">
-        Meus veículos cadastrados
-    </h1>
-
-    <p class="text-muted">
-        Veículos cadastrados no sistema FleetCard.
-    </p>
-
-    <a href="/admin/FleetCard/veiculo/add/"
-       class="btn btn-primary">
-
-        <i class="bi bi-plus-circle me-2"></i>
-
-        Cadastrar veículo
-
-    </a>
-
-</div>
-
-
-<!-- Carros -->
-
-<section class="mb-5">
-
-    <div class="d-flex align-items-center mb-4">
-
-        <i class="bi bi-car-front-fill fs-2 text-primary me-3"></i>
-
-        <div>
-
-            <h2 class="fw-bold mb-0">
-                Carros
-            </h2>
-
-            <small class="text-muted">
-                {{ carros_cadastrados|length }} veículo(s)
-            </small>
-
-        </div>
+        <p class="text-muted">
+            Veículos cadastrados no sistema FleetCard.
+        </p>
 
     </div>
 
 
-    {% if carros_cadastrados %}
+    <!-- CARROS -->
+
+    <section class="mb-5">
+
+        <h2 class="fw-bold mb-4">
+            🚗 Carros
+        </h2>
 
         <div class="row g-4">
 
             {% for veiculo in carros_cadastrados %}
 
-                <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4">
 
-                    <div class="card h-100 shadow border-0">
+                <div class="card h-100 shadow-sm border-0">
 
-                        <!-- Imagem -->
+                    <!-- Imagem -->
 
-                        {% if veiculo.imagem %}
+                    {% if veiculo.imagem %}
 
-                            <img
-                                src="{{ veiculo.imagem.url }}"
-                                class="card-img-top"
-                                alt="{{ veiculo.marca }} {{ veiculo.modelo }}"
-                                style="height: 220px; object-fit: cover;"
-                            >
+                    <img
+                        src="{{ veiculo.imagem.url }}"
+                        class="card-img-top"
+                        alt="{{ veiculo.marca }} {{ veiculo.modelo }}"
+                        style="height: 220px; object-fit: cover;"
+                    >
 
-                        {% else %}
+                    {% else %}
 
-                            <div
-                                class="bg-light d-flex align-items-center justify-content-center"
-                                style="height: 220px;"
-                            >
+                    <div
+                        class="d-flex align-items-center justify-content-center bg-light"
+                        style="height: 220px;"
+                    >
+                        <span style="font-size: 70px;">
+                            🚗
+                        </span>
+                    </div>
 
-                                <i class="bi bi-car-front display-1 text-secondary"></i>
+                    {% endif %}
 
-                            </div>
+
+                    <!-- Informações -->
+
+                    <div class="card-body">
+
+                        <span class="badge bg-primary mb-2">
+                            {{ veiculo.get_tipo_display }}
+                        </span>
+
+                        <h4 class="fw-bold">
+                            {{ veiculo.marca }} {{ veiculo.modelo }}
+                        </h4>
+
+                        <hr>
+
+                        <p>
+                            <strong>Placa:</strong>
+                            {{ veiculo.placa }}
+                        </p>
+
+                        <p>
+                            <strong>Ano:</strong>
+                            {{ veiculo.ano }}
+                        </p>
+
+                        <p>
+                            <strong>Cor:</strong>
+                            {{ veiculo.cor }}
+                        </p>
+
+                        <p>
+                            <strong>Combustível:</strong>
+                            {{ veiculo.get_combustivel_display }}
+                        </p>
+
+                        <p>
+                            <strong>Quilometragem:</strong>
+                            {{ veiculo.quilometragem }} km
+                        </p>
+
+                        {% if veiculo.observacoes %}
+
+                        <p>
+                            <strong>Observações:</strong>
+                            {{ veiculo.observacoes }}
+                        </p>
 
                         {% endif %}
 
-
-                        <!-- Dados -->
-
-                        <div class="card-body">
-
-                            <h4 class="card-title fw-bold">
-
-                                {{ veiculo.marca }}
-                                {{ veiculo.modelo }}
-
-                            </h4>
-
-                            <span class="badge bg-primary mb-3">
-
-                                {{ veiculo.get_tipo_display }}
-
-                            </span>
-
-                            <p class="mb-1">
-                                <strong>Placa:</strong>
-                                {{ veiculo.placa }}
-                            </p>
-
-                            <p class="mb-1">
-                                <strong>Ano:</strong>
-                                {{ veiculo.ano }}
-                            </p>
-
-                            <p class="mb-1">
-                                <strong>Cor:</strong>
-                                {{ veiculo.cor }}
-                            </p>
-
-                            <p class="mb-1">
-                                <strong>Combustível:</strong>
-                                {{ veiculo.get_combustivel_display }}
-                            </p>
-
-                            <p class="mb-1">
-                                <strong>Quilometragem:</strong>
-                                {{ veiculo.quilometragem }} km
-                            </p>
-
-                            {% if veiculo.observacoes %}
-
-                                <p class="small text-muted mt-3">
-
-                                    {{ veiculo.observacoes }}
-
-                                </p>
-
-                            {% endif %}
-
-                        </div>
+                    </div>
 
 
-                        <!-- Botões -->
+                    <!-- Rodapé -->
 
-                        <div class="card-footer bg-white border-0 p-3">
+                    <div class="card-footer bg-white">
 
-                            <div class="d-grid gap-2 d-md-flex">
+                        <small class="text-muted">
 
-                                <a
-                                    href="/admin/FleetCard/veiculo/{{ veiculo.id }}/change/"
-                                    class="btn btn-warning flex-fill"
-                                >
+                            Cadastrado em:
+                            {{ veiculo.data_cadastro|date:"d/m/Y H:i" }}
 
-                                    <i class="bi bi-pencil-square me-1"></i>
-
-                                    Editar
-
-                                </a>
-
-                                <a
-                                    href="/admin/FleetCard/veiculo/{{ veiculo.id }}/delete/"
-                                    class="btn btn-danger flex-fill"
-                                >
-
-                                    <i class="bi bi-trash me-1"></i>
-
-                                    Excluir
-
-                                </a>
-
-                            </div>
-
-                        </div>
+                        </small>
 
                     </div>
 
                 </div>
 
+            </div>
+
+            {% empty %}
+
+            <div class="col-12">
+
+                <div class="alert alert-info">
+                    Nenhum carro cadastrado.
+                </div>
+
+            </div>
+
             {% endfor %}
 
         </div>
 
-    {% else %}
-
-        <div class="alert alert-light border text-center">
-
-            <i class="bi bi-info-circle me-2"></i>
-
-            Nenhum carro cadastrado.
-
-        </div>
-
-    {% endif %}
-
-</section>
+    </section>
 
 
-<!-- Motos -->
+    <!-- MOTOS -->
 
-<section class="mb-5">
+    <section class="mb-5">
 
-    <div class="d-flex align-items-center mb-4">
-
-        <i class="bi bi-bicycle fs-2 text-primary me-3"></i>
-
-        <div>
-
-            <h2 class="fw-bold mb-0">
-                Motocicletas
-            </h2>
-
-            <small class="text-muted">
-                {{ motos_cadastrados|length }} veículo(s)
-            </small>
-
-        </div>
-
-    </div>
-
-
-    {% if motos_cadastrados %}
+        <h2 class="fw-bold mb-4">
+            🏍️ Motos
+        </h2>
 
         <div class="row g-4">
 
             {% for veiculo in motos_cadastrados %}
 
-                <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4">
 
-                    <div class="card h-100 shadow border-0">
+                <div class="card h-100 shadow-sm border-0">
 
-                        <!-- Imagem -->
+                    {% if veiculo.imagem %}
 
-                        {% if veiculo.imagem %}
+                    <img
+                        src="{{ veiculo.imagem.url }}"
+                        class="card-img-top"
+                        alt="{{ veiculo.marca }} {{ veiculo.modelo }}"
+                        style="height: 220px; object-fit: cover;"
+                    >
 
-                            <img
-                                src="{{ veiculo.imagem.url }}"
-                                class="card-img-top"
-                                alt="{{ veiculo.marca }} {{ veiculo.modelo }}"
-                                style="height: 220px; object-fit: cover;"
-                            >
+                    {% else %}
 
-                        {% else %}
+                    <div
+                        class="d-flex align-items-center justify-content-center bg-light"
+                        style="height: 220px;"
+                    >
+                        <span style="font-size: 70px;">
+                            🏍️
+                        </span>
+                    </div>
 
-                            <div
-                                class="bg-light d-flex align-items-center justify-content-center"
-                                style="height: 220px;"
-                            >
+                    {% endif %}
 
-                                <i class="bi bi-bicycle display-1 text-secondary"></i>
 
-                            </div>
+                    <div class="card-body">
+
+                        <span class="badge bg-primary mb-2">
+                            {{ veiculo.get_tipo_display }}
+                        </span>
+
+                        <h4 class="fw-bold">
+                            {{ veiculo.marca }} {{ veiculo.modelo }}
+                        </h4>
+
+                        <hr>
+
+                        <p>
+                            <strong>Placa:</strong>
+                            {{ veiculo.placa }}
+                        </p>
+
+                        <p>
+                            <strong>Ano:</strong>
+                            {{ veiculo.ano }}
+                        </p>
+
+                        <p>
+                            <strong>Cor:</strong>
+                            {{ veiculo.cor }}
+                        </p>
+
+                        <p>
+                            <strong>Combustível:</strong>
+                            {{ veiculo.get_combustivel_display }}
+                        </p>
+
+                        <p>
+                            <strong>Quilometragem:</strong>
+                            {{ veiculo.quilometragem }} km
+                        </p>
+
+                        {% if veiculo.observacoes %}
+
+                        <p>
+                            <strong>Observações:</strong>
+                            {{ veiculo.observacoes }}
+                        </p>
 
                         {% endif %}
 
-
-                        <!-- Dados -->
-
-                        <div class="card-body">
-
-                            <h4 class="card-title fw-bold">
-
-                                {{ veiculo.marca }}
-                                {{ veiculo.modelo }}
-
-                            </h4>
-
-                            <span class="badge bg-primary mb-3">
-
-                                {{ veiculo.get_tipo_display }}
-
-                            </span>
-
-                            <p class="mb-1">
-                                <strong>Placa:</strong>
-                                {{ veiculo.placa }}
-                            </p>
-
-                            <p class="mb-1">
-                                <strong>Ano:</strong>
-                                {{ veiculo.ano }}
-                            </p>
-
-                            <p class="mb-1">
-                                <strong>Cor:</strong>
-                                {{ veiculo.cor }}
-                            </p>
-
-                            <p class="mb-1">
-                                <strong>Combustível:</strong>
-                                {{ veiculo.get_combustivel_display }}
-                            </p>
-
-                            <p class="mb-1">
-                                <strong>Quilometragem:</strong>
-                                {{ veiculo.quilometragem }} km
-                            </p>
-
-                            {% if veiculo.observacoes %}
-
-                                <p class="small text-muted mt-3">
-
-                                    {{ veiculo.observacoes }}
-
-                                </p>
-
-                            {% endif %}
-
-                        </div>
+                    </div>
 
 
-                        <!-- Botões -->
+                    <div class="card-footer bg-white">
 
-                        <div class="card-footer bg-white border-0 p-3">
+                        <small class="text-muted">
 
-                            <div class="d-grid gap-2 d-md-flex">
+                            Cadastrado em:
+                            {{ veiculo.data_cadastro|date:"d/m/Y H:i" }}
 
-                                <a
-                                    href="/admin/FleetCard/veiculo/{{ veiculo.id }}/change/"
-                                    class="btn btn-warning flex-fill"
-                                >
-
-                                    <i class="bi bi-pencil-square me-1"></i>
-
-                                    Editar
-
-                                </a>
-
-                                <a
-                                    href="/admin/FleetCard/veiculo/{{ veiculo.id }}/delete/"
-                                    class="btn btn-danger flex-fill"
-                                >
-
-                                    <i class="bi bi-trash me-1"></i>
-
-                                    Excluir
-
-                                </a>
-
-                            </div>
-
-                        </div>
+                        </small>
 
                     </div>
 
                 </div>
 
+            </div>
+
+            {% empty %}
+
+            <div class="col-12">
+
+                <div class="alert alert-info">
+                    Nenhuma moto cadastrada.
+                </div>
+
+            </div>
+
             {% endfor %}
 
         </div>
 
-    {% else %}
-
-        <div class="alert alert-light border text-center">
-
-            <i class="bi bi-info-circle me-2"></i>
-
-            Nenhuma motocicleta cadastrada.
-
-        </div>
-
-    {% endif %}
-
-</section>
+    </section>
 
 
-<!-- Caminhões -->
+    <!-- CAMINHÕES -->
 
-<section class="mb-5">
+    <section class="mb-5">
 
-    <div class="d-flex align-items-center mb-4">
-
-        <i class="bi bi-truck fs-2 text-primary me-3"></i>
-
-        <div>
-
-            <h2 class="fw-bold mb-0">
-                Caminhões
-            </h2>
-
-            <small class="text-muted">
-                {{ caminhoes_cadastrados|length }} veículo(s)
-            </small>
-
-        </div>
-
-    </div>
-
-
-    {% if caminhoes_cadastrados %}
+        <h2 class="fw-bold mb-4">
+            🚛 Caminhões
+        </h2>
 
         <div class="row g-4">
 
             {% for veiculo in caminhoes_cadastrados %}
 
-                <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4">
 
-                    <div class="card h-100 shadow border-0">
+                <div class="card h-100 shadow-sm border-0">
 
-                        <!-- Imagem -->
+                    {% if veiculo.imagem %}
 
-                        {% if veiculo.imagem %}
+                    <img
+                        src="{{ veiculo.imagem.url }}"
+                        class="card-img-top"
+                        alt="{{ veiculo.marca }} {{ veiculo.modelo }}"
+                        style="height: 220px; object-fit: cover;"
+                    >
 
-                            <img
-                                src="{{ veiculo.imagem.url }}"
-                                class="card-img-top"
-                                alt="{{ veiculo.marca }} {{ veiculo.modelo }}"
-                                style="height: 220px; object-fit: cover;"
-                            >
+                    {% else %}
 
-                        {% else %}
+                    <div
+                        class="d-flex align-items-center justify-content-center bg-light"
+                        style="height: 220px;"
+                    >
+                        <span style="font-size: 70px;">
+                            🚛
+                        </span>
+                    </div>
 
-                            <div
-                                class="bg-light d-flex align-items-center justify-content-center"
-                                style="height: 220px;"
-                            >
+                    {% endif %}
 
-                                <i class="bi bi-truck display-1 text-secondary"></i>
 
-                            </div>
+                    <div class="card-body">
+
+                        <span class="badge bg-primary mb-2">
+                            {{ veiculo.get_tipo_display }}
+                        </span>
+
+                        <h4 class="fw-bold">
+                            {{ veiculo.marca }} {{ veiculo.modelo }}
+                        </h4>
+
+                        <hr>
+
+                        <p>
+                            <strong>Placa:</strong>
+                            {{ veiculo.placa }}
+                        </p>
+
+                        <p>
+                            <strong>Ano:</strong>
+                            {{ veiculo.ano }}
+                        </p>
+
+                        <p>
+                            <strong>Cor:</strong>
+                            {{ veiculo.cor }}
+                        </p>
+
+                        <p>
+                            <strong>Combustível:</strong>
+                            {{ veiculo.get_combustivel_display }}
+                        </p>
+
+                        <p>
+                            <strong>Quilometragem:</strong>
+                            {{ veiculo.quilometragem }} km
+                        </p>
+
+                        {% if veiculo.observacoes %}
+
+                        <p>
+                            <strong>Observações:</strong>
+                            {{ veiculo.observacoes }}
+                        </p>
 
                         {% endif %}
 
-
-                        <!-- Dados -->
-
-                        <div class="card-body">
-
-                            <h4 class="card-title fw-bold">
-
-                                {{ veiculo.marca }}
-                                {{ veiculo.modelo }}
-
-                            </h4>
-
-                            <span class="badge bg-primary mb-3">
-
-                                {{ veiculo.get_tipo_display }}
-
-                            </span>
-
-                            <p class="mb-1">
-                                <strong>Placa:</strong>
-                                {{ veiculo.placa }}
-                            </p>
-
-                            <p class="mb-1">
-                                <strong>Ano:</strong>
-                                {{ veiculo.ano }}
-                            </p>
-
-                            <p class="mb-1">
-                                <strong>Cor:</strong>
-                                {{ veiculo.cor }}
-                            </p>
-
-                            <p class="mb-1">
-                                <strong>Combustível:</strong>
-                                {{ veiculo.get_combustivel_display }}
-                            </p>
-
-                            <p class="mb-1">
-                                <strong>Quilometragem:</strong>
-                                {{ veiculo.quilometragem }} km
-                            </p>
-
-                            {% if veiculo.observacoes %}
-
-                                <p class="small text-muted mt-3">
-
-                                    {{ veiculo.observacoes }}
-
-                                </p>
-
-                            {% endif %}
-
-                        </div>
+                    </div>
 
 
-                        <!-- Botões -->
+                    <div class="card-footer bg-white">
 
-                        <div class="card-footer bg-white border-0 p-3">
+                        <small class="text-muted">
 
-                            <div class="d-grid gap-2 d-md-flex">
+                            Cadastrado em:
+                            {{ veiculo.data_cadastro|date:"d/m/Y H:i" }}
 
-                                <a
-                                    href="/admin/FleetCard/veiculo/{{ veiculo.id }}/change/"
-                                    class="btn btn-warning flex-fill"
-                                >
-
-                                    <i class="bi bi-pencil-square me-1"></i>
-
-                                    Editar
-
-                                </a>
-
-                                <a
-                                    href="/admin/FleetCard/veiculo/{{ veiculo.id }}/delete/"
-                                    class="btn btn-danger flex-fill"
-                                >
-
-                                    <i class="bi bi-trash me-1"></i>
-
-                                    Excluir
-
-                                </a>
-
-                            </div>
-
-                        </div>
+                        </small>
 
                     </div>
 
                 </div>
 
+            </div>
+
+            {% empty %}
+
+            <div class="col-12">
+
+                <div class="alert alert-info">
+                    Nenhum caminhão cadastrado.
+                </div>
+
+            </div>
+
             {% endfor %}
 
         </div>
 
-    {% else %}
-
-        <div class="alert alert-light border text-center">
-
-            <i class="bi bi-info-circle me-2"></i>
-
-            Nenhum caminhão cadastrado.
-
-        </div>
-
-    {% endif %}
-
-</section>
-
+    </section>
 
 </div>
 

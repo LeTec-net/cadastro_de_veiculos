@@ -15,7 +15,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 INSTALLED_APPS = [
-    'jazzmin',                      # ← DEVE ser o primeiro
+                         
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -88,58 +88,3 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-
-# =========================================================
-# JAZZMIN - CONFIGURAÇÃO PRINCIPAL
-# =========================================================
-
-JAZZMIN_SETTINGS = {
-    "site_title": "FleetCard Admin",
-    "site_header": "FleetCard",
-    "site_brand": "FleetCard",
-    "welcome_sign": "Bem-vindo ao FleetCard",
-    "copyright": "FleetCard",
-    "search_model": ["auth.User", "FleetCard.Veiculo"],  # ajuste se necessário
-
-    # CSS customizado
-    "custom_css": "css/jazzmin_admin.css",   # ← coloque o CSS do admin aqui
-
-    # Ícones (opcional)
-    "icons": {
-        "auth": "fas fa-users-cog",
-        "auth.user": "fas fa-user",
-        "auth.Group": "fas fa-users",
-    },
-
-    "show_ui_builder": True,  # útil para testar
-}
-
-# =========================================================
-# JAZZMIN - VISUAL (VERMELHO)
-# =========================================================
-
-JAZZMIN_UI_TWEAKS = {
-    "theme": "darkly",
-    "navbar": "navbar-dark",
-    "navbar_fixed": True,
-    "sidebar": "sidebar-dark-danger",
-    "sidebar_fixed": True,
-    "sidebar_nav_compact_style": False,
-    "brand_colour": "danger",
-    "accent": "danger",
-    "footer_fixed": False,
-    "actions_sticky_top": True,
-    "button_classes": {
-        "primary": "btn-danger",
-        "secondary": "btn-secondary",
-        "info": "btn-info",
-        "warning": "btn-warning",
-        "danger": "btn-danger",
-        "success": "btn-success",
-    },
-}
-
-
-# Login redirect
-LOGIN_REDIRECT_URL = '/admin/'
-LOGOUT_REDIRECT_URL = '/'

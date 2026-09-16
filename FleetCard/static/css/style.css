@@ -1,132 +1,23 @@
 
-
-
-/* --------------------------------------------------------------------------
-   CSS feito por CybernautiluSS, inspirado no design do FleetCard, com cores e estilos personalizados para criar uma identidade visual única e agradável.
-   -------------------------------------------------------------------------- */
+/* CSS do FleetCard */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
+
+/* Cores */
+
 :root {
-    /* Paleta base do projeto (tons terrosos/quentes) */
     --fc-fundo: #FBF1E0;
     --fc-fundo-secao: #F4E6CC;
     --fc-fundo-card: #FFFFFF;
+
     --fc-texto: #2E1B12;
     --fc-texto-suave: #6B5544;
     --fc-borda: rgba(46, 27, 18, 0.12);
 
     --fc-primaria: #8A2A22;
     --fc-primaria-escura: #6B1E18;
-    --fc-primaria-clara: /* LOGIN FLEETCARD */
-
-/* Fundo da tela */
-body.login {
-    background: #f4f6f9 !important;
-}
-
-
-/* Logo */
-#fleetcard-login-logo {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#fleetcard-login-logo img {
-    width: 220px;
-    max-width: 100%;
-    height: auto;
-}
-
-
-/* Caixa de login */
-.login-box,
-.login-card {
-    border-radius: 12px !important;
-}
-
-
-/* Campos */
-.login .form-control {
-    border: 1px solid #ced4da !important;
-    border-radius: 6px !important;
-}
-
-.login .form-control:focus {
-    border-color: #1473ea !important;
-    box-shadow: 0 0 0 0.15rem rgba(20, 115, 234, 0.20) !important;
-}
-
-
-/* Botão Entrar */
-.login .submit-row input,
-.login .btn-primary {
-    background-color: #1473ea !important;
-    border-color: #1473ea !important;
-    color: #ffffff !important;
-    border-radius: 6px !important;
-}
-
-.login .submit-row input:hover,
-.login .btn-primary:hover {
-    background-color: #06256d !important;
-    border-color: #06256d !important;
-}
-
-
-/* Botão Voltar para o Site */
-.fleetcard-voltar-site {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.fleetcard-voltar-site a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-
-    padding: 10px 18px;
-
-    background-color: #1473ea !important;
-    color: #ffffff !important;
-
-    border-radius: 6px;
-
-    text-decoration: none;
-    font-weight: 600;
-
-    transition: 0.3s;
-}
-
-.fleetcard-voltar-site a:hover {
-    background-color: #06256d !important;
-    color: #ffffff !important;
-}
-
-
-/* Celular */
-@media (max-width: 576px) {
-
-    #fleetcard-login-logo img {
-        width: 180px;
-    }
-
-    .fleetcard-voltar-site span {
-        display: none;
-    }
-
-    .fleetcard-voltar-site a {
-        width: 45px;
-        height: 45px;
-        padding: 0;
-        border-radius: 50%;
-    }
-
-    .fleetcard-voltar-site i {
-        font-size: 18px;
-    }
-};
+    --fc-primaria-clara: #F3DEDB;
     --fc-primaria-rgb: 138, 42, 34;
 
     --fc-dourado: #BE770D;
@@ -155,34 +46,48 @@ body.login {
     --fc-fonte-display: "Poppins", Arial, sans-serif;
 
     --fc-raio: 0.75rem;
-    --fc-sombra: 0 10px 30px rgba(46, 27, 18, 0.10);
-    --fc-sombra-hover: 0 16px 34px rgba(46, 27, 18, 0.18);
+
+    --fc-sombra:
+        0 10px 30px rgba(46, 27, 18, 0.10);
+
+    --fc-sombra-hover:
+        0 16px 34px rgba(46, 27, 18, 0.18);
+
     --fc-transicao: all 0.25s ease;
 
     --cor-fundo: var(--fc-fundo);
     --cor-fundo-secao: var(--fc-fundo-secao);
     --cor-texto: var(--fc-texto);
     --cor-texto-suave: var(--fc-texto-suave);
+
     --fonte-corpo: var(--fc-fonte-corpo);
     --fonte-display: var(--fc-fonte-display);
 }
+
+
+/* Bootstrap */
 
 :root,
 [data-bs-theme="light"] {
     --bs-body-font-family: var(--fc-fonte-corpo);
     --bs-body-bg: var(--fc-primaria-escura);
     --bs-body-color: var(--fc-texto);
+
     --bs-border-radius: var(--fc-raio);
     --bs-border-radius-sm: 0.5rem;
     --bs-border-radius-lg: 1rem;
     --bs-border-radius-xl: 1.25rem;
+
     --bs-border-color: var(--fc-borda);
+
     --bs-link-color: var(--fc-primaria);
     --bs-link-hover-color: var(--fc-primaria-escura);
+
     --bs-emphasis-color: var(--fc-texto);
 
     --bs-primary: var(--fc-primaria);
     --bs-primary-rgb: var(--fc-primaria-rgb);
+
     --bs-primary-text-emphasis: var(--fc-primaria);
     --bs-primary-bg-subtle: #F3DEDB;
     --bs-primary-border-subtle: #E3B8B2;
@@ -215,10 +120,13 @@ body.login {
 
     --bs-light: var(--fc-light);
     --bs-light-rgb: 248, 242, 231;
+
     --bs-dark: var(--fc-dark);
     --bs-dark-rgb: 36, 22, 16;
 }
 
+
+/* Página */
 
 html {
     scroll-behavior: smooth;
@@ -226,30 +134,59 @@ html {
 
 body {
     background: var(--fc-fundo) !important;
+
     color: var(--fc-texto);
+
     font-family: var(--fc-fonte-corpo);
+
     line-height: 1.6;
 
     background-image:
-        radial-gradient(circle at 12% 8%, rgba(var(--fc-primaria-rgb), 0.12), transparent 40%),
-        radial-gradient(circle at 88% 92%, rgba(var(--fc-dourado-rgb), 0.14), transparent 45%);
+        radial-gradient(
+            circle at 12% 8%,
+            rgba(var(--fc-primaria-rgb), 0.12),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 88% 92%,
+            rgba(var(--fc-dourado-rgb), 0.14),
+            transparent 45%
+        );
+
     background-attachment: fixed;
 }
 
+
+/* Conteúdo */
+
 main {
     min-height: 60vh;
+
     background: var(--fc-fundo) !important;
+
     margin: 0 !important;
     padding: 0 !important;
 }
+
 main > :last-child {
     margin-bottom: 0 !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
+
+/* Títulos */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--fc-fonte-display);
+
     font-weight: 700;
+
     letter-spacing: -0.01em;
+
     color: var(--fc-texto);
 }
 
@@ -257,23 +194,30 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--fc-texto-suave);
 }
 
-.text-muted {
-    color: var(--fc-texto-suave) !important;
-}
+
+/* Links */
 
 a {
     transition: color 0.2s ease;
 }
 
+
+/* Seleção de texto */
+
 ::selection {
     background: var(--fc-fundo);
-    color: #fff;
+
+    color: #FFFFFF;
 }
 
 ::-moz-selection {
     background: var(--fc-fundo);
-    color: #fff;
+
+    color: #FFFFFF;
 }
+
+
+/* Foco */
 
 a:focus-visible,
 button:focus-visible,
@@ -282,19 +226,31 @@ select:focus-visible,
 textarea:focus-visible,
 .btn:focus-visible {
     outline: 3px solid rgba(var(--fc-dourado-rgb), 0.55);
+
     outline-offset: 2px;
 }
 
+
+/* Nome do site */
+
 #site-name a {
     color: inherit;
+
     text-decoration: none;
 }
 
+
+/* Botões */
+
 .btn {
     font-family: var(--fc-fonte-corpo);
+
     font-weight: 600;
+
     border-radius: var(--bs-border-radius);
+
     transition: var(--fc-transicao);
+
     letter-spacing: 0.01em;
 }
 
@@ -310,12 +266,17 @@ textarea:focus-visible,
 .btn-primary {
     --bs-btn-bg: var(--fc-primaria);
     --bs-btn-border-color: var(--fc-primaria);
+
     --bs-btn-hover-bg: var(--fc-primaria-escura);
     --bs-btn-hover-border-color: var(--fc-primaria-escura);
+
     --bs-btn-active-bg: var(--fc-primaria-escura);
     --bs-btn-active-border-color: var(--fc-primaria-escura);
+
     --bs-btn-focus-shadow-rgb: var(--fc-primaria-rgb);
-    box-shadow: 0 4px 14px rgba(var(--fc-primaria-rgb), 0.28);
+
+    box-shadow:
+        0 4px 14px rgba(var(--fc-primaria-rgb), 0.28);
 }
 
 .btn-outline-danger,
@@ -333,26 +294,43 @@ textarea:focus-visible,
     padding-inline: 1.25rem;
 }
 
+
+/* Navbar */
+
 .navbar.bg-primary {
-    background: linear-gradient(180deg, var(--fc-primaria) 0%, var(--fc-primaria-escura) 100%) !important;
+    background: linear-gradient(
+        180deg,
+        var(--fc-primaria) 0%,
+        var(--fc-primaria-escura) 100%
+    ) !important;
 }
 
 .navbar .btn-primary {
     box-shadow: none;
 }
 
+
+/* Sidebar */
+
 .offcanvas.bg-primary {
-    background: linear-gradient(180deg, var(--fc-primaria-escura) 0%, var(--fc-primaria) 55%, var(--fc-primaria-escura) 100%) !important;
+    background: linear-gradient(
+        180deg,
+        var(--fc-primaria-escura) 0%,
+        var(--fc-primaria) 55%,
+        var(--fc-primaria-escura) 100%
+    ) !important;
 }
 
 .offcanvas .list-group-item-action {
     border-radius: 0 !important;
+
     transition: var(--fc-transicao);
 }
 
 .offcanvas .list-group-item-action:hover,
 .offcanvas .list-group-item-action:focus {
     background-color: rgba(255, 255, 255, 0.12) !important;
+
     padding-left: 1.75rem !important;
 }
 
@@ -377,25 +355,37 @@ textarea:focus-visible,
     background-color: rgba(255, 255, 255, 0.15) !important;
 }
 
+
+/* Rodapé */
+
 footer {
     margin-top: 0 !important;
 }
 
-
-
 footer.bg-primary {
-    background: linear-gradient(180deg, var(--fc-primaria) 0%, var(--fc-primaria-escura) 100%) !important;
+    background: linear-gradient(
+        180deg,
+        var(--fc-primaria) 0%,
+        var(--fc-primaria-escura) 100%
+    ) !important;
 }
 
 footer a.text-white:hover {
     color: #FBE7C8 !important;
+
     text-decoration: underline;
 }
 
+
+/* Cards */
+
 .card {
     border-radius: var(--fc-raio);
+
     background-color: var(--fc-fundo-card);
+
     box-shadow: var(--fc-sombra);
+
     transition: var(--fc-transicao);
 }
 
@@ -409,25 +399,34 @@ footer a.text-white:hover {
     font-family: var(--fc-fonte-display);
 }
 
+
+/* Cards de veículos */
+
 .vehicle-card {
     overflow: hidden;
 }
 
 .vehicle-card:hover {
     transform: translateY(-6px);
+
     box-shadow: var(--fc-sombra-hover) !important;
 }
 
 .vehicle-card .card-body.border-info {
     border-color: var(--bs-info-border-subtle) !important;
+
     border-width: 1px !important;
 }
 
 .vehicle-image {
-    height: 220px;
     width: 100%;
+
+    height: 220px;
+
     object-fit: cover;
+
     background-color: var(--fc-fundo-secao);
+
     transition: transform 0.4s ease;
 }
 
@@ -435,27 +434,44 @@ footer a.text-white:hover {
     transform: scale(1.05);
 }
 
+
+/* Detalhes do veículo */
+
 .vehicle-detail-image {
     min-height: 450px;
+
     object-fit: cover;
 }
 
 .vehicle-detail-placeholder {
     min-height: 450px;
+
     background-color: var(--fc-fundo-secao);
+
     color: var(--fc-texto-suave);
 }
 
+
+/* Badges */
+
 .badge {
     font-weight: 600;
+
     letter-spacing: 0.02em;
+
     padding: 0.45em 0.75em;
+
     border-radius: 999px;
 }
 
+
+/* Alertas */
+
 .alert {
     border: none;
+
     border-radius: var(--fc-raio);
+
     border-left: 4px solid transparent;
 }
 
@@ -465,12 +481,18 @@ footer a.text-white:hover {
 
 .alert-light {
     background-color: var(--fc-fundo-secao);
+
     color: var(--fc-texto);
 }
 
+
+/* Formulários */
+
 .form-label {
     color: var(--fc-texto);
+
     font-weight: 600;
+
     margin-bottom: 0.4rem;
 }
 
@@ -485,11 +507,16 @@ form input[type="password"],
 form input[type="file"],
 form select,
 form textarea {
-    background-color: #fff;
+    background-color: #FFFFFF;
+
     color: var(--fc-texto);
+
     border: 1px solid var(--fc-borda);
+
     border-radius: 0.6rem;
+
     padding: 0.6rem 0.9rem;
+
     transition: var(--fc-transicao);
 }
 
@@ -499,7 +526,10 @@ form input:focus,
 form select:focus,
 form textarea:focus {
     border-color: var(--fc-primaria);
-    box-shadow: 0 0 0 0.2rem rgba(var(--fc-primaria-rgb), 0.18);
+
+    box-shadow:
+        0 0 0 0.2rem rgba(var(--fc-primaria-rgb), 0.18);
+
     outline: none;
 }
 
@@ -517,16 +547,22 @@ form select[multiple] {
 }
 
 
+/* Carousel */
+
 .carousel-inner {
     border-radius: var(--fc-raio);
+
     overflow: hidden;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     background-color: rgba(var(--fc-primaria-rgb), 0.65);
+
     border-radius: 50%;
+
     padding: 1.2rem;
+
     background-size: 50%;
 }
 
@@ -535,18 +571,53 @@ form select[multiple] {
 }
 
 
+/* Lista */
 
 .list-group-item-action:hover {
     background-color: var(--fc-fundo-secao);
 }
 
 
+/* Responsivo */
+
 @media (max-width: 575.98px) {
-    .display-1 { font-size: 3.5rem; }
-    .display-3 { font-size: 2.4rem; }
-    .display-4 { font-size: 2rem; }
-    .display-5 { font-size: 1.75rem; }
+
+    .display-1 {
+        font-size: 3.5rem;
+    }
+
+    .display-3 {
+        font-size: 2.4rem;
+    }
+
+    .display-4 {
+        font-size: 2rem;
+    }
+
+    .display-5 {
+        font-size: 1.75rem;
+    }
+
+    .vehicle-detail-image,
+    .vehicle-detail-placeholder {
+        min-height: 300px;
+    }
+
+    .vehicle-image {
+        height: 200px;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+
+    .btn-lg {
+        width: 100%;
+    }
 }
+
+
+/* Ajuste final */
 
 main {
     margin-bottom: 0 !important;
