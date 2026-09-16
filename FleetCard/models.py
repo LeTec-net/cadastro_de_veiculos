@@ -80,3 +80,79 @@ class Veiculo(models.Model):
 
     def __str__(self):
         return f'{self.marca} {self.modelo} - {self.placa}'
+    
+
+
+TIPOS_SERVICO = [
+    ("troca_oleo", "Troca de óleo"),
+    ("revisao", "Revisão"),
+    ("freios", "Sistema de freios"),
+    ("suspensao", "Suspensão"),
+    ("motor", "Motor"),
+    ("eletrica", "Elétrica"),
+    ("pneus", "Pneus"),
+    ("outros", "Outros"),
+]
+
+STATUS_SERVICO = [
+    ("aguardando", "Aguardando"),
+    ("andamento", "Em andamento"),
+    ("concluido", "Concluído"),
+    ("cancelado", "Cancelado"),
+]
+
+
+class OrdemServico(models.Model):
+
+    veiculo = models.ForeignKey(
+        Veiculo,
+        on_delete=models.CASCADE,
+        related_name="ordens_servico"
+    )
+
+    tipo_servico = models.CharField(
+        max_length=50,
+        choices=TIPOS_SERVICO
+    )
+
+    descricao = models.TextField(
+        blank=True
+    )
+
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_SERVICO,
+        default="aguardando"
+    )
+
+    valor = models.DecimalField(
+        max_digits=10,
+        decimal_places=2
+    )
+
+    data_entrada = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    data_conclusao = models.DateTimeField(
+        null=True,
+        blank=True
+    )
+
+    def save(self, *args, **kwargs):
+
+        if self.status == "concluido" and self.data_conclusao is None:
+            from django.utils import timezone
+            self.data_conclusao = timezone.now()
+
+        if self.status != "concluido":
+            self.data_conclusao = None
+
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"OS #{self.id} - {self.veiculo}"
+
+
+
+  
