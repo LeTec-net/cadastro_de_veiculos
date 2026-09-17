@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import logout
-from django.contrib.admin.views.decorators import staff_member_required
+from django.contrib.auth.decorators import login_required
 
 from .models import Veiculo
+from .forms import VeiculoForm
 
 from .veiculos_api import (
     buscar_carros,
@@ -81,7 +82,6 @@ def pagina_veiculos(request):
     )
 
 
-
 # DESLOGAR E VOLTAR PARA HOME
 
 def deslogar(request):
@@ -125,12 +125,94 @@ def ver_detalhes(request, tipo, marca, modelo):
     )
 
 
+@login_required(login_url='/admin/login/')
+def editar_veiculo(request, id):
+
+    veiculo = Veiculo.objects.get(id=id)
+
+    if request.method == 'POST':
+
+        form = VeiculoForm(
+            request.POST,
+            request.FILES,
+            instance=veiculo
+        )
+
+        if form.is_valid():
+
+            form.save()
+
+            return redirect('lista_veiculos')
+
+    else:
+
+        form = VeiculoForm(
+            instance=veiculo
+        )
+
+    return render(
+        request,
+        'editar_veiculo.html',
+        {
+            'form': form,
+            'veiculo': veiculo
+        }
+    )
+
+
+@login_required(login_url='/admin/login/')
+def excluir_veiculo(request, id):
+
+    veiculo = get_object_or_404(
+        Veiculo,
+        id=id
+    )
+
+    if request.method == 'POST':
+
+        veiculo.delete()
+
+        return redirect('lista_veiculos')
+
+    return render(
+        request,
+        'excluir_veiculo.html',
+        {
+            'veiculo': veiculo
+        }
+    )
+
+
+@login_required(login_url='/admin/login/')
+def cadastrar_veiculo(request):
+
+    if request.method == 'POST':
+
+        form = VeiculoForm(
+            request.POST,
+            request.FILES
+        )
+
+        if form.is_valid():
+            form.save()
+
+            return redirect('lista_veiculos')
+
+    else:
+
+        form = VeiculoForm()
+
+    return render(
+        request,
+        'cadastrar_veiculo.html',
+        {
+            'form': form
+        }
+    )
+
 
 # crud pelo django admin
-
-
-
-@staff_member_required(login_url='/admin/login/')
+@login_required(login_url='/admin/login/')
 def lista_veiculos(request):
 
     # READ - carros cadastrados

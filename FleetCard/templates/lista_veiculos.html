@@ -44,19 +44,12 @@ Veículos Cadastrados | FleetCard
 
                     {% if veiculo.imagem %}
 
-                    <img
-                        src="{{ veiculo.imagem.url }}"
-                        class="card-img-top"
-                        alt="{{ veiculo.marca }} {{ veiculo.modelo }}"
-                        style="height: 220px; object-fit: cover;"
-                    >
+                    <img src="{{ veiculo.imagem.url }}" class="card-img-top"
+                        alt="{{ veiculo.marca }} {{ veiculo.modelo }}" style="height: 220px; object-fit: cover;">
 
                     {% else %}
 
-                    <div
-                        class="d-flex align-items-center justify-content-center bg-light"
-                        style="height: 220px;"
-                    >
+                    <div class="d-flex align-items-center justify-content-center bg-light" style="height: 220px;">
                         <span style="font-size: 70px;">
                             🚗
                         </span>
@@ -116,16 +109,26 @@ Veículos Cadastrados | FleetCard
                     </div>
 
 
-                    <!-- Rodapé -->
-
                     <div class="card-footer bg-white">
 
                         <small class="text-muted">
-
                             Cadastrado em:
                             {{ veiculo.data_cadastro|date:"d/m/Y H:i" }}
-
                         </small>
+
+                        <div class="d-flex gap-2 mt-3">
+
+                            <a href="{% url 'editar_veiculo' veiculo.id %}" class="btn btn-primary btn-sm flex-fill">
+                                <i class="bi bi-pencil-square"></i>
+                                Editar
+                            </a>
+
+                            <a href="{% url 'excluir_veiculo' veiculo.id %}" class="btn btn-danger btn-sm flex-fill">
+                                <i class="bi bi-trash"></i>
+                                Excluir
+                            </a>
+
+                        </div>
 
                     </div>
 
@@ -168,19 +171,12 @@ Veículos Cadastrados | FleetCard
 
                     {% if veiculo.imagem %}
 
-                    <img
-                        src="{{ veiculo.imagem.url }}"
-                        class="card-img-top"
-                        alt="{{ veiculo.marca }} {{ veiculo.modelo }}"
-                        style="height: 220px; object-fit: cover;"
-                    >
+                    <img src="{{ veiculo.imagem.url }}" class="card-img-top"
+                        alt="{{ veiculo.marca }} {{ veiculo.modelo }}" style="height: 220px; object-fit: cover;">
 
                     {% else %}
 
-                    <div
-                        class="d-flex align-items-center justify-content-center bg-light"
-                        style="height: 220px;"
-                    >
+                    <div class="d-flex align-items-center justify-content-center bg-light" style="height: 220px;">
                         <span style="font-size: 70px;">
                             🏍️
                         </span>
@@ -237,15 +233,26 @@ Veículos Cadastrados | FleetCard
 
                     </div>
 
-
                     <div class="card-footer bg-white">
 
                         <small class="text-muted">
-
                             Cadastrado em:
                             {{ veiculo.data_cadastro|date:"d/m/Y H:i" }}
-
                         </small>
+
+                        <div class="d-flex gap-2 mt-3">
+
+                            <a href="{% url 'editar_veiculo' veiculo.id %}" class="btn btn-primary btn-sm flex-fill">
+                                <i class="bi bi-pencil-square"></i>
+                                Editar
+                            </a>
+
+                            <a href="{% url 'excluir_veiculo' veiculo.id %}" class="btn btn-danger btn-sm flex-fill">
+                                <i class="bi bi-trash"></i>
+                                Excluir
+                            </a>
+
+                        </div>
 
                     </div>
 
@@ -288,19 +295,12 @@ Veículos Cadastrados | FleetCard
 
                     {% if veiculo.imagem %}
 
-                    <img
-                        src="{{ veiculo.imagem.url }}"
-                        class="card-img-top"
-                        alt="{{ veiculo.marca }} {{ veiculo.modelo }}"
-                        style="height: 220px; object-fit: cover;"
-                    >
+                    <img src="{{ veiculo.imagem.url }}" class="card-img-top"
+                        alt="{{ veiculo.marca }} {{ veiculo.modelo }}" style="height: 220px; object-fit: cover;">
 
                     {% else %}
 
-                    <div
-                        class="d-flex align-items-center justify-content-center bg-light"
-                        style="height: 220px;"
-                    >
+                    <div class="d-flex align-items-center justify-content-center bg-light" style="height: 220px;">
                         <span style="font-size: 70px;">
                             🚛
                         </span>
@@ -361,11 +361,23 @@ Veículos Cadastrados | FleetCard
                     <div class="card-footer bg-white">
 
                         <small class="text-muted">
-
                             Cadastrado em:
                             {{ veiculo.data_cadastro|date:"d/m/Y H:i" }}
-
                         </small>
+
+                        <div class="d-flex gap-2 mt-3">
+
+                            <a href="{% url 'editar_veiculo' veiculo.id %}" class="btn btn-primary btn-sm flex-fill">
+                                <i class="bi bi-pencil-square"></i>
+                                Editar
+                            </a>
+
+                            <a href="{% url 'excluir_veiculo' veiculo.id %}" class="btn btn-danger btn-sm flex-fill">
+                                <i class="bi bi-trash"></i>
+                                Excluir
+                            </a>
+
+                        </div>
 
                     </div>
 
