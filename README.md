@@ -2,7 +2,7 @@
 
 README.md
 arquivos
-🚗 FleetCard
+FleetCard
 Sistema de Gestão e Cadastro de Veículos
 
 
@@ -12,223 +12,202 @@ Sistema de Gestão e Cadastro de Veículos
 
 
 
-📋 Sobre o Projeto
-O FleetCard é uma aplicação web desenvolvida para centralizar o cadastro e o gerenciamento de veículos. O sistema permite realizar operações de cadastro, consulta, atualização e exclusão, além de gerenciar Ordens de Serviço vinculadas a cada veículo.
 
-✨ Funcionalidades
-✅ CRUD completo de Veículos
+Sobre o Projeto
+O FleetCard é uma aplicação web desenvolvida com Django para cadastro e gerenciamento de veículos. O sistema permite realizar operações de cadastro, consulta, edição e exclusão, além de gerenciar Ordens de Serviço vinculadas a cada veículo.
 
-✅ CRUD completo de Ordens de Serviço
+Funcionalidades
+CRUD completo de Veículos
 
-✅ Formulário de Contatos com persistência no banco
+CRUD completo de Ordens de Serviço
 
-✅ Autenticação de usuários
+Formulário de Contatos com persistência no banco
 
-✅ Django Admin personalizado
+Autenticação de usuários
 
-✅ Página de veículos integrada com API
+Django Admin personalizado
 
-✅ Interface 100% responsiva (desktop + mobile)
+Página de veículos integrada com API
 
-🛠️ Tecnologias Utilizadas
+Interface responsiva (desktop e mobile)
+
+Tecnologias
 Tecnologia
 
 Versão
 
 Descrição
 
-🐍 Python
+Python
 
 3.13.13
 
 Linguagem principal
 
-🌐 Django
+Django
 
 6.1.1
 
 Framework web
 
-🗄️ SQLite
+SQLite
 
 —
 
 Banco de dados
 
-🎨 Bootstrap
+Bootstrap
 
 5.3.3
 
 Interface responsiva
 
-✨ Bootstrap Icons
+Bootstrap Icons
 
 1.11.3
 
 Ícones da interface
 
-📦 Git / GitHub
+Git / GitHub
 
 —
 
 Controle de versão
 
-🎨 Cores e Layout
-O FleetCard utiliza uma identidade visual própria, com tons terrosos e vermelho-escuro, transmitindo seriedade e modernidade.
-
-🎨 Paleta de Cores
-Nome
+Identidade Visual
+Cores principais
+Cor
 
 Hex
 
-Uso principal
+Uso
 
-🟥 Primária
+Primária
 
 #8A2A22
 
 Botões, navbar, destaques
 
-🟥 Primária Escura
+Primária Escura
 
 #6B1E18
 
 Hover e gradientes
 
-🟡 Dourado
+Dourado
 
 #BE770D
 
-Destaques secundários, indicadores
+Destaques secundários
 
-🟤 Texto
+Texto
 
 #2E1B12
 
 Textos principais
 
-🟤 Texto Suave
+Texto Suave
 
 #6B5544
 
 Textos secundários
 
-beige Fundo
+Fundo
 
 #FBF1E0
 
 Fundo da página
 
-⬜ Fundo Card
+Fundo Card
 
 #FFFFFF
 
 Cards e formulários
 
-🔴 Danger
+Danger
 
 #A5342A
 
-Ações de exclusão / erros
+Exclusão e erros
 
-🟢 Success
+Success
 
 #3E7A44
 
-Confirmações e status positivos
+Confirmações
 
-🔵 Info
+Info
 
 #2E6F73
 
 Informações
 
-🟠 Warning
+Warning
 
 #C98A1B
 
 Avisos
 
-✍️ Tipografia
+Tipografia
 Tipo
 
 Fonte
 
 Uso
 
-🔤 Display
+Display
 
 Poppins
 
 Títulos (h1–h6)
 
-📝 Corpo
+Corpo
 
 Inter
 
 Textos e formulários
 
-📐 Layout
-Border Radius: 0.75rem (arredondamento suave)
+Layout
+Border radius: 0.75rem
 
-Sombra padrão: suave e elegante
+Cards com sombra e efeito hover
 
-Transições: 0.25s ease
+Botões com elevação suave
 
-Cards: efeito hover com elevação
+Navbar e footer com gradiente vermelho-escuro
 
-Botões: elevação suave no hover
+Interface totalmente responsiva (tabela no desktop / cards no celular)
 
-Navbar / Footer: gradiente vermelho-escuro
-
-Formulários: inputs brancos com borda sutil e foco em vermelho
-
-📱 Responsividade
-Dispositivo
-
-Comportamento
-
-💻 Desktop / Tablet
-
-Tabelas completas + layout em colunas
-
-📱 Celular
-
-Cards organizados + botões em linha + menu offcanvas
-
-📁 Estrutura do Projeto
+Estrutura do Projeto
 cadastro_de_veiculos/
-│
-├── 📂 FleetCard/                     # Aplicação principal
-│   ├── 📄 models.py                  # Veiculo, OrdemServico, Contato
-│   ├── 📄 views.py
-│   ├── 📄 urls.py
-│   ├── 📄 admin.py
-│   ├── 📄 forms.py
-│   │
-│   └── 📂 templates/
-│       ├── 📄 base.html
-│       ├── 📂 includes/
-│       │   ├── 📄 navbar.html
-│       │   └── 📄 footer.html
-│       ├── 📄 home.html
-│       ├── 📄 sobre.html
-│       ├── 📄 contatos.html
-│       ├── 📄 cadastrar_veiculo.html
-│       ├── 📄 lista_veiculos.html
-│       ├── 📄 editar_veiculo.html
-│       ├── 📄 pagina_veiculos.html
-│       ├── 📄 cadastrar_ordem_servico.html
-│       ├── 📄 lista_ordens_servico.html
-│       ├── 📄 editar_ordem_servico.html
-│       ├── 📄 excluir_ordem_servico.html
-│       └── 📄 ordens_servico_veiculo.html
-│
-├── 📄 manage.py
-├── 📄 db.sqlite3
-└── 📄 requirements.txt
-🗄️ Modelos do Banco de Dados
-🚙 Veiculo
+├── FleetCard/
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── admin.py
+│   ├── forms.py
+│   └── templates/
+│       ├── base.html
+│       ├── includes/
+│       │   ├── navbar.html
+│       │   └── footer.html
+│       ├── home.html
+│       ├── sobre.html
+│       ├── contatos.html
+│       ├── cadastrar_veiculo.html
+│       ├── lista_veiculos.html
+│       ├── editar_veiculo.html
+│       ├── pagina_veiculos.html
+│       ├── cadastrar_ordem_servico.html
+│       ├── lista_ordens_servico.html
+│       ├── editar_ordem_servico.html
+│       ├── excluir_ordem_servico.html
+│       └── ordens_servico_veiculo.html
+├── manage.py
+├── db.sqlite3
+└── requirements.txt
+Modelos do Banco de Dados
+Veiculo
 Campo
 
 Tipo
@@ -301,13 +280,11 @@ DateTimeField
 
 Registrada automaticamente
 
-🛠️ OrdemServico
+OrdemServico
 Relacionamento 1:N com Veiculo
-→ Um veículo pode possuir várias ordens de serviço.
+Um veículo pode possuir várias ordens de serviço.
 
-📩 Contato
-Armazena as mensagens enviadas pelo formulário:
-
+Contato
 Campo
 
 Tipo
@@ -350,109 +327,110 @@ DateTimeField
 
 Data/hora automática
 
-🔗 Principais Rotas
-🚗 Veículos
+Rotas Principais
+Veículos
 Operação
 
 Rota
 
 Descrição
 
-➕ Create
+Create
 
 /veiculos/cadastrar/
 
-Cadastrar novo veículo
+Cadastrar veículo
 
-📋 Read
+Read
 
 /veiculos/
 
 Listar veículos
 
-✏️ Update
+Update
 
 /veiculos/editar/<id>/
 
 Editar veículo
 
-🗑️ Delete
+Delete
 
 /veiculos/excluir/<id>/
 
 Excluir veículo
 
-🛠️ Ordens de Serviço
+Ordens de Serviço
 Operação
 
 Rota
 
 Descrição
 
-➕ Create
+Create
 
 /ordens-servico/cadastrar/<veiculo_id>/
 
-Cadastrar OS vinculada a um veículo
+Cadastrar OS
 
-📋 Read
+Read
 
 /ordens-servico/
 
 Listar todas as OS
 
-🔍 Read
+Read
 
 /veiculos/<veiculo_id>/ordens-servico/
 
-OS de um veículo específico
+OS de um veículo
 
-✏️ Update
+Update
 
 /ordens-servico/editar/<id>/
 
 Editar OS
 
-🗑️ Delete
+Delete
 
 /ordens-servico/excluir/<id>/
 
 Excluir OS
 
-🌐 Rotas Gerais
+Rotas Gerais
 Rota
 
 Função
 
 /
 
-🏠 Página inicial
+Página inicial
 
 /sobre/
 
-ℹ️ Sobre o projeto
+Sobre o projeto
 
 /contatos/
 
-📩 Formulário de contatos
+Formulário de contatos
 
 /pagina_veiculos/
 
-🔌 Página de veículos + API
+Página de veículos + API
 
 /deslogar/
 
-🚪 Encerrar sessão
+Encerrar sessão
 
 /admin/
 
-⚙️ Área administrativa Django
+Área administrativa
 
-🚀 Como Executar o Projeto
-1️⃣ Clone o repositório
+Como Executar
+# 1. Clone o repositório
 git clone https://github.com/chavierwebmidia2026-glitch/cadastro_de_veiculos.git
 cd cadastro_de_veiculos
-2️⃣ Crie e ative o ambiente virtual
+
+# 2. Crie e ative o ambiente virtual
 python -m venv venv
 
 # Windows
@@ -460,42 +438,44 @@ venv\Scripts\activate
 
 # Linux / macOS
 source venv/bin/activate
-3️⃣ Instale as dependências
-pip install -r requirements.txt
-4️⃣ Aplique as migrations
-python manage.py migrate
-5️⃣ (Opcional) Crie um superusuário
-python manage.py createsuperuser
-6️⃣ Execute o servidor
-python manage.py runserver
-🌐 Acesse: http://127.0.0.1:8000
 
-👥 Equipe — Grupo 3
+# 3. Instale as dependências
+pip install -r requirements.txt
+
+# 4. Aplique as migrations
+python manage.py migrate
+
+# 5. (Opcional) Crie um superusuário
+python manage.py createsuperuser
+
+# 6. Execute o servidor
+python manage.py runserver
+Acesse: http://127.0.0.1:8000
+
+Equipe — Grupo 3
 Integrante
 
 Função
 
-👨‍💻 Raphael Farias
+Raphael Farias
 
 Desenvolvedor
 
-👨‍💻 Kayke Cansanção
+Kayke Cansanção
 
 Desenvolvedor
 
-👩‍💻 Letícia
+Letícia
 
 Desenvolvedora
 
-👨‍💻 Fabiano
+Fabiano
 
 Desenvolvedor
 
-🎓 Turma: 2026.2
-📚 Curso: Programador Back-End Python
-📖 Unidade Curricular: Desenvolvimento Web com Django
+Turma: 2026.2
+Curso: Programador Back-End Python
+Unidade Curricular: Desenvolvimento Web com Django
 
-📄 Licença
+Licença
 Este projeto foi desenvolvido para fins educacionais como parte da Atividade Avaliativa Prática do curso Programador Back-End Python.
-
-FleetCard © 2026 — Grupo 3
