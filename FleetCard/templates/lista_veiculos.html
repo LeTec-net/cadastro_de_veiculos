@@ -106,6 +106,77 @@ Veículos Cadastrados | FleetCard
 
                         {% endif %}
 
+
+                        <!-- Ordens de Serviço -->
+
+                        <hr>
+
+                        <h5 class="fw-bold">
+                            🛠️ Ordens de Serviço
+                        </h5>
+
+                        {% if veiculo.ordens_servico.all %}
+
+                        {% for ordem in veiculo.ordens_servico.all %}
+
+                        <div class="border rounded p-2 mb-2">
+
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <strong>
+                                    OS #{{ ordem.id }}
+                                </strong>
+
+                                {% if ordem.status == 'aguardando' %}
+
+                                <span class="badge bg-warning text-dark">
+                                    Aguardando
+                                </span>
+
+                                {% elif ordem.status == 'andamento' %}
+
+                                <span class="badge bg-primary">
+                                    Em andamento
+                                </span>
+
+                                {% elif ordem.status == 'concluido' %}
+
+                                <span class="badge bg-success">
+                                    Concluído
+                                </span>
+
+                                {% elif ordem.status == 'cancelado' %}
+
+                                <span class="badge bg-danger">
+                                    Cancelado
+                                </span>
+
+                                {% endif %}
+
+                            </div>
+
+                            <small class="text-muted">
+                                {{ ordem.get_tipo_servico_display }}
+                            </small>
+
+                            <br>
+
+                            <small>
+                                Valor: R$ {{ ordem.valor|floatformat:2 }}
+                            </small>
+
+                        </div>
+
+                        {% endfor %}
+
+                        {% else %}
+
+                        <p class="text-muted mb-0">
+                            Nenhuma Ordem de Serviço.
+                        </p>
+
+                        {% endif %}
+
                     </div>
 
 
@@ -123,13 +194,18 @@ Veículos Cadastrados | FleetCard
                                 Editar
                             </a>
 
+                            <a href="{% url 'ordens_servico_veiculo' veiculo.id %}"
+                                class="btn btn-success btn-sm flex-fill">
+                                <i class="bi bi-tools"></i>
+                                Ordem de Serviço
+                            </a>
+
                             <a href="{% url 'excluir_veiculo' veiculo.id %}" class="btn btn-danger btn-sm flex-fill">
                                 <i class="bi bi-trash"></i>
                                 Excluir
                             </a>
 
                         </div>
-
                     </div>
 
                 </div>
@@ -231,6 +307,77 @@ Veículos Cadastrados | FleetCard
 
                         {% endif %}
 
+
+                        <!-- Ordens de Serviço -->
+
+                        <hr>
+
+                        <h5 class="fw-bold">
+                            🛠️ Ordens de Serviço
+                        </h5>
+
+                        {% if veiculo.ordens_servico.all %}
+
+                        {% for ordem in veiculo.ordens_servico.all %}
+
+                        <div class="border rounded p-2 mb-2">
+
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <strong>
+                                    OS #{{ ordem.id }}
+                                </strong>
+
+                                {% if ordem.status == 'aguardando' %}
+
+                                <span class="badge bg-warning text-dark">
+                                    Aguardando
+                                </span>
+
+                                {% elif ordem.status == 'andamento' %}
+
+                                <span class="badge bg-primary">
+                                    Em andamento
+                                </span>
+
+                                {% elif ordem.status == 'concluido' %}
+
+                                <span class="badge bg-success">
+                                    Concluído
+                                </span>
+
+                                {% elif ordem.status == 'cancelado' %}
+
+                                <span class="badge bg-danger">
+                                    Cancelado
+                                </span>
+
+                                {% endif %}
+
+                            </div>
+
+                            <small class="text-muted">
+                                {{ ordem.get_tipo_servico_display }}
+                            </small>
+
+                            <br>
+
+                            <small>
+                                Valor: R$ {{ ordem.valor|floatformat:2 }}
+                            </small>
+
+                        </div>
+
+                        {% endfor %}
+
+                        {% else %}
+
+                        <p class="text-muted mb-0">
+                            Nenhuma Ordem de Serviço.
+                        </p>
+
+                        {% endif %}
+
                     </div>
 
                     <div class="card-footer bg-white">
@@ -245,6 +392,12 @@ Veículos Cadastrados | FleetCard
                             <a href="{% url 'editar_veiculo' veiculo.id %}" class="btn btn-primary btn-sm flex-fill">
                                 <i class="bi bi-pencil-square"></i>
                                 Editar
+                            </a>
+
+                            <a href="{% url 'ordens_servico_veiculo' veiculo.id %}"
+                                class="btn btn-success btn-sm flex-fill">
+                                <i class="bi bi-tools"></i>
+                                Ordem de Serviço
                             </a>
 
                             <a href="{% url 'excluir_veiculo' veiculo.id %}" class="btn btn-danger btn-sm flex-fill">
@@ -355,6 +508,77 @@ Veículos Cadastrados | FleetCard
 
                         {% endif %}
 
+
+                        <!-- Ordens de Serviço -->
+
+                        <hr>
+
+                        <h5 class="fw-bold">
+                            🛠️ Ordens de Serviço
+                        </h5>
+
+                        {% if veiculo.ordens_servico.all %}
+
+                        {% for ordem in veiculo.ordens_servico.all %}
+
+                        <div class="border rounded p-2 mb-2">
+
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <strong>
+                                    OS #{{ ordem.id }}
+                                </strong>
+
+                                {% if ordem.status == 'aguardando' %}
+
+                                <span class="badge bg-warning text-dark">
+                                    Aguardando
+                                </span>
+
+                                {% elif ordem.status == 'andamento' %}
+
+                                <span class="badge bg-primary">
+                                    Em andamento
+                                </span>
+
+                                {% elif ordem.status == 'concluido' %}
+
+                                <span class="badge bg-success">
+                                    Concluído
+                                </span>
+
+                                {% elif ordem.status == 'cancelado' %}
+
+                                <span class="badge bg-danger">
+                                    Cancelado
+                                </span>
+
+                                {% endif %}
+
+                            </div>
+
+                            <small class="text-muted">
+                                {{ ordem.get_tipo_servico_display }}
+                            </small>
+
+                            <br>
+
+                            <small>
+                                Valor: R$ {{ ordem.valor|floatformat:2 }}
+                            </small>
+
+                        </div>
+
+                        {% endfor %}
+
+                        {% else %}
+
+                        <p class="text-muted mb-0">
+                            Nenhuma Ordem de Serviço.
+                        </p>
+
+                        {% endif %}
+
                     </div>
 
 
@@ -371,6 +595,12 @@ Veículos Cadastrados | FleetCard
                                 <i class="bi bi-pencil-square"></i>
                                 Editar
                             </a>
+                            <a href="{% url 'ordens_servico_veiculo' veiculo.id %}"
+                                class="btn btn-success btn-sm flex-fill">
+                                <i class="bi bi-tools"></i>
+                                Ordem de Serviço
+                            </a>
+
 
                             <a href="{% url 'excluir_veiculo' veiculo.id %}" class="btn btn-danger btn-sm flex-fill">
                                 <i class="bi bi-trash"></i>

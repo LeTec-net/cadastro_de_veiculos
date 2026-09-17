@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Cadastrar Ordem de Serviço | FleetCard
+{% endblock %}
+
+{% block content %}
+
+<section class="container-fluid py-4 py-md-5">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-12 col-lg-8">
+
+                <div class="card shadow">
+
+                    <div class="card-body p-4">
+
+                        <h2 class="text-center mb-4">
+                            Cadastrar Ordem de Serviço
+                        </h2>
+
+                        <form method="POST">
+
+                            {% csrf_token %}
+
+                            <!-- Veículo -->
+                            <div class="mb-3">
+
+                                <label for="veiculo" class="form-label">
+                                    Veículo
+                                </label>
+
+                                {% if veiculo %}
+
+                                <input type="text" class="form-control"
+                                    value="{{ veiculo.marca }} {{ veiculo.modelo }} - {{ veiculo.placa }}" readonly>
+
+                                <input type="hidden" name="veiculo" value="{{ veiculo.id }}">
+
+                                {% else %}
+
+                                <select name="veiculo" id="veiculo" class="form-select" required>
+
+                                    <option value="">
+                                        Selecione o veículo
+                                    </option>
+
+                                    {% for veiculo in veiculos %}
+
+                                    <option value="{{ veiculo.id }}">
+                                        {{ veiculo.marca }} {{ veiculo.modelo }} - {{ veiculo.placa }}
+                                    </option>
+
+                                    {% endfor %}
+
+                                </select>
+
+                                {% endif %}
+
+                            </div>
+
+                            <!-- Tipo de serviço -->
+                            <div class="mb-3">
+
+                                <label for="tipo_servico" class="form-label">
+                                    Tipo de serviço
+                                </label>
+
+                                <select name="tipo_servico" id="tipo_servico" class="form-select" required>
+
+                                    <option value="">
+                                        Selecione o serviço
+                                    </option>
+
+                                    <option value="troca_oleo">
+                                        Troca de óleo
+                                    </option>
+
+                                    <option value="revisao">
+                                        Revisão
+                                    </option>
+
+                                    <option value="freios">
+                                        Sistema de freios
+                                    </option>
+
+                                    <option value="suspensao">
+                                        Suspensão
+                                    </option>
+
+                                    <option value="motor">
+                                        Motor
+                                    </option>
+
+                                    <option value="eletrica">
+                                        Elétrica
+                                    </option>
+
+                                    <option value="pneus">
+                                        Pneus
+                                    </option>
+
+                                    <option value="outros">
+                                        Outros
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                            <!-- Descrição -->
+                            <div class="mb-3">
+
+                                <label for="descricao" class="form-label">
+                                    Descrição
+                                </label>
+
+                                <textarea name="descricao" id="descricao" class="form-control" rows="4"
+                                    placeholder="Descreva o serviço..."></textarea>
+
+                            </div>
+
+                            <!-- Status -->
+                            <div class="mb-3">
+
+                                <label for="status" class="form-label">
+                                    Status
+                                </label>
+
+                                <select name="status" id="status" class="form-select">
+
+                                    <option value="aguardando">
+                                        Aguardando
+                                    </option>
+
+                                    <option value="andamento">
+                                        Em andamento
+                                    </option>
+
+                                    <option value="concluido">
+                                        Concluído
+                                    </option>
+
+                                    <option value="cancelado">
+                                        Cancelado
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                            <!-- Valor -->
+                            <div class="mb-4">
+
+                                <label for="valor" class="form-label">
+                                    Valor
+                                </label>
+
+                                <input type="number" name="valor" id="valor" class="form-control" step="0.01" min="0"
+                                    placeholder="0,00" required>
+
+                            </div>
+
+                            <!-- Botões -->
+                            <div class="d-flex justify-content-between">
+
+                                <a href="{% url 'lista_veiculos' %}" class="btn btn-secondary">
+                                    Voltar
+                                </a>
+
+                                <button type="submit" class="btn btn-primary">
+                                    Cadastrar Ordem de Serviço
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

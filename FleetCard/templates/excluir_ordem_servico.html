@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Excluir Ordem de Serviço | FleetCard
+{% endblock %}
+
+{% block content %}
+
+<section class="container-fluid py-4 py-md-5">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-12 col-md-8 col-lg-6">
+
+                <div class="card shadow">
+
+                    <div class="card-body p-4 text-center">
+
+                        <i class="bi bi-exclamation-triangle-fill text-danger fs-1 mb-3"></i>
+
+                        <h2 class="mb-3">
+                            Excluir Ordem de Serviço
+                        </h2>
+
+                        <p class="mb-4">
+                            Tem certeza que deseja excluir a
+                            <strong>Ordem de Serviço #{{ ordem.id }}</strong>?
+                        </p>
+
+                        <p class="text-muted">
+                            Veículo:
+                            <strong>
+                                {{ ordem.veiculo.marca }}
+                                {{ ordem.veiculo.modelo }}
+                            </strong>
+                            -
+                            {{ ordem.veiculo.placa }}
+                        </p>
+
+                        <p class="text-muted">
+                            Serviço:
+                            <strong>
+                                {{ ordem.get_tipo_servico_display }}
+                            </strong>
+                        </p>
+
+                        <form method="POST">
+
+                            {% csrf_token %}
+
+                            <div class="d-flex justify-content-between mt-4">
+
+                                <a
+                                    href="{% url 'lista_ordens_servico' %}"
+                                    class="btn btn-secondary"
+                                >
+                                    Cancelar
+                                </a>
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-danger"
+                                >
+                                    <i class="bi bi-trash me-1"></i>
+                                    Excluir
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

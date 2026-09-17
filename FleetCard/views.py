@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 
-from .models import Veiculo
+from .models import Veiculo, OrdemServico
 from .forms import VeiculoForm
 
 from .veiculos_api import (
@@ -237,5 +237,146 @@ def lista_veiculos(request):
             'carros_cadastrados': carros_cadastrados,
             'motos_cadastrados': motos_cadastrados,
             'caminhoes_cadastrados': caminhoes_cadastrados,
+        }
+    )
+
+
+# crud ordem serviço
+def cadastrar_ordem_servico(request):
+    if request.method == 'POST':
+        veiculo_id = request.POST.get('veiculo')
+        tipo_servico = request.POST.get('tipo_servico')
+        descricao = request.POST.get('descricao')
+        status = request.POST.get('status')
+        valor = request.POST.get('valor')
+
+        OrdemServico.objects.create(
+            veiculo_id=veiculo_id,
+            tipo_servico=tipo_servico,
+            descricao=descricao,
+            status=status,
+            valor=valor
+        )
+
+        return redirect('lista_ordens_servico')
+
+    veiculos = Veiculo.objects.all()
+
+    return render(
+        request,
+        'cadastrar_ordem_servico.html',
+        {
+            'veiculos': veiculos,
+        }
+    )
+
+
+def cadastrar_ordem_servico_veiculo(request, veiculo_id):
+
+    veiculo = get_object_or_404(Veiculo, id=veiculo_id)
+
+    if request.method == 'POST':
+
+        tipo_servico = request.POST.get('tipo_servico')
+        descricao = request.POST.get('descricao')
+        status = request.POST.get('status')
+        valor = request.POST.get('valor')
+
+        OrdemServico.objects.create(
+            veiculo=veiculo,
+            tipo_servico=tipo_servico,
+            descricao=descricao,
+            status=status,
+            valor=valor
+        )
+
+        return redirect('lista_ordens_servico')
+
+    return render(
+        request,
+        'cadastrar_ordem_servico.html',
+        {
+            'veiculo': veiculo,
+            'veiculos': Veiculo.objects.all(),
+        }
+    )
+
+
+def ordens_servico_veiculo(request, veiculo_id):
+
+    veiculo = get_object_or_404(
+        Veiculo,
+        id=veiculo_id
+    )
+
+    ordens = OrdemServico.objects.filter(
+        veiculo=veiculo
+    ).order_by('-id')
+
+    return render(
+        request,
+        'ordens_servico_veiculo.html',
+        {
+            'veiculo': veiculo,
+            'ordens': ordens,
+        }
+    )
+
+def lista_ordens_servico(request):
+
+    ordens = OrdemServico.objects.select_related('veiculo').all().order_by('-id')
+
+    return render(
+        request,
+        'lista_ordens_servico.html',
+        {
+            'ordens': ordens,
+        }
+    )
+
+
+
+
+def editar_ordem_servico(request, id):
+
+    ordem = get_object_or_404(OrdemServico, id=id)
+
+    if request.method == 'POST':
+
+        ordem.veiculo_id = request.POST.get('veiculo')
+        ordem.tipo_servico = request.POST.get('tipo_servico')
+        ordem.descricao = request.POST.get('descricao')
+        ordem.status = request.POST.get('status')
+        ordem.valor = request.POST.get('valor')
+
+        ordem.save()
+
+        return redirect('lista_ordens_servico')
+
+    veiculos = Veiculo.objects.all()
+
+    return render(
+        request,
+        'editar_ordem_servico.html',
+        {
+            'ordem': ordem,
+            'veiculos': veiculos,
+        }
+    )
+
+
+def excluir_ordem_servico(request, id):
+
+    ordem = get_object_or_404(OrdemServico, id=id)
+
+    if request.method == 'POST':
+        ordem.delete()
+        return redirect('lista_ordens_servico')
+
+    return render(
+        request,
+        'excluir_ordem_servico.html',
+        {
+            'ordem': ordem,
         }
     )

@@ -1,0 +1,246 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Editar Ordem de Serviço | FleetCard
+{% endblock %}
+
+{% block content %}
+
+<section class="container-fluid py-4 py-md-5">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-12 col-lg-8">
+
+                <div class="card shadow">
+
+                    <div class="card-body p-4">
+
+                        <h2 class="text-center mb-4">
+                            Editar Ordem de Serviço
+                        </h2>
+
+                        <form method="POST">
+
+                            {% csrf_token %}
+
+                            <!-- Veículo -->
+                            <div class="mb-3">
+
+                                <label for="veiculo" class="form-label">
+                                    Veículo
+                                </label>
+
+                                <select
+                                    name="veiculo"
+                                    id="veiculo"
+                                    class="form-select"
+                                    required
+                                >
+
+                                    {% for veiculo in veiculos %}
+
+                                        <option
+                                            value="{{ veiculo.id }}"
+                                            {% if veiculo.id == ordem.veiculo.id %}selected{% endif %}
+                                        >
+                                            {{ veiculo.marca }} {{ veiculo.modelo }} - {{ veiculo.placa }}
+                                        </option>
+
+                                    {% endfor %}
+
+                                </select>
+
+                            </div>
+
+                            <!-- Tipo de serviço -->
+                            <div class="mb-3">
+
+                                <label for="tipo_servico" class="form-label">
+                                    Tipo de serviço
+                                </label>
+
+                                <select
+                                    name="tipo_servico"
+                                    id="tipo_servico"
+                                    class="form-select"
+                                    required
+                                >
+
+                                    <option
+                                        value="troca_oleo"
+                                        {% if ordem.tipo_servico == 'troca_oleo' %}selected{% endif %}
+                                    >
+                                        Troca de óleo
+                                    </option>
+
+                                    <option
+                                        value="revisao"
+                                        {% if ordem.tipo_servico == 'revisao' %}selected{% endif %}
+                                    >
+                                        Revisão
+                                    </option>
+
+                                    <option
+                                        value="freios"
+                                        {% if ordem.tipo_servico == 'freios' %}selected{% endif %}
+                                    >
+                                        Sistema de freios
+                                    </option>
+
+                                    <option
+                                        value="suspensao"
+                                        {% if ordem.tipo_servico == 'suspensao' %}selected{% endif %}
+                                    >
+                                        Suspensão
+                                    </option>
+
+                                    <option
+                                        value="motor"
+                                        {% if ordem.tipo_servico == 'motor' %}selected{% endif %}
+                                    >
+                                        Motor
+                                    </option>
+
+                                    <option
+                                        value="eletrica"
+                                        {% if ordem.tipo_servico == 'eletrica' %}selected{% endif %}
+                                    >
+                                        Elétrica
+                                    </option>
+
+                                    <option
+                                        value="pneus"
+                                        {% if ordem.tipo_servico == 'pneus' %}selected{% endif %}
+                                    >
+                                        Pneus
+                                    </option>
+
+                                    <option
+                                        value="outros"
+                                        {% if ordem.tipo_servico == 'outros' %}selected{% endif %}
+                                    >
+                                        Outros
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                            <!-- Descrição -->
+                            <div class="mb-3">
+
+                                <label for="descricao" class="form-label">
+                                    Descrição
+                                </label>
+
+                                <textarea
+                                    name="descricao"
+                                    id="descricao"
+                                    class="form-control"
+                                    rows="4"
+                                >{{ ordem.descricao }}</textarea>
+
+                            </div>
+
+                            <!-- Status -->
+                            <div class="mb-3">
+
+                                <label for="status" class="form-label">
+                                    Status
+                                </label>
+
+                                <select
+                                    name="status"
+                                    id="status"
+                                    class="form-select"
+                                >
+
+                                    <option
+                                        value="aguardando"
+                                        {% if ordem.status == 'aguardando' %}selected{% endif %}
+                                    >
+                                        Aguardando
+                                    </option>
+
+                                    <option
+                                        value="andamento"
+                                        {% if ordem.status == 'andamento' %}selected{% endif %}
+                                    >
+                                        Em andamento
+                                    </option>
+
+                                    <option
+                                        value="concluido"
+                                        {% if ordem.status == 'concluido' %}selected{% endif %}
+                                    >
+                                        Concluído
+                                    </option>
+
+                                    <option
+                                        value="cancelado"
+                                        {% if ordem.status == 'cancelado' %}selected{% endif %}
+                                    >
+                                        Cancelado
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                            <!-- Valor -->
+                            <div class="mb-4">
+
+                                <label for="valor" class="form-label">
+                                    Valor
+                                </label>
+
+                                <input
+                                    type="number"
+                                    name="valor"
+                                    id="valor"
+                                    class="form-control"
+                                    step="0.01"
+                                    min="0"
+                                    value="{{ ordem.valor }}"
+                                    required
+                                >
+
+                            </div>
+
+                            <!-- Botões -->
+                            <div class="d-flex justify-content-between">
+
+                                <a
+                                    href="{% url 'lista_ordens_servico' %}"
+                                    class="btn btn-secondary"
+                                >
+                                    Voltar
+                                </a>
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary"
+                                >
+                                    Salvar Alterações
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
