@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 
-from .models import Veiculo, OrdemServico
+from .models import Veiculo, OrdemServico, Contato
 from .forms import VeiculoForm
 
 from .veiculos_api import (
@@ -25,9 +25,28 @@ def sobre(request):
     return render(request, 'sobre.html')
 
 
-# CONTATOS
-
 def contatos(request):
+
+    if request.method == 'POST':
+
+        nome = request.POST.get('nome')
+        email = request.POST.get('email')
+        telefone = request.POST.get('telefone')
+        assunto = request.POST.get('assunto')
+        mensagem = request.POST.get('mensagem')
+
+        Contato.objects.create(
+            nome=nome,
+            email=email,
+            telefone=telefone,
+            assunto=assunto,
+            mensagem=mensagem
+        )
+
+        return render(request, 'contatos.html', {
+            'sucesso': 'Sua mensagem foi enviada e salva com sucesso!'
+        })
+
     return render(request, 'contatos.html')
 
 

@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.html import format_html
 
-from .models import Veiculo, OrdemServico
+from .models import Veiculo, OrdemServico,  Contato
 
 
 # Template personalizado da tela de login
@@ -66,3 +66,29 @@ class OrdemServicoAdmin(admin.ModelAdmin):
     ordering = (
         '-id',
     )
+
+
+
+@admin.register(Contato)
+class ContatoAdmin(admin.ModelAdmin):
+
+    list_display = (
+        'id',
+        'nome',
+        'email',
+        'telefone',
+        'assunto',
+        'data_envio',
+    )
+
+    search_fields = (
+        'nome',
+        'email',
+        'telefone',
+        'assunto',
+    )
+
+    ordering = (
+        '-data_envio',
+    )
+
