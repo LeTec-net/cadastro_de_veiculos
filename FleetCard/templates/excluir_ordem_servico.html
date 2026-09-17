@@ -16,7 +16,7 @@ Excluir Ordem de Serviço | FleetCard
 
                 <div class="card shadow">
 
-                    <div class="card-body p-4 text-center">
+                    <div class="card-body p-3 p-sm-4 text-center">
 
                         <i class="bi bi-exclamation-triangle-fill text-danger fs-1 mb-3"></i>
 
@@ -50,19 +50,14 @@ Excluir Ordem de Serviço | FleetCard
 
                             {% csrf_token %}
 
-                            <div class="d-flex justify-content-between mt-4">
+                            <!-- Botões -->
+                            <div class="d-flex flex-row gap-2 mt-4">
 
-                                <a
-                                    href="{% url 'lista_ordens_servico' %}"
-                                    class="btn btn-secondary"
-                                >
+                                <a href="{% url 'lista_ordens_servico' %}" class="btn btn-secondary flex-fill">
                                     Cancelar
                                 </a>
 
-                                <button
-                                    type="submit"
-                                    class="btn btn-danger"
-                                >
+                                <button type="submit" class="btn btn-danger flex-fill">
                                     <i class="bi bi-trash me-1"></i>
                                     Excluir
                                 </button>

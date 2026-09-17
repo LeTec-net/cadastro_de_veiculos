@@ -1,4 +1,3 @@
-
 /* CSS do FleetCard */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
@@ -142,16 +141,12 @@ body {
     line-height: 1.6;
 
     background-image:
-        radial-gradient(
-            circle at 12% 8%,
+        radial-gradient(circle at 12% 8%,
             rgba(var(--fc-primaria-rgb), 0.12),
-            transparent 40%
-        ),
-        radial-gradient(
-            circle at 88% 92%,
+            transparent 40%),
+        radial-gradient(circle at 88% 92%,
             rgba(var(--fc-dourado-rgb), 0.14),
-            transparent 45%
-        );
+            transparent 45%);
 
     background-attachment: fixed;
 }
@@ -168,7 +163,7 @@ main {
     padding: 0 !important;
 }
 
-main > :last-child {
+main> :last-child {
     margin-bottom: 0 !important;
 }
 
@@ -298,11 +293,9 @@ textarea:focus-visible,
 /* Navbar */
 
 .navbar.bg-primary {
-    background: linear-gradient(
-        180deg,
-        var(--fc-primaria) 0%,
-        var(--fc-primaria-escura) 100%
-    ) !important;
+    background: linear-gradient(180deg,
+            var(--fc-primaria) 0%,
+            var(--fc-primaria-escura) 100%) !important;
 }
 
 .navbar .btn-primary {
@@ -313,12 +306,10 @@ textarea:focus-visible,
 /* Sidebar */
 
 .offcanvas.bg-primary {
-    background: linear-gradient(
-        180deg,
-        var(--fc-primaria-escura) 0%,
-        var(--fc-primaria) 55%,
-        var(--fc-primaria-escura) 100%
-    ) !important;
+    background: linear-gradient(180deg,
+            var(--fc-primaria-escura) 0%,
+            var(--fc-primaria) 55%,
+            var(--fc-primaria-escura) 100%) !important;
 }
 
 .offcanvas .list-group-item-action {
@@ -363,11 +354,9 @@ footer {
 }
 
 footer.bg-primary {
-    background: linear-gradient(
-        180deg,
-        var(--fc-primaria) 0%,
-        var(--fc-primaria-escura) 100%
-    ) !important;
+    background: linear-gradient(180deg,
+            var(--fc-primaria) 0%,
+            var(--fc-primaria-escura) 100%) !important;
 }
 
 footer a.text-white:hover {
@@ -576,6 +565,15 @@ form select[multiple] {
 .list-group-item-action:hover {
     background-color: var(--fc-fundo-secao);
 }
+
+
+#id_observacoes {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
 
 
 /* Responsivo */

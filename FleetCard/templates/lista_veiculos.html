@@ -7,11 +7,12 @@ Veículos Cadastrados | FleetCard
 
 {% block content %}
 
-<div class="container py-5">
+<div class="container py-4 py-md-5">
+
 
     <!-- Cabeçalho -->
 
-    <div class="text-center mb-5">
+    <div class="text-center mb-4 mb-md-5">
 
         <h1 class="fw-bold">
             Veículos Cadastrados
@@ -44,7 +45,7 @@ Veículos Cadastrados | FleetCard
 
                     {% if veiculo.imagem %}
 
-                    <img src="{{ veiculo.imagem.url }}" class="card-img-top"
+                    <img src="{{ veiculo.imagem.url }}" class="card-img-top img-fluid"
                         alt="{{ veiculo.marca }} {{ veiculo.modelo }}" style="height: 220px; object-fit: cover;">
 
                     {% else %}
@@ -66,7 +67,7 @@ Veículos Cadastrados | FleetCard
                             {{ veiculo.get_tipo_display }}
                         </span>
 
-                        <h4 class="fw-bold">
+                        <h4 class="fw-bold text-break">
                             {{ veiculo.marca }} {{ veiculo.modelo }}
                         </h4>
 
@@ -99,7 +100,7 @@ Veículos Cadastrados | FleetCard
 
                         {% if veiculo.observacoes %}
 
-                        <p>
+                        <p class="text-break">
                             <strong>Observações:</strong>
                             {{ veiculo.observacoes }}
                         </p>
@@ -121,7 +122,8 @@ Veículos Cadastrados | FleetCard
 
                         <div class="border rounded p-2 mb-2">
 
-                            <div class="d-flex justify-content-between align-items-center">
+                            <div
+                                class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2">
 
                                 <strong>
                                     OS #{{ ordem.id }}
@@ -187,7 +189,8 @@ Veículos Cadastrados | FleetCard
                             {{ veiculo.data_cadastro|date:"d/m/Y H:i" }}
                         </small>
 
-                        <div class="d-flex gap-2 mt-3">
+                        <!-- Botões -->
+                        <div class="d-flex flex-row gap-2 mt-3">
 
                             <a href="{% url 'editar_veiculo' veiculo.id %}" class="btn btn-primary btn-sm flex-fill">
                                 <i class="bi bi-pencil-square"></i>
@@ -197,7 +200,7 @@ Veículos Cadastrados | FleetCard
                             <a href="{% url 'ordens_servico_veiculo' veiculo.id %}"
                                 class="btn btn-success btn-sm flex-fill">
                                 <i class="bi bi-tools"></i>
-                                Ordem de Serviço
+                                Ordem
                             </a>
 
                             <a href="{% url 'excluir_veiculo' veiculo.id %}" class="btn btn-danger btn-sm flex-fill">
@@ -206,6 +209,7 @@ Veículos Cadastrados | FleetCard
                             </a>
 
                         </div>
+
                     </div>
 
                 </div>
@@ -247,7 +251,7 @@ Veículos Cadastrados | FleetCard
 
                     {% if veiculo.imagem %}
 
-                    <img src="{{ veiculo.imagem.url }}" class="card-img-top"
+                    <img src="{{ veiculo.imagem.url }}" class="card-img-top img-fluid"
                         alt="{{ veiculo.marca }} {{ veiculo.modelo }}" style="height: 220px; object-fit: cover;">
 
                     {% else %}
@@ -267,7 +271,7 @@ Veículos Cadastrados | FleetCard
                             {{ veiculo.get_tipo_display }}
                         </span>
 
-                        <h4 class="fw-bold">
+                        <h4 class="fw-bold text-break">
                             {{ veiculo.marca }} {{ veiculo.modelo }}
                         </h4>
 
@@ -300,7 +304,7 @@ Veículos Cadastrados | FleetCard
 
                         {% if veiculo.observacoes %}
 
-                        <p>
+                        <p class="text-break">
                             <strong>Observações:</strong>
                             {{ veiculo.observacoes }}
                         </p>
@@ -322,7 +326,8 @@ Veículos Cadastrados | FleetCard
 
                         <div class="border rounded p-2 mb-2">
 
-                            <div class="d-flex justify-content-between align-items-center">
+                            <div
+                                class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2">
 
                                 <strong>
                                     OS #{{ ordem.id }}
@@ -387,7 +392,8 @@ Veículos Cadastrados | FleetCard
                             {{ veiculo.data_cadastro|date:"d/m/Y H:i" }}
                         </small>
 
-                        <div class="d-flex gap-2 mt-3">
+                        <!-- Botões -->
+                        <div class="d-flex flex-row gap-2 mt-3">
 
                             <a href="{% url 'editar_veiculo' veiculo.id %}" class="btn btn-primary btn-sm flex-fill">
                                 <i class="bi bi-pencil-square"></i>
@@ -397,7 +403,7 @@ Veículos Cadastrados | FleetCard
                             <a href="{% url 'ordens_servico_veiculo' veiculo.id %}"
                                 class="btn btn-success btn-sm flex-fill">
                                 <i class="bi bi-tools"></i>
-                                Ordem de Serviço
+                                Ordem
                             </a>
 
                             <a href="{% url 'excluir_veiculo' veiculo.id %}" class="btn btn-danger btn-sm flex-fill">
@@ -448,7 +454,7 @@ Veículos Cadastrados | FleetCard
 
                     {% if veiculo.imagem %}
 
-                    <img src="{{ veiculo.imagem.url }}" class="card-img-top"
+                    <img src="{{ veiculo.imagem.url }}" class="card-img-top img-fluid"
                         alt="{{ veiculo.marca }} {{ veiculo.modelo }}" style="height: 220px; object-fit: cover;">
 
                     {% else %}
@@ -468,7 +474,7 @@ Veículos Cadastrados | FleetCard
                             {{ veiculo.get_tipo_display }}
                         </span>
 
-                        <h4 class="fw-bold">
+                        <h4 class="fw-bold text-break">
                             {{ veiculo.marca }} {{ veiculo.modelo }}
                         </h4>
 
@@ -501,7 +507,7 @@ Veículos Cadastrados | FleetCard
 
                         {% if veiculo.observacoes %}
 
-                        <p>
+                        <p class="text-break">
                             <strong>Observações:</strong>
                             {{ veiculo.observacoes }}
                         </p>
@@ -523,7 +529,8 @@ Veículos Cadastrados | FleetCard
 
                         <div class="border rounded p-2 mb-2">
 
-                            <div class="d-flex justify-content-between align-items-center">
+                            <div
+                                class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2">
 
                                 <strong>
                                     OS #{{ ordem.id }}
@@ -589,18 +596,19 @@ Veículos Cadastrados | FleetCard
                             {{ veiculo.data_cadastro|date:"d/m/Y H:i" }}
                         </small>
 
-                        <div class="d-flex gap-2 mt-3">
+                        <!-- Botões -->
+                        <div class="d-flex flex-row gap-2 mt-3">
 
                             <a href="{% url 'editar_veiculo' veiculo.id %}" class="btn btn-primary btn-sm flex-fill">
                                 <i class="bi bi-pencil-square"></i>
                                 Editar
                             </a>
+
                             <a href="{% url 'ordens_servico_veiculo' veiculo.id %}"
                                 class="btn btn-success btn-sm flex-fill">
                                 <i class="bi bi-tools"></i>
-                                Ordem de Serviço
+                                Ordem
                             </a>
-
 
                             <a href="{% url 'excluir_veiculo' veiculo.id %}" class="btn btn-danger btn-sm flex-fill">
                                 <i class="bi bi-trash"></i>
@@ -630,6 +638,7 @@ Veículos Cadastrados | FleetCard
         </div>
 
     </section>
+
 
 </div>
 
