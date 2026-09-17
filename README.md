@@ -1,623 +1,501 @@
-blioteca
-/
-projeto integrador FleetCard
-/
-README_FleetCard_FORMATADO_COMPLETO.md
 
 
+README.md
+arquivos
 🚗 FleetCard
-🚘 Sistema de Gestão e Cadastro de Veículos
-Projeto Integrador — Programador Back-End Python
+Sistema de Gestão e Cadastro de Veículos
 
-Unidade Curricular: Desenvolvimento Web com Django
-Turma: 2026.2
-Grupo: Grupo 3
 
-👨‍💻 Integrantes
-Raphael Farias
 
-Kayke Cansanção
 
-Letícia
 
-Fabiano
 
-🔗 Repositório
-GitHub — cadastro_de_veiculos
 
-📖 Sobre o Projeto
-O FleetCard é um sistema web desenvolvido em Python e Django com o objetivo de realizar o cadastro, consulta e gerenciamento de veículos.
 
-O sistema trabalha com diferentes tipos de veículos:
+📋 Sobre o Projeto
+O FleetCard é uma aplicação web desenvolvida para centralizar o cadastro e o gerenciamento de veículos. O sistema permite realizar operações de cadastro, consulta, atualização e exclusão, além de gerenciar Ordens de Serviço vinculadas a cada veículo.
 
-🚗 Carros
+✨ Funcionalidades
+✅ CRUD completo de Veículos
 
-🏍️ Motocicletas
+✅ CRUD completo de Ordens de Serviço
 
-🚚 Caminhões
+✅ Formulário de Contatos com persistência no banco
 
-O projeto foi desenvolvido a partir do cenário da Oficina Mecânica AutoPrime, utilizado como situação de aprendizagem. Entretanto, o FleetCard foi estruturado como uma solução genérica para oficinas mecânicas, podendo ser adaptado a diferentes estabelecimentos.
+✅ Autenticação de usuários
 
-A aplicação utiliza Django ORM, SQLite, Bootstrap 5, Bootstrap Icons e Django Admin.
+✅ Django Admin personalizado
 
-📋 Situação de Aprendizagem
-O gerenciamento de veículos pode envolver diversas informações, como tipo, marca, modelo, placa, ano, cor, combustível, quilometragem, observações e histórico de serviços.
+✅ Página de veículos integrada com API
 
-Quando essas informações são armazenadas de maneira manual ou desorganizada, podem ocorrer dificuldades para localizar dados, atualizar registros e acompanhar os veículos.
+✅ Interface 100% responsiva (desktop + mobile)
 
-Diante dessa necessidade, foi proposta uma aplicação web capaz de centralizar essas informações em um único sistema.
+🛠️ Tecnologias Utilizadas
+Tecnologia
 
-O FleetCard utiliza Python, Django e SQLite no desenvolvimento do sistema e Bootstrap 5 na construção da interface responsiva.
+Versão
 
-🎯 Desafio
-Desenvolver um sistema web denominado FleetCard, permitindo realizar o cadastro, consulta, atualização e exclusão de veículos de forma organizada.
+Descrição
 
-O sistema possui como objetivos:
+🐍 Python
 
-📝 Cadastro de veículos;
+3.13.13
 
-🔎 Consulta de veículos;
+Linguagem principal
 
-📋 Listagem;
+🌐 Django
 
-👁️ Visualização dos detalhes;
+6.1.1
 
-✏️ Edição;
+Framework web
 
-🗑️ Exclusão;
+🗄️ SQLite
 
-🏷️ Classificação por tipo;
+—
 
-🔧 Controle de Ordens de Serviço;
+Banco de dados
 
-🔐 Administração pelo Django Admin;
+🎨 Bootstrap
 
-📱 Interface responsiva.
+5.3.3
 
-🛠️ Tecnologias
-Tecnologia	Utilização
-🐍 Python	Linguagem principal
-🌐 Django	Framework web
-🗄️ Django ORM	Comunicação com o banco
-💾 SQLite	Banco de dados
-🎨 Bootstrap 5	Interface responsiva
-🔣 Bootstrap Icons	Ícones da interface
-📄 Django Templates	Estrutura das páginas
-🖥️ HTML5	Estrutura
-🎨 CSS3	Personalização visual
-⚡ JavaScript	Interações da interface
-🌿 Git	Controle de versão
-🐙 GitHub	Repositório
-📦 Funcionalidades
-🚘 Veículos
-O sistema permite trabalhar com:
+Interface responsiva
 
-🚗 Carros;
+✨ Bootstrap Icons
 
-🏍️ Motocicletas;
+1.11.3
 
-🚚 Caminhões.
+Ícones da interface
 
-O cadastro de veículos utiliza os seguintes campos:
+📦 Git / GitHub
 
-Campo	Descrição
-Tipo	Tipo do veículo
-Marca	Marca do veículo
-Modelo	Modelo
-Placa	Identificação única
-Ano	Ano do veículo
-Cor	Cor
-Combustível	Tipo de combustível
-Quilometragem	Quilometragem atual
-Observações	Informações adicionais
-Imagem	Imagem opcional
-Data de cadastro	Data e hora do cadastro
-⛽ Combustíveis disponíveis
-Gasolina
+—
 
-Etanol
+Controle de versão
 
-Diesel
+🎨 Cores e Layout
+O FleetCard utiliza uma identidade visual própria, com tons terrosos e vermelho-escuro, transmitindo seriedade e modernidade.
 
-Flex
+🎨 Paleta de Cores
+Nome
 
-Elétrico
+Hex
 
-Híbrido
+Uso principal
 
-🔧 Ordens de Serviço
-O FleetCard possui o modelo OrdemServico, relacionado diretamente ao veículo.
+🟥 Primária
 
-Um veículo pode possuir várias ordens de serviço.
+#8A2A22
 
-Tipos de serviço
-Troca de óleo
+Botões, navbar, destaques
 
-Revisão
+🟥 Primária Escura
 
-Sistema de freios
+#6B1E18
 
-Suspensão
+Hover e gradientes
 
-Motor
+🟡 Dourado
 
-Elétrica
+#BE770D
 
-Pneus
+Destaques secundários, indicadores
 
-Outros
+🟤 Texto
 
-Status
-Aguardando
+#2E1B12
 
-Em andamento
+Textos principais
 
-Concluído
+🟤 Texto Suave
 
-Cancelado
+#6B5544
 
-A data de conclusão é controlada automaticamente pelo sistema quando a Ordem de Serviço passa para o status Concluído.
+Textos secundários
 
-🔐 Django Admin
-O Django Admin é utilizado para o gerenciamento administrativo dos registros.
+beige Fundo
 
-O cadastro de veículos permite:
+#FBF1E0
 
-Visualizar;
+Fundo da página
 
-Cadastrar;
+⬜ Fundo Card
 
-Editar;
+#FFFFFF
 
-Excluir;
+Cards e formulários
 
-Pesquisar;
+🔴 Danger
 
-Filtrar;
+#A5342A
 
-Ordenar registros.
+Ações de exclusão / erros
 
-🔎 Pesquisas
-Marca;
+🟢 Success
 
-Modelo;
+#3E7A44
 
-Placa.
+Confirmações e status positivos
 
-🔽 Filtros
-Tipo;
+🔵 Info
 
-Combustível;
+#2E6F73
 
-Ano.
+Informações
 
-🔧 Ordens de Serviço
-As Ordens de Serviço são exibidas dentro do cadastro do veículo por meio de Inline Admin.
+🟠 Warning
 
-Acesso
-/admin/
-Para criar um usuário administrador:
+#C98A1B
 
-python manage.py createsuperuser
-🧭 Páginas e URLs
-Página	URL
-🏠 Home	/
-ℹ️ Sobre	/sobre/
-📞 Contatos	/contatos/
-🚗 Veículos	/pagina_veiculos/
-📄 Detalhes	/pagina_veiculos/detalhes/<tipo>/<marca>/<modelo>/
-📋 Lista de veículos	/veiculos/
-🔐 Administração	/admin/
-🚪 Deslogar	/deslogar/
-O gerenciamento administrativo de criação, edição e exclusão dos veículos é realizado pelo Django Admin.
+Avisos
 
-☰ Sidebar Responsiva
-A navegação utiliza o componente Offcanvas do Bootstrap.
+✍️ Tipografia
+Tipo
 
-O menu foi desenvolvido para funcionar em:
+Fonte
 
-💻 Computadores;
+Uso
 
-💻 Notebooks;
+🔤 Display
 
-📱 Tablets;
+Poppins
 
-📱 Smartphones.
+Títulos (h1–h6)
 
-A estrutura de navegação contempla as principais áreas do sistema, incluindo Home, Veículos, Cadastro, Lista, Contatos, Sobre e Administração.
+📝 Corpo
 
-🎨 Interface
-A interface utiliza Bootstrap 5 e Bootstrap Icons, complementados pelo CSS próprio do FleetCard.
+Inter
 
-A identidade visual utiliza principalmente:
+Textos e formulários
 
-Elemento	Cor
-Vermelho principal	#8A2A22
-Vermelho escuro	#6B1E18
-Dourado	#BE770D
-Fundo principal	#FBF1E0
-Fundo de seção	#F4E6CC
-Texto principal	#2E1B12
-A aplicação possui:
+📐 Layout
+Border Radius: 0.75rem (arredondamento suave)
 
-Navbar;
+Sombra padrão: suave e elegante
 
-Logo FleetCard;
+Transições: 0.25s ease
 
-Menu hambúrguer;
+Cards: efeito hover com elevação
 
-Sidebar Offcanvas;
+Botões: elevação suave no hover
 
-Footer;
+Navbar / Footer: gradiente vermelho-escuro
 
-Carrossel na Home;
+Formulários: inputs brancos com borda sutil e foco em vermelho
 
-Seção Hero;
+📱 Responsividade
+Dispositivo
 
-Cards;
+Comportamento
 
-Layout responsivo;
+💻 Desktop / Tablet
 
-Personalização visual própria.
+Tabelas completas + layout em colunas
 
-🗄️ Banco de Dados
-O projeto utiliza SQLite durante o desenvolvimento.
+📱 Celular
 
-A comunicação entre os modelos e o banco é realizada pelo Django ORM.
-
-Fluxo
-Model
-  ↓
-Django ORM
-  ↓
-Migration
-  ↓
-SQLite
-Comandos principais
-python manage.py makemigrations
-python manage.py migrate
-🔄 CRUD
-O sistema utiliza as operações fundamentais de CRUD:
-
-CREATE
-  ↓
-READ
-  ↓
-UPDATE
-  ↓
-DELETE
-Create
-Cadastro de veículos.
-
-Read
-Listagem e visualização dos dados.
-
-Update
-Atualização das informações.
-
-Delete
-Exclusão dos registros.
-
-No projeto atual, o gerenciamento administrativo do CRUD de veículos é realizado pelo Django Admin.
+Cards organizados + botões em linha + menu offcanvas
 
 📁 Estrutura do Projeto
 cadastro_de_veiculos/
 │
-├── FleetCard/
-│   ├── migrations/
-│   ├── static/
-│   │   └── js/
-│   │       └── script.js
-│   ├── templates/
-│   │   ├── admin/
-│   │   │   ├── custom_login.html
-│   │   │   └── meu_admin.html
-│   │   ├── includes/
-│   │   │   ├── footer.html
-│   │   │   └── navbar.html
-│   │   ├── base.html
-│   │   ├── cadastrar_veiculo.html
-│   │   ├── contatos.html
-│   │   ├── home.html
-│   │   ├── lista_veiculos.html
-│   │   ├── pagina_veiculos.html
-│   │   ├── sobre.html
-│   │   ├── test_base.html
-│   │   └── ver_detalhes.html
-│   ├── __init__.py
-│   ├── admin.py
-│   ├── apps.py
-│   ├── models.py
-│   ├── tests.py
-│   ├── urls.py
-│   └── views.py
+├── 📂 FleetCard/                     # Aplicação principal
+│   ├── 📄 models.py                  # Veiculo, OrdemServico, Contato
+│   ├── 📄 views.py
+│   ├── 📄 urls.py
+│   ├── 📄 admin.py
+│   ├── 📄 forms.py
+│   │
+│   └── 📂 templates/
+│       ├── 📄 base.html
+│       ├── 📂 includes/
+│       │   ├── 📄 navbar.html
+│       │   └── 📄 footer.html
+│       ├── 📄 home.html
+│       ├── 📄 sobre.html
+│       ├── 📄 contatos.html
+│       ├── 📄 cadastrar_veiculo.html
+│       ├── 📄 lista_veiculos.html
+│       ├── 📄 editar_veiculo.html
+│       ├── 📄 pagina_veiculos.html
+│       ├── 📄 cadastrar_ordem_servico.html
+│       ├── 📄 lista_ordens_servico.html
+│       ├── 📄 editar_ordem_servico.html
+│       ├── 📄 excluir_ordem_servico.html
+│       └── 📄 ordens_servico_veiculo.html
 │
-├── config/
-│   ├── __init__.py
-│   ├── asgi.py
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-│
-├── media/
-│   └── veiculos/
-│
-├── static/
-├── db.sqlite3
-├── manage.py
-└── requirements.txt
-🧩 Template Base
-O projeto utiliza herança de templates.
+├── 📄 manage.py
+├── 📄 db.sqlite3
+└── 📄 requirements.txt
+🗄️ Modelos do Banco de Dados
+🚙 Veiculo
+Campo
 
-O arquivo principal é:
+Tipo
 
-FleetCard/templates/base.html
-A estrutura compartilhada inclui:
+Descrição
 
-Navbar;
+tipo
 
-Conteúdo principal;
+Choices
 
-Footer;
+Carro, moto ou caminhão
 
-Bootstrap;
+marca
 
-Bootstrap Icons;
+CharField
 
-CSS;
+Marca do veículo
 
-JavaScript.
+modelo
 
-As páginas utilizam o conceito de herança do Django Templates.
+CharField
 
-Exemplo
-{% extends 'base.html' %}
-🖼️ Imagens e Arquivos de Mídia
-As imagens enviadas dos veículos são armazenadas no diretório:
+Modelo do veículo
 
-media/veiculos/
-A configuração utiliza:
+placa
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
-Durante o desenvolvimento, as URLs de mídia são disponibilizadas pelo config/urls.py.
+Unique
 
-🌐 Integração com API
-A página de veículos utiliza dados obtidos por APIs externas para apresentar informações de veículos.
+Identificação única
 
-A implementação está organizada no arquivo:
+ano
 
-FleetCard/veiculos_api.py
-Os dados são organizados por:
+IntegerField
 
-🚗 Carros;
+Ano do veículo
 
-🏍️ Motocicletas;
+cor
 
-🚚 Caminhões.
+CharField
 
-As informações são apresentadas na interface através de cards Bootstrap.
+Cor do veículo
 
-📚 Funcionalidades Complementares
-A documentação do projeto prevê a evolução do FleetCard para recursos adicionais:
+combustivel
 
-🏷️ Marcas;
+Choices
 
-🗂️ Categorias;
+Gasolina, etanol, diesel, flex...
 
-⛽ Combustíveis;
+quilometragem
 
-🎨 Cores;
+IntegerField
 
-🔧 Manutenção;
+Quilometragem atual
 
-🔄 Revisões;
+observacoes
 
-🛣️ Quilometragem;
+TextField
 
-📑 Documentação;
+Observações adicionais
 
-📊 Relatórios.
+imagem
 
-Esses recursos representam a evolução planejada do sistema e não devem ser considerados funcionalidades independentes já implementadas enquanto não houver sua implementação no código.
+ImageField
 
-🧪 Regras de Negócio
-A placa do veículo deve ser única.
+Foto do veículo
 
-O tipo do veículo utiliza opções previamente definidas.
+data_cadastro
 
-A quilometragem possui valor padrão 0.
+DateTimeField
 
-Observações são opcionais.
+Registrada automaticamente
 
-A imagem do veículo é opcional.
+🛠️ OrdemServico
+Relacionamento 1:N com Veiculo
+→ Um veículo pode possuir várias ordens de serviço.
 
-Um veículo pode possuir várias Ordens de Serviço.
+📩 Contato
+Armazena as mensagens enviadas pelo formulário:
 
-Uma Ordem de Serviço pertence a um veículo.
+Campo
 
-Quando uma Ordem de Serviço é concluída, a data de conclusão é registrada automaticamente.
+Tipo
 
-Quando o status deixa de ser concluído, a data de conclusão é removida.
+Finalidade
+
+nome
+
+CharField
+
+Nome do remetente
+
+email
+
+EmailField
+
+E-mail
+
+telefone
+
+CharField
+
+Telefone (opcional)
+
+assunto
+
+CharField
+
+Assunto
+
+mensagem
+
+TextField
+
+Mensagem enviada
+
+data_envio
+
+DateTimeField
+
+Data/hora automática
+
+🔗 Principais Rotas
+🚗 Veículos
+Operação
+
+Rota
+
+Descrição
+
+➕ Create
+
+/veiculos/cadastrar/
+
+Cadastrar novo veículo
+
+📋 Read
+
+/veiculos/
+
+Listar veículos
+
+✏️ Update
+
+/veiculos/editar/<id>/
+
+Editar veículo
+
+🗑️ Delete
+
+/veiculos/excluir/<id>/
+
+Excluir veículo
+
+🛠️ Ordens de Serviço
+Operação
+
+Rota
+
+Descrição
+
+➕ Create
+
+/ordens-servico/cadastrar/<veiculo_id>/
+
+Cadastrar OS vinculada a um veículo
+
+📋 Read
+
+/ordens-servico/
+
+Listar todas as OS
+
+🔍 Read
+
+/veiculos/<veiculo_id>/ordens-servico/
+
+OS de um veículo específico
+
+✏️ Update
+
+/ordens-servico/editar/<id>/
+
+Editar OS
+
+🗑️ Delete
+
+/ordens-servico/excluir/<id>/
+
+Excluir OS
+
+🌐 Rotas Gerais
+Rota
+
+Função
+
+/
+
+🏠 Página inicial
+
+/sobre/
+
+ℹ️ Sobre o projeto
+
+/contatos/
+
+📩 Formulário de contatos
+
+/pagina_veiculos/
+
+🔌 Página de veículos + API
+
+/deslogar/
+
+🚪 Encerrar sessão
+
+/admin/
+
+⚙️ Área administrativa Django
 
 🚀 Como Executar o Projeto
-1. Clonar o repositório
+1️⃣ Clone o repositório
 git clone https://github.com/chavierwebmidia2026-glitch/cadastro_de_veiculos.git
-2. Entrar na pasta
 cd cadastro_de_veiculos
-3. Criar ambiente virtual
-No Windows:
+2️⃣ Crie e ative o ambiente virtual
+python -m venv venv
 
-python -m venv .venv
-4. Ativar o ambiente virtual
-Git Bash:
+# Windows
+venv\Scripts\activate
 
-source .venv/Scripts/activate
-PowerShell:
-
-.venv\Scripts\Activate.ps1
-5. Instalar as dependências
-python -m pip install -r requirements.txt
-6. Aplicar as migrations
+# Linux / macOS
+source venv/bin/activate
+3️⃣ Instale as dependências
+pip install -r requirements.txt
+4️⃣ Aplique as migrations
 python manage.py migrate
-7. Criar superusuário
+5️⃣ (Opcional) Crie um superusuário
 python manage.py createsuperuser
-8. Executar o servidor
+6️⃣ Execute o servidor
 python manage.py runserver
-9. Acessar no navegador
-http://127.0.0.1:8000/
+🌐 Acesse: http://127.0.0.1:8000
 
-Para o Django Admin:
+👥 Equipe — Grupo 3
+Integrante
 
-http://127.0.0.1:8000/admin/
+Função
 
-🌿 Controle de Versão
-O desenvolvimento utiliza Git e GitHub.
+👨‍💻 Raphael Farias
 
-Estrutura utilizada no desenvolvimento:
+Desenvolvedor
 
-master
-  │
-  ├── develop
-  │
-  ├── feature/sidebar
-  ├── feature/carousel
-  ├── feature/pagina_veiculos
-  ├── feature/api-veiculos
-  ├── feature/crud-veiculos
-  └── feature/stylizar_css_admin_Django
-As funcionalidades são desenvolvidas em branches específicas e posteriormente integradas ao fluxo principal do projeto.
+👨‍💻 Kayke Cansanção
 
-📌 Status do Projeto
-🟢 Implementado
-Estrutura Django;
+Desenvolvedor
 
-Aplicação FleetCard;
+👩‍💻 Letícia
 
-Templates;
+Desenvolvedora
 
-base.html;
+👨‍💻 Fabiano
 
-Navbar;
+Desenvolvedor
 
-Footer;
+🎓 Turma: 2026.2
+📚 Curso: Programador Back-End Python
+📖 Unidade Curricular: Desenvolvimento Web com Django
 
-Bootstrap 5;
+📄 Licença
+Este projeto foi desenvolvido para fins educacionais como parte da Atividade Avaliativa Prática do curso Programador Back-End Python.
 
-Bootstrap Icons;
-
-CSS personalizado;
-
-Sidebar Offcanvas;
-
-Menu hambúrguer;
-
-Carrossel da Home;
-
-Hero da Home;
-
-Páginas Home, Sobre e Contatos;
-
-Página de veículos;
-
-Página de detalhes;
-
-Modelo Veiculo;
-
-Banco SQLite;
-
-Django ORM;
-
-Django Admin;
-
-Filtros e pesquisas no Admin;
-
-Modelo OrdemServico;
-
-Ordens de Serviço relacionadas ao veículo;
-
-Upload de imagens;
-
-Integração com API de veículos;
-
-Controle de acesso às opções administrativas.
-
-🔄 Em evolução
-Aprimoramento da interface;
-
-Melhorias na apresentação dos veículos;
-
-Melhorias no controle administrativo;
-
-Refinamento da documentação;
-
-Testes e ajustes finais.
-
-📋 Planejado
-Marcas;
-
-Categorias;
-
-Controle de documentação;
-
-Controle de revisões;
-
-Controle de quilometragem;
-
-Relatórios;
-
-Melhorias no Dashboard;
-
-Novas funcionalidades de manutenção.
-
-🎓 Projeto Integrador
-O FleetCard tem como finalidade aplicar, de forma prática, os conhecimentos desenvolvidos durante a formação em programação Back-End com Python e Django.
-
-O projeto utiliza conceitos de:
-
-Desenvolvimento Web;
-
-Django;
-
-ORM;
-
-Banco de dados;
-
-CRUD;
-
-Templates;
-
-Bootstrap;
-
-Django Admin;
-
-APIs;
-
-Git e GitHub.
-
-A documentação acompanha a evolução do projeto, registrando sua estrutura, tecnologias, funcionalidades, requisitos e planejamento.
-
-🏁 Conclusão
-O FleetCard propõe uma solução web para centralizar o cadastro e gerenciamento de veículos.
-
-A utilização de Python, Django, ORM, SQLite, Bootstrap e Django Admin proporciona uma estrutura organizada e responsiva.
-
-O sistema trabalha com carros, motocicletas e caminhões e possui suporte ao gerenciamento de Ordens de Serviço.
-
-A arquitetura permite que novas funcionalidades sejam adicionadas futuramente, incluindo manutenção, revisões, documentação, quilometragem e relatórios.
-
-🚗 FleetCard
-Organização, controle e gestão de veículos em um único sistema.
-
-📌 Projeto
-Informação	Detalhes
-🚗 Projeto	FleetCard
-📚 Tipo	Projeto Integrador
-🎓 Curso	Programação em Back-end Python
-📖 UC	Desenvolvimento Web com Django
-💻 Área	Desenvolvimento Web
-🐍 Backend	Python + Django
-🗄️ Banco de Dados	SQLite
-🎨 Frontend	HTML5 + CSS3 + Bootstrap 5
-🔐 Administração	Django Admin
-🌿 Controle de versão	Git + GitHub
+FleetCard © 2026 — Grupo 3
