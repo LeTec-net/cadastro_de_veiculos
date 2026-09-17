@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 
@@ -25,6 +26,7 @@ def sobre(request):
     return render(request, 'sobre.html')
 
 
+
 def contatos(request):
 
     if request.method == 'POST':
@@ -43,11 +45,16 @@ def contatos(request):
             mensagem=mensagem
         )
 
-        return render(request, 'contatos.html', {
-            'sucesso': 'Sua mensagem foi enviada e salva com sucesso!'
-        })
+        messages.success( 
+            request, 
+            'Sua mensagem foi enviada e salva com sucesso!' 
+            )
+
+        return redirect('contatos')
 
     return render(request, 'contatos.html')
+
+
 
 
 # API DE VEICULOS
