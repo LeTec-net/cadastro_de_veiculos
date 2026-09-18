@@ -14,7 +14,9 @@ from .veiculos_api import (
 )
 
 
-# Páginas
+# ============================================================
+# PÁGINAS
+# ============================================================
 
 def home(request):
     return render(request, 'home.html')
@@ -49,19 +51,27 @@ def contatos(request):
 
         return redirect('contatos')
 
-    return render(request, 'contatos.html')
+    return render(
+        request,
+        'contatos.html'
+    )
 
 
-# API de veículos
+# ============================================================
+# API DE VEÍCULOS
+# ============================================================
 
 def pagina_veiculos(request):
 
+    # Veículos cadastrados no banco de dados
     veiculos = Veiculo.objects.all().order_by('-id')
 
+    # Busca veículos na API
     carros = buscar_carros()[:5]
     motos = buscar_motos()[:5]
     caminhoes = buscar_caminhoes()[:5]
 
+    # Busca imagens dos carros
     for veiculo in carros:
         veiculo["imagem"] = buscar_imagem(
             veiculo["Make_Name"],
@@ -69,6 +79,7 @@ def pagina_veiculos(request):
             "car"
         )
 
+    # Busca imagens das motos
     for veiculo in motos:
         veiculo["imagem"] = buscar_imagem(
             veiculo["Make_Name"],
@@ -76,6 +87,7 @@ def pagina_veiculos(request):
             "moto"
         )
 
+    # Busca imagens dos caminhões
     for veiculo in caminhoes:
         veiculo["imagem"] = buscar_imagem(
             veiculo["Make_Name"],
@@ -97,12 +109,20 @@ def pagina_veiculos(request):
     )
 
 
+# ============================================================
+# LOGOUT
+# ============================================================
+
 def deslogar(request):
 
     logout(request)
 
     return redirect('home')
 
+
+# ============================================================
+# DETALHES DO VEÍCULO DA API
+# ============================================================
 
 def ver_detalhes(request, tipo, marca, modelo):
 
@@ -134,38 +154,73 @@ def ver_detalhes(request, tipo, marca, modelo):
     )
 
 
-# CRUD de veículos
+# ============================================================
+# CRUD DE VEÍCULOS
+# ============================================================
 
 @login_required(login_url='/admin/login/')
-def cadastrar_veiculo(request):
+def cadastrar_veiculo(request, cliente_id=None):
 
-    if request.method == 'POST':
+    # Cliente
+    cliente = None
 
-        form = VeiculoForm(
-            request.POST,
-            request.FILES
+    if cliente_id:
+        cliente = get_object_or_404(
+            Cliente,
+            id=cliente_id
         )
 
+    # Cadastro
+    if request.method == 'POST':
+
+        print("POST RECEBIDO")
+        print(request.POST)
+        print(request.FILES)
+
+        form = VeiculoForm(
+        request.POST,
+        request.FILES
+    )
         if form.is_valid():
 
-            form.save()
+            # Cria o veículo
+            veiculo = form.save(commit=False)
+
+            # Liga o veículo ao cliente
+            if cliente:
+                veiculo.cliente = cliente
+
+            # Salva
+            veiculo.save()
 
             messages.success(
                 request,
                 'Veículo cadastrado com sucesso!'
             )
 
-            return redirect('lista_veiculos')
+            # Volta para o cliente
+            if cliente:
+                return redirect(
+                    'detalhe_cliente',
+                    cliente_id=cliente.id
+                )
+
+            # Volta para a lista
+            return redirect(
+                'lista_veiculos'
+            )
 
     else:
 
+        # Formulário vazio
         form = VeiculoForm()
 
     return render(
         request,
         'cadastrar_veiculo.html',
         {
-            'form': form
+            'form': form,
+            'cliente': cliente
         }
     )
 
@@ -273,20 +328,26 @@ def excluir_veiculo(request, id):
     )
 
 
-# CRUD de clientes
-
+# ============================================================
+# CRUD DE CLIENTES
+# ============================================================
 
 @login_required(login_url='/admin/login/')
 def cadastrar_cliente(request):
+
     if request.method == 'POST':
+
         nome = request.POST.get('nome')
         cpf_cnpj = request.POST.get('cpf_cnpj')
         telefone = request.POST.get('telefone')
         email = request.POST.get('email')
         endereco = request.POST.get('endereco')
 
-        # Verifica se o CPF/CNPJ já está cadastrado
-        if Cliente.objects.filter(cpf_cnpj=cpf_cnpj).exists():
+        # Verifica CPF/CNPJ
+        if Cliente.objects.filter(
+            cpf_cnpj=cpf_cnpj
+        ).exists():
+
             messages.error(
                 request,
                 'Já existe um cliente cadastrado com este CPF/CNPJ.'
@@ -297,7 +358,7 @@ def cadastrar_cliente(request):
                 'cadastrar_cliente.html'
             )
 
-        # Cadastra o cliente
+        # Cadastra cliente
         Cliente.objects.create(
             nome=nome,
             cpf_cnpj=cpf_cnpj,
@@ -313,8 +374,10 @@ def cadastrar_cliente(request):
 
         return redirect('lista_clientes')
 
-    return render(request, 'cadastrar_cliente.html')
-
+    return render(
+        request,
+        'cadastrar_cliente.html'
+    )
 
 
 @login_required(login_url='/admin/login/')
@@ -327,6 +390,33 @@ def lista_clientes(request):
         'lista_clientes.html',
         {
             'clientes': clientes
+        }
+    )
+
+
+@login_required(login_url='/admin/login/')
+def detalhe_cliente(request, cliente_id):
+
+    # Busca o cliente
+    cliente = get_object_or_404(
+        Cliente,
+        id=cliente_id
+    )
+
+    # Busca os veículos do cliente
+    veiculos = (
+        Veiculo.objects
+        .filter(cliente=cliente)
+        .prefetch_related('ordens_servico')
+        .order_by('-id')
+    )
+
+    return render(
+        request,
+        'detalhe_cliente.html',
+        {
+            'cliente': cliente,
+            'veiculos': veiculos,
         }
     )
 
@@ -393,7 +483,9 @@ def excluir_cliente(request, id):
     )
 
 
-# CRUD de ordens de serviço
+# ============================================================
+# CRUD DE ORDENS DE SERVIÇO
+# ============================================================
 
 @login_required(login_url='/admin/login/')
 def cadastrar_ordem_servico(request):
@@ -437,6 +529,7 @@ def cadastrar_ordem_servico(request):
 @login_required(login_url='/admin/login/')
 def cadastrar_ordem_servico_veiculo(request, veiculo_id):
 
+    # Busca o veículo
     veiculo = get_object_or_404(
         Veiculo,
         id=veiculo_id

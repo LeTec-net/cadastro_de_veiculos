@@ -35,7 +35,9 @@ Cadastrar Veículo | FleetCard
 
 
                         <!-- Formulário -->
-                        <form method="post" enctype="multipart/form-data">
+                        <form method="post" enctype="multipart/form-data"
+                            action="{% if cliente %}{% url 'cadastrar_veiculo_cliente' cliente.id %}{% else %}{% url 'cadastrar_veiculo' %}{% endif %}">
+
 
                             {% csrf_token %}
 
@@ -268,15 +270,29 @@ Cadastrar Veículo | FleetCard
                                 <!-- Botões -->
                                 <div class="col-12 d-grid d-sm-flex gap-2 mt-4">
 
-                                    <button type="submit" class="btn btn-primary flex-sm-fill">
+                                    <button type="submit" name="cadastrar" value="1" class="btn btn-primary flex-sm-fill">
                                         <i class="bi bi-check-circle"></i>
                                         Cadastrar
                                     </button>
+
+
+                                    {% if cliente %}
+
+                                    <a href="{% url 'detalhe_cliente' cliente.id %}"
+                                        class="btn btn-secondary flex-sm-fill">
+                                        <i class="bi bi-arrow-left"></i>
+                                        Voltar para cliente
+                                    </a>
+
+                                    {% else %}
 
                                     <a href="{% url 'pagina_veiculos' %}" class="btn btn-secondary flex-sm-fill">
                                         <i class="bi bi-arrow-left"></i>
                                         Voltar
                                     </a>
+
+                                    {% endif %}
+
 
                                 </div>
 

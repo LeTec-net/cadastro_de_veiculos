@@ -1,0 +1,420 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Detalhes do Cliente | FleetCard
+{% endblock %}
+
+{% block content %}
+
+<section class="container-fluid py-4 py-md-5">
+
+    <div class="container">
+
+        <!-- Cabeçalho -->
+        <div class="row align-items-center g-3 mb-4">
+
+            <div class="col-12 col-lg-8">
+
+                <h1 class="h3 fw-bold mb-2">
+                    <i class="bi bi-person-circle text-primary"></i>
+                    Detalhes do Cliente
+                </h1>
+
+                <p class="text-muted mb-0">
+                    Informações do cliente, veículos e ordens de serviço.
+                </p>
+
+            </div>
+
+            <div class="col-12 col-lg-4">
+
+                <div class="d-flex flex-column flex-sm-row gap-2">
+
+                    <a href="{% url 'lista_clientes' %}"
+                        class="btn btn-outline-secondary w-100 d-flex align-items-center justify-content-center gap-2">
+                        <i class="bi bi-arrow-left"></i>
+                        <span>Voltar</span>
+                    </a>
+
+                    <a href="{% url 'editar_cliente' cliente.id %}"
+                        class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-2">
+                        <i class="bi bi-pencil-fill"></i>
+                        <span>Editar cliente</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Dados do cliente -->
+        <div class="card shadow-sm mb-4">
+
+            <div class="card-header bg-primary text-white">
+
+                <h2 class="h5 mb-0">
+
+                    <i class="bi bi-person-vcard-fill"></i>
+
+                    {{ cliente.nome }}
+
+                </h2>
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="row g-4">
+
+                    <!-- CPF/CNPJ -->
+                    <div class="col-12 col-md-6 col-xl-3">
+
+                        <div class="small text-muted">
+                            CPF/CNPJ
+                        </div>
+
+                        <div class="fw-semibold text-break">
+                            {{ cliente.cpf_cnpj }}
+                        </div>
+
+                    </div>
+
+                    <!-- Telefone -->
+                    <div class="col-12 col-md-6 col-xl-3">
+
+                        <div class="small text-muted">
+                            Telefone
+                        </div>
+
+                        <div class="fw-semibold text-break">
+                            {{ cliente.telefone }}
+                        </div>
+
+                    </div>
+
+                    <!-- E-mail -->
+                    <div class="col-12 col-md-6 col-xl-3">
+
+                        <div class="small text-muted">
+                            E-mail
+                        </div>
+
+                        {% if cliente.email %}
+
+                        <div class="fw-semibold text-break">
+                            {{ cliente.email }}
+                        </div>
+
+                        {% else %}
+
+                        <div class="text-muted">
+                            Não informado
+                        </div>
+
+                        {% endif %}
+
+                    </div>
+
+                    <!-- Data de cadastro -->
+                    <div class="col-12 col-md-6 col-xl-3">
+
+                        <div class="small text-muted">
+                            Cadastro
+                        </div>
+
+                        <div class="fw-semibold">
+                            {{ cliente.data_cadastro|date:"d/m/Y H:i" }}
+                        </div>
+
+                    </div>
+
+                    <!-- Endereço -->
+                    <div class="col-12">
+
+                        <div class="small text-muted">
+                            Endereço
+                        </div>
+
+                        {% if cliente.endereco %}
+
+                        <div class="fw-semibold text-break">
+                            {{ cliente.endereco }}
+                        </div>
+
+                        {% else %}
+
+                        <div class="text-muted">
+                            Não informado
+                        </div>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Cabeçalho dos veículos -->
+        <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-3 mb-3">
+
+            <div>
+
+                <h2 class="h4 fw-bold mb-1">
+
+                    <i class="bi bi-car-front-fill text-primary"></i>
+
+                    Veículos do cliente
+
+                </h2>
+
+                <p class="text-muted mb-0">
+                    Veículos relacionados a {{ cliente.nome }}.
+                </p>
+
+            </div>
+
+            
+            <a href="{% url 'cadastrar_veiculo_cliente' cliente.id %}"
+                class="btn btn-primary d-flex align-items-center justify-content-center gap-2">
+                <i class="bi bi-plus-circle-fill"></i>
+                <span>Cadastrar veículo</span>
+            </a>
+            
+
+
+        </div>
+
+
+        <!-- Veículos -->
+        {% if veiculos %}
+
+        <div class="row g-4">
+
+            {% for veiculo in veiculos %}
+
+            <div class="col-12 col-md-6 col-xl-4">
+
+                <div class="card h-100 shadow-sm">
+
+                    <!-- Cabeçalho veículo -->
+                    <div class="card-header bg-primary text-white">
+
+                        <h3 class="h5 mb-0 text-break">
+
+                            <i class="bi bi-car-front-fill"></i>
+
+                            {{ veiculo.marca }}
+                            {{ veiculo.modelo }}
+
+                        </h3>
+
+                    </div>
+
+
+                    <!-- Dados veículo -->
+                    <div class="card-body">
+
+                        <div class="mb-3">
+
+                            <div class="small text-muted">
+                                Tipo
+                            </div>
+
+                            <div class="fw-semibold">
+                                {{ veiculo.get_tipo_display }}
+                            </div>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <div class="small text-muted">
+                                Placa
+                            </div>
+
+                            <div class="fw-semibold text-break">
+                                {{ veiculo.placa }}
+                            </div>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <div class="small text-muted">
+                                Ano
+                            </div>
+
+                            <div class="fw-semibold">
+                                {{ veiculo.ano }}
+                            </div>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <div class="small text-muted">
+                                Cor
+                            </div>
+
+                            <div class="fw-semibold text-break">
+                                {{ veiculo.cor }}
+                            </div>
+
+                        </div>
+
+
+                        <!-- Ordens de serviço -->
+                        <div>
+
+                            <div class="small text-muted mb-2">
+                                Ordens de Serviço
+                            </div>
+
+                            {% if veiculo.ordens_servico.all %}
+
+                            <div class="list-group">
+
+                                {% for ordem in veiculo.ordens_servico.all %}
+
+                                <div class="list-group-item">
+
+                                    <div class="fw-semibold text-break">
+                                        {{ ordem.tipo_servico }}
+                                    </div>
+
+                                    <div class="small text-muted text-break">
+                                        {{ ordem.descricao }}
+                                    </div>
+
+                                    <div class="small mt-1">
+                                        Status:
+                                        <strong>
+                                            {{ ordem.status }}
+                                        </strong>
+                                    </div>
+
+                                </div>
+
+                                {% endfor %}
+
+                            </div>
+
+                            {% else %}
+
+                            <div class="text-muted small">
+                                Nenhuma ordem de serviço cadastrada.
+                            </div>
+
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Botões -->
+                    <div class="card-footer bg-transparent">
+
+                        <div class="row g-2">
+
+                            <!-- Ordens -->
+                            <div class="col-12">
+
+                                <a href="{% url 'ordens_servico_veiculo' veiculo.id %}"
+                                    class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-2">
+                                    <i class="bi bi-tools"></i>
+                                    <span>Ver ordens de serviço</span>
+                                </a>
+
+                            </div>
+
+
+                            <!-- Nova ordem -->
+                            <div class="col-12">
+
+                                <a href="{% url 'cadastrar_ordem_servico_veiculo' veiculo.id %}"
+                                    class="btn btn-outline-success w-100 d-flex align-items-center justify-content-center gap-2">
+                                    <i class="bi bi-plus-circle"></i>
+                                    <span>Nova ordem de serviço</span>
+                                </a>
+
+                            </div>
+
+
+                            <!-- Editar veículo -->
+                            <div class="col-12 col-sm-6">
+
+                                <a href="{% url 'editar_veiculo' veiculo.id %}"
+                                    class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-center gap-2">
+                                    <i class="bi bi-pencil-fill"></i>
+                                    <span>Editar</span>
+                                </a>
+
+                            </div>
+
+
+                            <!-- Excluir veículo -->
+                            <div class="col-12 col-sm-6">
+
+                                <a href="{% url 'excluir_veiculo' veiculo.id %}"
+                                    class="btn btn-outline-danger w-100 d-flex align-items-center justify-content-center gap-2">
+                                    <i class="bi bi-trash-fill"></i>
+                                    <span>Excluir</span>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <!-- Nenhum veículo -->
+        <div class="card shadow-sm border-0">
+
+            <div class="card-body text-center py-5">
+
+                <i class="bi bi-car-front fs-1 text-muted"></i>
+
+                <h3 class="h5 mt-3">
+                    Nenhum veículo cadastrado
+                </h3>
+
+                <p class="text-muted">
+                    Este cliente ainda não possui veículos relacionados.
+                </p>
+
+                <a href="{% url 'cadastrar_veiculo_cliente' cliente.id %}" class="btn btn-primary d-inline-flex align-items-center gap-2">
+                    <i class="bi bi-plus-circle-fill"></i>
+                    <span>Cadastrar veículo</span>
+                </a>
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}
