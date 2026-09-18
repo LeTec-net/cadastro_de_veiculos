@@ -7,305 +7,305 @@ Cadastrar Veículo | FleetCard
 
 {% block content %}
 
-<section class="container-fluid px-2 px-sm-3 px-md-4 py-3 py-sm-4 py-md-5">
+<link rel="stylesheet" href="{% static 'css/cadastrar_veiculo.css' %}">
 
-    <div class="container">
+<div class="cadastrar-veiculo-page">
 
-        <div class="row justify-content-center">
+    <section class="container-fluid px-2 px-sm-3 px-md-4">
 
-            <div class="col-12 col-sm-11 col-md-10 col-lg-8 col-xl-7">
+        <div class="container">
 
-                <div class="card shadow border-0">
+            <div class="row justify-content-center">
 
-                    <div class="card-body p-3 p-sm-4 p-md-5">
+                <div class="col-12 col-sm-11 col-md-10 col-lg-8 col-xl-7">
 
-                        <!-- Título -->
-                        <div class="text-center mb-4">
+                    <div class="card shadow border-0 cadastrar-veiculo-card">
 
-                            <h1 class="h3 fw-bold">
-                                <i class="bi bi-car-front-fill"></i>
-                                Cadastrar Veículo
-                            </h1>
+                        <div class="card-body p-3 p-sm-4 p-md-5">
 
-                            <p class="text-muted mb-0">
-                                Preencha os dados do veículo
-                            </p>
+                            <!-- Título -->
+                            <div class="text-center mb-4">
 
-                        </div>
+                                <h1 class="cadastrar-veiculo-title h3">
+                                    <i class="bi bi-car-front-fill"></i>
+                                    Cadastrar Veículo
+                                </h1>
 
+                                <div class="cadastrar-veiculo-heading-line"></div>
 
-                        <!-- Formulário -->
-                        <form method="post" enctype="multipart/form-data">
-
-                            {% csrf_token %}
-
-                            <div class="row g-3">
-
-                                <!-- Tipo -->
-                                <div class="col-12 col-md-6">
-
-                                    <label
-                                        for="{{ form.tipo.id_for_label }}"
-                                        class="form-label fw-semibold"
-                                    >
-                                        Tipo
-                                    </label>
-
-                                    {{ form.tipo }}
-
-                                    {% if form.tipo.errors %}
-                                        <div class="invalid-feedback d-block">
-                                            {{ form.tipo.errors }}
-                                        </div>
-                                    {% endif %}
-
-                                </div>
-
-
-                                <!-- Marca -->
-                                <div class="col-12 col-md-6">
-
-                                    <label
-                                        for="{{ form.marca.id_for_label }}"
-                                        class="form-label fw-semibold"
-                                    >
-                                        Marca
-                                    </label>
-
-                                    {{ form.marca }}
-
-                                    {% if form.marca.errors %}
-                                        <div class="invalid-feedback d-block">
-                                            {{ form.marca.errors }}
-                                        </div>
-                                    {% endif %}
-
-                                </div>
-
-
-                                <!-- Modelo -->
-                                <div class="col-12 col-md-6">
-
-                                    <label
-                                        for="{{ form.modelo.id_for_label }}"
-                                        class="form-label fw-semibold"
-                                    >
-                                        Modelo
-                                    </label>
-
-                                    {{ form.modelo }}
-
-                                    {% if form.modelo.errors %}
-                                        <div class="invalid-feedback d-block">
-                                            {{ form.modelo.errors }}
-                                        </div>
-                                    {% endif %}
-
-                                </div>
-
-
-                                <!-- Placa -->
-                                <div class="col-12 col-md-6">
-
-                                    <label
-                                        for="{{ form.placa.id_for_label }}"
-                                        class="form-label fw-semibold"
-                                    >
-                                        Placa
-                                    </label>
-
-                                    {{ form.placa }}
-
-                                    {% if form.placa.errors %}
-                                        <div class="invalid-feedback d-block">
-                                            {{ form.placa.errors }}
-                                        </div>
-                                    {% endif %}
-
-                                </div>
-
-
-                                <!-- Ano -->
-                                <div class="col-12 col-md-6">
-
-                                    <label
-                                        for="{{ form.ano.id_for_label }}"
-                                        class="form-label fw-semibold"
-                                    >
-                                        Ano
-                                    </label>
-
-                                    {{ form.ano }}
-
-                                    {% if form.ano.errors %}
-                                        <div class="invalid-feedback d-block">
-                                            {{ form.ano.errors }}
-                                        </div>
-                                    {% endif %}
-
-                                </div>
-
-
-                                <!-- Cor -->
-                                <div class="col-12 col-md-6">
-
-                                    <label
-                                        for="{{ form.cor.id_for_label }}"
-                                        class="form-label fw-semibold"
-                                    >
-                                        Cor
-                                    </label>
-
-                                    {{ form.cor }}
-
-                                    {% if form.cor.errors %}
-                                        <div class="invalid-feedback d-block">
-                                            {{ form.cor.errors }}
-                                        </div>
-                                    {% endif %}
-
-                                </div>
-
-
-                                <!-- Combustível -->
-                                <div class="col-12 col-md-6">
-
-                                    <label
-                                        for="{{ form.combustivel.id_for_label }}"
-                                        class="form-label fw-semibold"
-                                    >
-                                        Combustível
-                                    </label>
-
-                                    {{ form.combustivel }}
-
-                                    {% if form.combustivel.errors %}
-                                        <div class="invalid-feedback d-block">
-                                            {{ form.combustivel.errors }}
-                                        </div>
-                                    {% endif %}
-
-                                </div>
-
-
-                                <!-- Quilometragem -->
-                                <div class="col-12 col-md-6">
-
-                                    <label
-                                        for="{{ form.quilometragem.id_for_label }}"
-                                        class="form-label fw-semibold"
-                                    >
-                                        Quilometragem
-                                    </label>
-
-                                    {{ form.quilometragem }}
-
-                                    {% if form.quilometragem.errors %}
-                                        <div class="invalid-feedback d-block">
-                                            {{ form.quilometragem.errors }}
-                                        </div>
-                                    {% endif %}
-
-                                </div>
-
-
-                                <!-- Observações -->
-                                <div class="col-12">
-
-                                    <label
-                                        for="{{ form.observacoes.id_for_label }}"
-                                        class="form-label fw-semibold"
-                                    >
-                                        Observações
-                                    </label>
-
-                                    {{ form.observacoes }}
-
-                                    {% if form.observacoes.errors %}
-                                        <div class="invalid-feedback d-block">
-                                            {{ form.observacoes.errors }}
-                                        </div>
-                                    {% endif %}
-
-                                </div>
-
-
-                                <!-- Upload da imagem -->
-                                <div class="col-12">
-
-                                    <label
-                                        for="{{ form.imagem.id_for_label }}"
-                                        class="form-label fw-semibold"
-                                    >
-                                        <i class="bi bi-image"></i>
-                                        Imagem do veículo
-                                    </label>
-
-                                    <div class="w-100">
-                                        {{ form.imagem }}
-                                    </div>
-
-                                    {% if form.imagem.errors %}
-                                        <div class="invalid-feedback d-block">
-                                            {{ form.imagem.errors }}
-                                        </div>
-                                    {% endif %}
-
-                                    <div class="form-text">
-                                        Escolha uma imagem do veículo.
-                                    </div>
-
-                                </div>
-
-
-                                <!-- Prévia da imagem -->
-                                <div
-                                    id="preview-container"
-                                    class="d-none col-12 mt-4"
-                                >
-
-                                    <p class="fw-bold text-center mb-2">
-                                        Prévia da imagem
-                                    </p>
-
-                                    <div class="ratio ratio-16x9 overflow-hidden rounded shadow">
-
-                                        <img
-                                            id="imagem-preview"
-                                            src=""
-                                            alt="Prévia do veículo"
-                                            class="img-fluid w-100 h-100 object-fit-cover"
-                                        >
-
-                                    </div>
-
-                                </div>
-
-
-                                <!-- Botões -->
-                                <div class="col-12 d-grid d-sm-flex gap-2 mt-4">
-
-                                    <button
-                                        type="submit"
-                                        class="btn btn-primary flex-sm-fill"
-                                    >
-                                        <i class="bi bi-check-circle"></i>
-                                        Cadastrar
-                                    </button>
-
-                                    <a
-                                        href="{% url 'pagina_veiculos' %}"
-                                        class="btn btn-secondary flex-sm-fill"
-                                    >
-                                        <i class="bi bi-arrow-left"></i>
-                                        Voltar
-                                    </a>
-
-                                </div>
+                                <p class="cadastrar-veiculo-subtitle mb-0 mt-3">
+                                    Preencha os dados do veículo
+                                </p>
 
                             </div>
 
-                        </form>
+                            <!-- Formulário -->
+                            <form method="post" enctype="multipart/form-data">
+
+                                {% csrf_token %}
+
+                                <div class="row g-3">
+
+                                    <!-- Tipo -->
+                                    <div class="col-12 col-md-6">
+
+                                        <label
+                                            for="{{ form.tipo.id_for_label }}"
+                                            class="form-label fw-semibold"
+                                        >
+                                            Tipo
+                                        </label>
+
+                                        {{ form.tipo }}
+
+                                        {% if form.tipo.errors %}
+                                            <div class="invalid-feedback d-block">
+                                                {{ form.tipo.errors }}
+                                            </div>
+                                        {% endif %}
+
+                                    </div>
+
+                                    <!-- Marca -->
+                                    <div class="col-12 col-md-6">
+
+                                        <label
+                                            for="{{ form.marca.id_for_label }}"
+                                            class="form-label fw-semibold"
+                                        >
+                                            Marca
+                                        </label>
+
+                                        {{ form.marca }}
+
+                                        {% if form.marca.errors %}
+                                            <div class="invalid-feedback d-block">
+                                                {{ form.marca.errors }}
+                                            </div>
+                                        {% endif %}
+
+                                    </div>
+
+                                    <!-- Modelo -->
+                                    <div class="col-12 col-md-6">
+
+                                        <label
+                                            for="{{ form.modelo.id_for_label }}"
+                                            class="form-label fw-semibold"
+                                        >
+                                            Modelo
+                                        </label>
+
+                                        {{ form.modelo }}
+
+                                        {% if form.modelo.errors %}
+                                            <div class="invalid-feedback d-block">
+                                                {{ form.modelo.errors }}
+                                            </div>
+                                        {% endif %}
+
+                                    </div>
+
+                                    <!-- Placa -->
+                                    <div class="col-12 col-md-6">
+
+                                        <label
+                                            for="{{ form.placa.id_for_label }}"
+                                            class="form-label fw-semibold"
+                                        >
+                                            Placa
+                                        </label>
+
+                                        {{ form.placa }}
+
+                                        {% if form.placa.errors %}
+                                            <div class="invalid-feedback d-block">
+                                                {{ form.placa.errors }}
+                                            </div>
+                                        {% endif %}
+
+                                    </div>
+
+                                    <!-- Ano -->
+                                    <div class="col-12 col-md-6">
+
+                                        <label
+                                            for="{{ form.ano.id_for_label }}"
+                                            class="form-label fw-semibold"
+                                        >
+                                            Ano
+                                        </label>
+
+                                        {{ form.ano }}
+
+                                        {% if form.ano.errors %}
+                                            <div class="invalid-feedback d-block">
+                                                {{ form.ano.errors }}
+                                            </div>
+                                        {% endif %}
+
+                                    </div>
+
+                                    <!-- Cor -->
+                                    <div class="col-12 col-md-6">
+
+                                        <label
+                                            for="{{ form.cor.id_for_label }}"
+                                            class="form-label fw-semibold"
+                                        >
+                                            Cor
+                                        </label>
+
+                                        {{ form.cor }}
+
+                                        {% if form.cor.errors %}
+                                            <div class="invalid-feedback d-block">
+                                                {{ form.cor.errors }}
+                                            </div>
+                                        {% endif %}
+
+                                    </div>
+
+                                    <!-- Combustível -->
+                                    <div class="col-12 col-md-6">
+
+                                        <label
+                                            for="{{ form.combustivel.id_for_label }}"
+                                            class="form-label fw-semibold"
+                                        >
+                                            Combustível
+                                        </label>
+
+                                        {{ form.combustivel }}
+
+                                        {% if form.combustivel.errors %}
+                                            <div class="invalid-feedback d-block">
+                                                {{ form.combustivel.errors }}
+                                            </div>
+                                        {% endif %}
+
+                                    </div>
+
+                                    <!-- Quilometragem -->
+                                    <div class="col-12 col-md-6">
+
+                                        <label
+                                            for="{{ form.quilometragem.id_for_label }}"
+                                            class="form-label fw-semibold"
+                                        >
+                                            Quilometragem
+                                        </label>
+
+                                        {{ form.quilometragem }}
+
+                                        {% if form.quilometragem.errors %}
+                                            <div class="invalid-feedback d-block">
+                                                {{ form.quilometragem.errors }}
+                                            </div>
+                                        {% endif %}
+
+                                    </div>
+
+                                    <!-- Observações -->
+                                    <div class="col-12">
+
+                                        <label
+                                            for="{{ form.observacoes.id_for_label }}"
+                                            class="form-label fw-semibold"
+                                        >
+                                            Observações
+                                        </label>
+
+                                        {{ form.observacoes }}
+
+                                        {% if form.observacoes.errors %}
+                                            <div class="invalid-feedback d-block">
+                                                {{ form.observacoes.errors }}
+                                            </div>
+                                        {% endif %}
+
+                                    </div>
+
+                                    <!-- Upload da imagem -->
+                                    <div class="col-12">
+
+                                        <label
+                                            for="{{ form.imagem.id_for_label }}"
+                                            class="form-label fw-semibold"
+                                        >
+                                            <i class="bi bi-image"></i>
+                                            Imagem do veículo
+                                        </label>
+
+                                        <div class="w-100">
+                                            {{ form.imagem }}
+                                        </div>
+
+                                        {% if form.imagem.errors %}
+                                            <div class="invalid-feedback d-block">
+                                                {{ form.imagem.errors }}
+                                            </div>
+                                        {% endif %}
+
+                                        <div class="form-text">
+                                            Escolha uma imagem do veículo.
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Prévia da imagem -->
+                                    <div
+                                        id="preview-container"
+                                        class="d-none col-12 mt-4"
+                                    >
+
+                                        <p class="fw-bold text-center mb-2">
+                                            Prévia da imagem
+                                        </p>
+
+                                        <div class="ratio ratio-16x9 overflow-hidden rounded shadow">
+
+                                            <img
+                                                id="imagem-preview"
+                                                src=""
+                                                alt="Prévia do veículo"
+                                                class="img-fluid w-100 h-100 object-fit-cover"
+                                            >
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Botões -->
+                                    <div class="col-12 mt-4">
+
+                                        <div class="cadastrar-actions">
+
+                                            <button
+                                                type="submit"
+                                                class="btn btn-primary flex-fill"
+                                            >
+                                                <i class="bi bi-check-circle"></i>
+                                                Cadastrar
+                                            </button>
+
+                                            <a
+                                                href="{% url 'pagina_veiculos' %}"
+                                                class="btn btn-secondary flex-fill"
+                                            >
+                                                <i class="bi bi-arrow-left"></i>
+                                                Voltar
+                                            </a>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </form>
+
+                        </div>
 
                     </div>
 
@@ -315,8 +315,8 @@ Cadastrar Veículo | FleetCard
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+</div>
 
 {% endblock %}

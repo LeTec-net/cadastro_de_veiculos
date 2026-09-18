@@ -1,0 +1,289 @@
+/* =========================================================
+   FleetCard — editar_veiculo.css
+   Estilo exclusivo da página "Editar Veículo"
+   ========================================================= */
+
+:root {
+    --editar-fleet-red: #b43227;
+    --editar-fleet-red-dark: #8f261e;
+    --editar-fleet-red-light: #d84a3d;
+    --editar-fleet-dark: #1f2327;
+    --editar-fleet-dark-2: #171a1d;
+    --editar-fleet-card: #252a2f;
+    --editar-fleet-white: #ffffff;
+    --editar-fleet-gray: #aeb4bb;
+    --editar-fleet-border: rgba(255, 255, 255, 0.08);
+}
+
+/* Fundo exclusivo da página */
+.editar-veiculo-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(180, 50, 39, 0.12),
+            transparent 35%
+        ),
+        var(--editar-fleet-dark);
+    color: var(--editar-fleet-white);
+    padding: 55px 0 80px;
+}
+
+/* Container do formulário */
+.editar-veiculo-page .editar-veiculo-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--editar-fleet-card) !important;
+    color: var(--editar-fleet-white);
+    border: 1px solid var(--editar-fleet-border) !important;
+    border-radius: 18px !important;
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.28) !important;
+}
+
+/* Brilho discreto no topo do card */
+.editar-veiculo-page .editar-veiculo-card::before {
+    content: "";
+    position: absolute;
+    width: 380px;
+    height: 220px;
+    top: -180px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(180, 50, 39, 0.13);
+    border-radius: 50%;
+    filter: blur(70px);
+    pointer-events: none;
+}
+
+/* Corpo */
+.editar-veiculo-page .card-body {
+    position: relative;
+}
+
+/* =========================================================
+   Cabeçalho
+   ========================================================= */
+
+.editar-veiculo-page .editar-veiculo-title {
+    color: var(--editar-fleet-white);
+    font-weight: 800;
+    letter-spacing: -0.8px;
+}
+
+.editar-veiculo-page .editar-veiculo-title i {
+    color: var(--editar-fleet-red-light);
+}
+
+.editar-veiculo-page .editar-veiculo-subtitle {
+    color: var(--editar-fleet-gray) !important;
+}
+
+/* Linha decorativa */
+.editar-veiculo-page .editar-veiculo-heading-line {
+    width: 55px;
+    height: 4px;
+    margin: 15px auto 0;
+    border-radius: 10px;
+    background: var(--editar-fleet-red);
+}
+
+/* =========================================================
+   Labels
+   ========================================================= */
+
+.editar-veiculo-page .form-label {
+    color: var(--editar-fleet-white);
+    font-size: 0.9rem;
+    margin-bottom: 7px;
+}
+
+/* =========================================================
+   Campos Django
+   ========================================================= */
+
+.editar-veiculo-page input:not([type="file"]),
+.editar-veiculo-page select,
+.editar-veiculo-page textarea {
+    width: 100%;
+    color: var(--editar-fleet-white) !important;
+    background: var(--editar-fleet-dark-2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 10px !important;
+    padding: 10px 13px;
+    font-size: 0.92rem;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+/* Select */
+.editar-veiculo-page select {
+    min-height: 43px;
+}
+
+/* Textarea */
+.editar-veiculo-page textarea {
+    min-height: 125px;
+    resize: vertical;
+}
+
+/* Placeholder */
+.editar-veiculo-page input::placeholder,
+.editar-veiculo-page textarea::placeholder {
+    color: rgba(174, 180, 187, 0.65);
+}
+
+/* Foco */
+.editar-veiculo-page input:not([type="file"]):focus,
+.editar-veiculo-page select:focus,
+.editar-veiculo-page textarea:focus {
+    outline: none;
+    border-color: rgba(180, 50, 39, 0.75) !important;
+    box-shadow: 0 0 0 3px rgba(180, 50, 39, 0.13) !important;
+    background: #1b1f22 !important;
+}
+
+/* Opções do select */
+.editar-veiculo-page select option {
+    background: var(--editar-fleet-dark-2);
+    color: var(--editar-fleet-white);
+}
+
+/* =========================================================
+   Upload de imagem
+   ========================================================= */
+
+.editar-veiculo-page input[type="file"] {
+    width: 100%;
+    color: var(--editar-fleet-gray);
+    background: var(--editar-fleet-dark-2);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 0.85rem;
+}
+
+.editar-veiculo-page input[type="file"]::file-selector-button {
+    margin-right: 10px;
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--editar-fleet-red);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.editar-veiculo-page input[type="file"]::file-selector-button:hover {
+    background: var(--editar-fleet-red-dark);
+}
+
+/* =========================================================
+   Erros de validação Django
+   ========================================================= */
+
+.editar-veiculo-page .errorlist {
+    list-style: none;
+    padding: 0;
+    margin: 6px 0 0;
+    color: #ff8175;
+    font-size: 0.8rem;
+}
+
+/* =========================================================
+   Botões
+   ========================================================= */
+
+.editar-veiculo-page .editar-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.editar-veiculo-page .editar-actions .btn {
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.editar-veiculo-page .editar-actions .btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Salvar */
+.editar-veiculo-page .editar-actions .btn-primary {
+    background: var(--editar-fleet-red) !important;
+    border-color: var(--editar-fleet-red) !important;
+    color: white !important;
+}
+
+.editar-veiculo-page .editar-actions .btn-primary:hover {
+    background: var(--editar-fleet-red-dark) !important;
+    box-shadow: 0 8px 20px rgba(180, 50, 39, 0.25);
+}
+
+/* Ordem de Serviço */
+.editar-veiculo-page .editar-actions .btn-success {
+    background: #2d6a4f !important;
+    border-color: #2d6a4f !important;
+    color: white !important;
+}
+
+/* Voltar */
+.editar-veiculo-page .editar-actions .btn-secondary {
+    background: #343a40 !important;
+    border-color: #343a40 !important;
+    color: white !important;
+}
+
+.editar-veiculo-page .editar-actions .btn-secondary:hover {
+    background: #454d54 !important;
+}
+
+/* =========================================================
+   Responsividade
+   ========================================================= */
+
+@media (max-width: 768px) {
+    .editar-veiculo-page {
+        padding: 30px 0 55px;
+    }
+
+    .editar-veiculo-page .card-body {
+        padding: 25px !important;
+    }
+
+    .editar-veiculo-page .editar-veiculo-title {
+        font-size: 2rem !important;
+    }
+
+    .editar-veiculo-page .editar-actions {
+        flex-direction: column;
+    }
+
+    .editar-veiculo-page .editar-actions .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .editar-veiculo-page .card-body {
+        padding: 20px !important;
+    }
+
+    .editar-veiculo-page .editar-veiculo-title {
+        font-size: 1.75rem !important;
+    }
+
+    .editar-veiculo-page .form-label {
+        font-size: 0.85rem;
+    }
+}

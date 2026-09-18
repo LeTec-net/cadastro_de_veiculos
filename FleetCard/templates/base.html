@@ -25,6 +25,10 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/cadastra_veiculo.css' %}">
 
+    <!-- CSS específico de cada página -->
+    {% block extra_css %}
+    {% endblock %}
+
 </head>
 
 <body>
