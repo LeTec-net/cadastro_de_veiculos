@@ -10,6 +10,12 @@
     --fc-fundo-secao: #F4E6CC;
     --fc-fundo-card: #FFFFFF;
 
+    /* NOVO: cor de fundo do site */
+    --fc-fundo-site: #1f2327;
+
+    /* NOVO: cor padrão dos textos do hero */
+    --fc-texto-hero: #b43227;
+
     --fc-texto: #2E1B12;
     --fc-texto-suave: #6B5544;
     --fc-borda: rgba(46, 27, 18, 0.12);
@@ -132,7 +138,7 @@ html {
 }
 
 body {
-    background-color: var(--fc-primaria-escura) !important;
+    background-color: var(--fc-fundo-site) !important;
 
     color: var(--fc-texto);
 
@@ -157,7 +163,7 @@ body {
 main {
     min-height: 60vh;
 
-    background-color: var(--fc-primaria-escura) !important;
+    background-color: var(--fc-fundo-site) !important;
 
     margin: 0 !important;
     padding: 0 !important;
@@ -568,6 +574,43 @@ form select[multiple] {
     max-width: 100% !important;
     box-sizing: border-box;
     resize: vertical;
+}
+
+
+/* Hero / Apresentação */
+
+.hero-fleetcard {
+    background-color: var(--fc-fundo-site);
+}
+
+.hero-fleetcard h1 {
+    color: var(--fc-texto-hero);
+}
+
+.hero-fleetcard h1 .destaque,
+.hero-fleetcard h2 {
+    color: var(--fc-texto-hero);
+}
+
+.hero-fleetcard .badge {
+    background-color: var(--fc-texto-hero);
+    color: #FFFFFF;
+}
+
+.hero-fleetcard .btn-primary {
+    --bs-btn-color: #FFFFFF;
+    --bs-btn-bg: var(--fc-texto-hero);
+    --bs-btn-border-color: var(--fc-texto-hero);
+
+    --bs-btn-hover-color: #FFFFFF;
+    --bs-btn-hover-bg: #8F271E;
+    --bs-btn-hover-border-color: #8F271E;
+
+    --bs-btn-active-color: #FFFFFF;
+    --bs-btn-active-bg: #8F271E;
+    --bs-btn-active-border-color: #8F271E;
+
+    box-shadow: 0 4px 14px rgba(180, 50, 39, 0.28);
 }
 
 

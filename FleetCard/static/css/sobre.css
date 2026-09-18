@@ -1,0 +1,203 @@
+/* FleetCard — Sobre */
+:root {
+    --red: #b43227;
+    --red-dark: #8f261f;
+    --dark: #1f2327;
+    --dark2: #171a1d;
+    --card: #252a2f;
+    --white: #fff;
+    --gray: #aeb4bb;
+    --border: rgba(255, 255, 255, .08)
+}
+
+.sobre-page {
+    min-height: 100vh;
+    background: radial-gradient(circle at 50% 0%, rgba(180, 50, 39, .13), transparent 35%), var(--dark);
+    color: var(--white)
+}
+
+.sobre-page .bg-dark,
+.sobre-page .bg-light {
+    background: transparent !important
+}
+
+.sobre-page .text-primary {
+    color: var(--red) !important
+}
+
+.sobre-page .text-secondary,
+.sobre-page .text-muted {
+    color: var(--gray) !important
+}
+
+.sobre-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 70px 0 85px;
+    background: radial-gradient(circle at 78% 20%, rgba(180, 50, 39, .18), transparent 32%)
+}
+
+.sobre-hero h1 {
+    color: var(--white);
+    font-size: clamp(2.5rem, 6vw, 4.4rem);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -2px
+}
+
+.sobre-hero h1 span {
+    color: var(--red)
+}
+
+.sobre-hero-badge,
+.sobre-section-label {
+    color: #d05b50
+}
+
+.sobre-hero-badge {
+    display: inline-block;
+    padding: 7px 18px;
+    margin-bottom: 18px;
+    border: 1px solid rgba(180, 50, 39, .45);
+    border-radius: 30px;
+    background: rgba(180, 50, 39, .14);
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px
+}
+
+.sobre-hero-description {
+    max-width: 680px;
+    margin-top: 24px;
+    color: var(--gray);
+    font-size: 1.08rem;
+    line-height: 1.7
+}
+
+.sobre-page .btn-primary {
+    background: var(--red);
+    border: 0;
+    border-radius: 10px;
+    font-weight: 700
+}
+
+.sobre-page .btn-primary:hover {
+    background: var(--red-dark);
+    transform: translateY(-2px)
+}
+
+.sobre-logo-card,
+.sobre-page .card {
+    background: var(--card);
+    color: var(--white);
+    border: 1px solid var(--border) !important
+}
+
+.sobre-logo-card {
+    border-radius: 18px !important;
+    overflow: hidden
+}
+
+.sobre-logo-card .card-body {
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px
+}
+
+.sobre-logo-card img {
+    max-height: 360px !important;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain
+}
+
+.sobre-section-title {
+    color: var(--white);
+    font-weight: 800
+}
+
+.sobre-section-label {
+    font-size: .78rem;
+    letter-spacing: 1.5px
+}
+
+.sobre-feature-card,
+.sobre-category-card,
+.sobre-tech-card {
+    border-radius: 18px !important;
+    transition: .25s ease
+}
+
+.sobre-feature-card:hover,
+.sobre-category-card:hover,
+.sobre-tech-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(180, 50, 39, .45) !important;
+    box-shadow: 0 18px 35px rgba(0, 0, 0, .28) !important
+}
+
+.sobre-icon {
+    color: var(--red) !important
+}
+
+.sobre-category-section,
+.sobre-differentials {
+    background: var(--dark2) !important
+}
+
+.sobre-tech-card {
+    border-radius: 15px !important
+}
+
+.sobre-differential {
+    height: 100%;
+    padding: 12px
+}
+
+.sobre-differential i {
+    color: var(--red)
+}
+
+.sobre-differential p {
+    color: rgba(255, 255, 255, .55) !important
+}
+
+.sobre-cta-card {
+    border-radius: 20px !important;
+    border: 1px solid rgba(180, 50, 39, .35) !important;
+    background: linear-gradient(135deg, var(--red-dark), var(--red)) !important
+}
+
+.sobre-cta-card .btn-light {
+    color: var(--red)
+}
+
+.sobre-page .lead {
+    color: var(--gray)
+}
+
+@media(max-width:768px) {
+    .sobre-hero {
+        padding: 45px 0 55px
+    }
+
+    .sobre-hero h1 {
+        font-size: 2.5rem;
+        letter-spacing: -1px
+    }
+
+    .sobre-hero-description {
+        font-size: .95rem
+    }
+
+    .sobre-logo-card .card-body {
+        min-height: 230px;
+        padding: 25px
+    }
+
+    .sobre-logo-card img {
+        max-height: 260px !important
+    }
+}

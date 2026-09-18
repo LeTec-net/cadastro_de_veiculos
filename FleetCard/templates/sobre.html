@@ -5,537 +5,408 @@
 
 {% block content %}
 
-<!-- Hero -->
-<section class="py-5 bg-dark text-white">
-    <div class="container py-5">
+<link rel="stylesheet" href="{% static 'css/sobre.css' %}">
 
-        <div class="row align-items-center g-4">
+<div class="sobre-page">
 
-            <div class="col-lg-7">
+    <!-- HERO -->
+    <section class="sobre-hero">
+        <div class="container py-5">
+            <div class="row align-items-center g-4">
 
-                <span class="badge bg-primary mb-3">
-                    FleetCard
+                <div class="col-lg-7">
+                    <span class="sobre-hero-label">
+                        FLEETCARD • SOBRE O PROJETO
+                    </span>
+
+                    <h1>
+                        Sobre o <span>FleetCard.</span>
+                    </h1>
+
+                    <p class="sobre-hero-description">
+                        Uma solução para cadastro, consulta e gerenciamento
+                        de veículos de forma simples, organizada e eficiente.
+                    </p>
+
+                    <a href="{% url 'pagina_veiculos' %}"
+                       class="btn btn-fleet btn-lg mt-3">
+                        <i class="bi bi-car-front-fill me-2"></i>
+                        Ver veículos
+                    </a>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="sobre-logo-card">
+                        <img src="{% static 'imagens/ChatGPT Image 14 de set. de 2026, 07_45_43.png' %}"
+                             alt="Logo FleetCard">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SOBRE O PROJETO -->
+    <section class="sobre-section py-5">
+        <div class="container py-4">
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6">
+                    <span class="sobre-label">
+                        SOBRE O PROJETO
+                    </span>
+
+                    <h2 class="sobre-title mt-2">
+                        Organização e controle em um único sistema
+                    </h2>
+
+                    <p class="sobre-text mt-3">
+                        O FleetCard foi desenvolvido para facilitar o cadastro,
+                        a consulta e o gerenciamento de veículos, permitindo
+                        organizar informações de carros, motocicletas e
+                        caminhões em um único ambiente, com uma estrutura
+                        moderna, responsiva e preparada para receber novos
+                        recursos e funcionalidades no futuro.
+                    </p>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="sobre-card">
+                        <div class="p-4">
+
+                            <h4 class="fw-bold mb-4">
+                                Principais recursos
+                            </h4>
+
+                            <div class="sobre-resource">
+                                <i class="bi bi-plus-circle-fill"></i>
+                                <div>
+                                    <h6 class="fw-bold">
+                                        Cadastro de veículos
+                                    </h6>
+                                    <p>
+                                        Registro das principais informações
+                                        dos veículos.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="sobre-resource">
+                                <i class="bi bi-search"></i>
+                                <div>
+                                    <h6 class="fw-bold">
+                                        Consulta
+                                    </h6>
+                                    <p>
+                                        Visualização dos veículos cadastrados
+                                        de forma organizada.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="sobre-resource">
+                                <i class="bi bi-pencil-square"></i>
+                                <div>
+                                    <h6 class="fw-bold">
+                                        Gerenciamento
+                                    </h6>
+                                    <p>
+                                        Edição e exclusão dos registros
+                                        cadastrados.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CATEGORIAS -->
+    <section class="sobre-dark-section py-5">
+        <div class="container">
+
+            <div class="text-center mb-5">
+                <span class="sobre-label">
+                    CATEGORIAS
                 </span>
 
-                <h1 class="display-5 fw-bold">
-                    Sobre o FleetCard
-                </h1>
+                <h2 class="sobre-title mt-2">
+                    Tipos de veículos
+                </h2>
 
-                <p class="lead mt-3">
-                    Uma solução para cadastro, consulta e gerenciamento
-                    de veículos de forma simples, organizada e eficiente.
+                <p class="sobre-muted">
+                    O sistema permite organizar diferentes categorias
+                    de veículos.
                 </p>
-
-                <a href="{% url 'pagina_veiculos' %}" class="btn btn-primary btn-lg mt-3">
-                    <i class="bi bi-car-front-fill me-2"></i>
-                    Ver veículos
-                </a>
-
             </div>
 
-            <div class="col-lg-5">
+            <div class="row g-4">
 
-                <div class="card border-0 shadow-lg rounded-4">
-                    <div class="card-body text-center ">
+                <div class="col-md-4">
+                    <div class="sobre-card sobre-category-card h-100">
+                        <div class="p-4 text-center">
 
-                        <img src="{% static 'imagens/ChatGPT Image 14 de set. de 2026, 07_45_43.png' %}" alt="Logo FleetCard" class="img-fluid"
-                            style="max-height: 800px;">
+                            <i class="bi bi-car-front-fill sobre-icon display-3"></i>
 
-                       
-                            
+                            <h4 class="fw-bold mt-3">
+                                Carros
+                            </h4>
 
+                            <p class="sobre-muted">
+                                Cadastro e organização de automóveis,
+                                com suas principais informações.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="sobre-card sobre-category-card h-100">
+                        <div class="p-4 text-center">
+
+                            <i class="bi bi-bicycle sobre-icon display-3"></i>
+
+                            <h4 class="fw-bold mt-3">
+                                Motocicletas
+                            </h4>
+
+                            <p class="sobre-muted">
+                                Organização das informações de
+                                motocicletas cadastradas.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="sobre-card sobre-category-card h-100">
+                        <div class="p-4 text-center">
+
+                            <i class="bi bi-truck-front-fill sobre-icon display-3"></i>
+
+                            <h4 class="fw-bold mt-3">
+                                Caminhões
+                            </h4>
+
+                            <p class="sobre-muted">
+                                Cadastro e gerenciamento de veículos
+                                destinados ao transporte.
+                            </p>
+
+                        </div>
                     </div>
                 </div>
 
             </div>
 
         </div>
-
-    </div>
-</section>
+    </section>
 
 
-<!-- Sobre o projeto -->
-<section class="py-5">
+    <!-- TECNOLOGIAS -->
+    <section class="sobre-section py-5">
+        <div class="container py-4">
 
-    <div class="container py-4">
-
-        <div class="row align-items-center g-5">
-
-            <div class="col-lg-6">
-
-                <span class="text-primary fw-bold">
-                    SOBRE O PROJETO
+            <div class="text-center mb-5">
+                <span class="sobre-label">
+                    TECNOLOGIAS
                 </span>
 
-                <h2 class="fw-bold mt-2">
-                    Organização e controle em um único sistema
+                <h2 class="sobre-title mt-2">
+                    Tecnologias utilizadas
                 </h2>
 
-                <p class="text-white mt-3">
-                    O FleetCard foi desenvolvido para facilitar o cadastro,
-                    a consulta e o gerenciamento de veículos, permitindo
-                    organizar informações de carros, motocicletas e
-                    caminhões em um único ambiente, com uma estrutura
-                    moderna, responsiva e preparada para receber novos
-                    recursos e funcionalidades no futuro.
+                <p class="sobre-muted">
+                    O FleetCard utiliza tecnologias modernas
+                    para desenvolvimento web.
                 </p>
-
             </div>
 
-            <div class="col-lg-6">
+            <div class="row g-4">
 
-                <div class="card border-0 shadow rounded-4">
-
-                    <div class="card-body p-4">
-
-                        <h4 class="fw-bold mb-4">
-                            Principais recursos
-                        </h4>
-
-                        <div class="d-flex gap-3 mb-4">
-
-                            <i class="bi bi-plus-circle-fill text-primary fs-4"></i>
-
-                            <div>
-                                <h6 class="fw-bold">
-                                    Cadastro de veículos
-                                </h6>
-
-                                <p class="text-secondary mb-0">
-                                    Registro das principais informações
-                                    dos veículos.
-                                </p>
-                            </div>
-
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="sobre-card sobre-tech-card h-100">
+                        <div class="p-3 text-center">
+                            <i class="bi bi-filetype-py sobre-icon fs-1"></i>
+                            <h6 class="fw-bold mt-2">Python</h6>
                         </div>
+                    </div>
+                </div>
 
-                        <div class="d-flex gap-3 mb-4">
-
-                            <i class="bi bi-search text-primary fs-4"></i>
-
-                            <div>
-                                <h6 class="fw-bold">
-                                    Consulta
-                                </h6>
-
-                                <p class="text-secondary mb-0">
-                                    Visualização dos veículos cadastrados
-                                    de forma organizada.
-                                </p>
-                            </div>
-
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="sobre-card sobre-tech-card h-100">
+                        <div class="p-3 text-center">
+                            <i class="bi bi-code-slash sobre-icon fs-1"></i>
+                            <h6 class="fw-bold mt-2">Django</h6>
                         </div>
+                    </div>
+                </div>
 
-                        <div class="d-flex gap-3">
-
-                            <i class="bi bi-pencil-square text-primary fs-4"></i>
-
-                            <div>
-                                <h6 class="fw-bold">
-                                    Gerenciamento
-                                </h6>
-
-                                <p class="text-secondary mb-0">
-                                    Edição e exclusão dos registros
-                                    cadastrados.
-                                </p>
-                            </div>
-
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="sobre-card sobre-tech-card h-100">
+                        <div class="p-3 text-center">
+                            <i class="bi bi-bootstrap-fill sobre-icon fs-1"></i>
+                            <h6 class="fw-bold mt-2">Bootstrap</h6>
                         </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-
-<!-- Categorias -->
-<section class="py-5 bg-light">
-
-    <div class="container">
-
-        <div class="text-center mb-5">
-
-            <span class="text-primary fw-bold">
-                CATEGORIAS
-            </span>
-
-            <h2 class="fw-bold mt-2">
-                Tipos de veículos
-            </h2>
-
-            <p class="text-secondary">
-                O sistema permite organizar diferentes categorias
-                de veículos.
-            </p>
-
-        </div>
-
-        <div class="row g-4">
-
-            <!-- Carros -->
-            <div class="col-md-4">
-
-                <div class="card h-100 border-0 shadow-sm rounded-4">
-
-                    <div class="card-body text-center p-4">
-
-                        <i class="bi bi-car-front-fill text-primary display-3"></i>
-
-                        <h4 class="fw-bold mt-3">
-                            Carros
-                        </h4>
-
-                        <p class="text-secondary">
-                            Cadastro e organização de automóveis,
-                            com suas principais informações.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Motocicletas -->
-            <div class="col-md-4">
-
-                <div class="card h-100 border-0 shadow-sm rounded-4">
-
-                    <div class="card-body text-center p-4">
-
-                        <i class="bi bi-bicycle text-primary display-3"></i>
-
-                        <h4 class="fw-bold mt-3">
-                            Motocicletas
-                        </h4>
-
-                        <p class="text-secondary">
-                            Organização das informações de
-                            motocicletas cadastradas.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Caminhões -->
-            <div class="col-md-4">
-
-                <div class="card h-100 border-0 shadow-sm rounded-4">
-
-                    <div class="card-body text-center p-4">
-
-                        <i class="bi bi-truck-front-fill text-primary display-3"></i>
-
-                        <h4 class="fw-bold mt-3">
-                            Caminhões
-                        </h4>
-
-                        <p class="text-secondary">
-                            Cadastro e gerenciamento de veículos
-                            destinados ao transporte.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-
-<!-- Tecnologias -->
-<section class="py-5">
-
-    <div class="container py-4">
-
-        <div class="text-center mb-5">
-
-            <span class="text-primary fw-bold">
-                TECNOLOGIAS
-            </span>
-
-            <h2 class="fw-bold mt-2">
-                Tecnologias utilizadas
-            </h2>
-
-            <p class="text-secondary">
-                O FleetCard utiliza tecnologias modernas
-                para desenvolvimento web.
-            </p>
-
-        </div>
-
-        <div class="row g-4">
-
-            <!-- Python -->
-            <div class="col-6 col-md-4 col-lg-2">
-
-                <div class="card border-0 shadow-sm h-100 text-center">
-                    <div class="card-body">
-
-                        <i class="bi bi-filetype-py text-primary fs-1"></i>
-
-                        <h6 class="fw-bold mt-2">
-                            Python
-                        </h6>
-
                     </div>
                 </div>
 
-            </div>
-
-
-            <!-- Django -->
-            <div class="col-6 col-md-4 col-lg-2">
-
-                <div class="card border-0 shadow-sm h-100 text-center">
-                    <div class="card-body">
-
-                        <i class="bi bi-code-slash text-primary fs-1"></i>
-
-                        <h6 class="fw-bold mt-2">
-                            Django
-                        </h6>
-
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="sobre-card sobre-tech-card h-100">
+                        <div class="p-3 text-center">
+                            <i class="bi bi-database-fill sobre-icon fs-1"></i>
+                            <h6 class="fw-bold mt-2">SQLite</h6>
+                        </div>
                     </div>
                 </div>
 
-            </div>
-
-
-            <!-- Bootstrap -->
-            <div class="col-6 col-md-4 col-lg-2">
-
-                <div class="card border-0 shadow-sm h-100 text-center">
-                    <div class="card-body">
-
-                        <i class="bi bi-bootstrap-fill text-primary fs-1"></i>
-
-                        <h6 class="fw-bold mt-2">
-                            Bootstrap
-                        </h6>
-
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="sobre-card sobre-tech-card h-100">
+                        <div class="p-3 text-center">
+                            <i class="bi bi-git sobre-icon fs-1"></i>
+                            <h6 class="fw-bold mt-2">Git</h6>
+                        </div>
                     </div>
                 </div>
 
-            </div>
-
-
-            <!-- SQLite -->
-            <div class="col-6 col-md-4 col-lg-2">
-
-                <div class="card border-0 shadow-sm h-100 text-center">
-                    <div class="card-body">
-
-                        <i class="bi bi-database-fill text-primary fs-1"></i>
-
-                        <h6 class="fw-bold mt-2">
-                            SQLite
-                        </h6>
-
-                    </div>
-                </div>
-
-            </div>
-
-
-            <!-- Git -->
-            <div class="col-6 col-md-4 col-lg-2">
-
-                <div class="card border-0 shadow-sm h-100 text-center">
-                    <div class="card-body">
-
-                        <i class="bi bi-git text-primary fs-1"></i>
-
-                        <h6 class="fw-bold mt-2">
-                            Git
-                        </h6>
-
-                    </div>
-                </div>
-
-            </div>
-
-
-            <!-- GitHub -->
-            <div class="col-6 col-md-4 col-lg-2">
-
-                <div class="card border-0 shadow-sm h-100 text-center">
-                    <div class="card-body">
-
-                        <i class="bi bi-github text-primary fs-1"></i>
-
-                        <h6 class="fw-bold mt-2">
-                            GitHub
-                        </h6>
-
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="sobre-card sobre-tech-card h-100">
+                        <div class="p-3 text-center">
+                            <i class="bi bi-github sobre-icon fs-1"></i>
+                            <h6 class="fw-bold mt-2">GitHub</h6>
+                        </div>
                     </div>
                 </div>
 
             </div>
 
         </div>
-
-    </div>
-</section>
+    </section>
 
 
-<!-- Diferenciais -->
-<section class="py-5 bg-dark text-white">
+    <!-- DIFERENCIAIS -->
+    <section class="sobre-dark-section py-5">
+        <div class="container py-4">
 
-    <div class="container py-4">
+            <div class="text-center mb-5">
+                <span class="sobre-label">
+                    DIFERENCIAIS
+                </span>
 
-        <div class="text-center mb-5">
-
-            <span class="text-primary fw-bold">
-                DIFERENCIAIS
-            </span>
-
-            <h2 class="fw-bold mt-2">
-                Uma plataforma preparada para evoluir
-            </h2>
-
-        </div>
-
-        <div class="row g-4">
-
-            <!-- Responsivo -->
-            <div class="col-md-6 col-lg-3">
-
-                <div class="text-center">
-
-                    <i class="bi bi-phone text-primary display-4"></i>
-
-                    <h5 class="fw-bold mt-3">
-                        Responsivo
-                    </h5>
-
-                    <p class="text-white-50">
-                        Adaptado para computadores, tablets
-                        e celulares.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Organização -->
-            <div class="col-md-6 col-lg-3">
-
-                <div class="text-center">
-
-                    <i class="bi bi-folder-check text-primary display-4"></i>
-
-                    <h5 class="fw-bold mt-3">
-                        Organização
-                    </h5>
-
-                    <p class="text-white-50">
-                        Informações estruturadas para facilitar
-                        o gerenciamento.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Segurança -->
-            <div class="col-md-6 col-lg-3">
-
-                <div class="text-center">
-
-                    <i class="bi bi-shield-check text-primary display-4"></i>
-
-                    <h5 class="fw-bold mt-3">
-                        Controle
-                    </h5>
-
-                    <p class="text-white-50">
-                        Gerenciamento dos registros cadastrados
-                        no sistema.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Evolução -->
-            <div class="col-md-6 col-lg-3">
-
-                <div class="text-center">
-
-                    <i class="bi bi-graph-up-arrow text-primary display-4"></i>
-
-                    <h5 class="fw-bold mt-3">
-                        Evolução
-                    </h5>
-
-                    <p class="text-white-50">
-                        Estrutura preparada para novos recursos.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-
-<!-- Chamada final -->
-<section class="py-5">
-
-    <div class="container py-4">
-
-        <div class="card border-0 shadow-lg rounded-4 bg-primary text-white">
-
-            <div class="card-body text-center p-4 p-md-5">
-
-                <i class="bi bi-car-front-fill display-4"></i>
-
-                <h2 class="fw-bold mt-3">
-                    Conheça os veículos cadastrados
+                <h2 class="sobre-title mt-2">
+                    Uma plataforma preparada para evoluir
                 </h2>
+            </div>
 
-                <p class="lead">
-                    Acesse a página de veículos e confira
-                    as informações disponíveis no FleetCard.
-                </p>
+            <div class="row g-4">
 
-                <a href="{% url 'pagina_veiculos' %}" class="btn btn-light btn-lg px-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="sobre-differential text-center">
+                        <i class="bi bi-phone display-4"></i>
 
-                    <i class="bi bi-arrow-right-circle me-2"></i>
-                    Acessar veículos
+                        <h5 class="fw-bold mt-3">
+                            Responsivo
+                        </h5>
 
-                </a>
+                        <p>
+                            Adaptado para computadores, tablets
+                            e celulares.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="sobre-differential text-center">
+                        <i class="bi bi-folder-check display-4"></i>
+
+                        <h5 class="fw-bold mt-3">
+                            Organização
+                        </h5>
+
+                        <p>
+                            Informações estruturadas para facilitar
+                            o gerenciamento.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="sobre-differential text-center">
+                        <i class="bi bi-shield-check display-4"></i>
+
+                        <h5 class="fw-bold mt-3">
+                            Controle
+                        </h5>
+
+                        <p>
+                            Gerenciamento dos registros cadastrados
+                            no sistema.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="sobre-differential text-center">
+                        <i class="bi bi-graph-up-arrow display-4"></i>
+
+                        <h5 class="fw-bold mt-3">
+                            Evolução
+                        </h5>
+
+                        <p>
+                            Estrutura preparada para novos recursos.
+                        </p>
+                    </div>
+                </div>
 
             </div>
 
         </div>
+    </section>
 
-    </div>
-</section>
+
+    <!-- CTA FINAL -->
+    <section class="sobre-section py-5">
+        <div class="container py-4">
+
+            <div class="sobre-cta">
+                <div class="p-4 p-md-5 text-center">
+
+                    <i class="bi bi-car-front-fill display-4"></i>
+
+                    <h2 class="fw-bold mt-3">
+                        Conheça os veículos cadastrados
+                    </h2>
+
+                    <p class="lead">
+                        Acesse a página de veículos e confira
+                        as informações disponíveis no FleetCard.
+                    </p>
+
+                    <a href="{% url 'pagina_veiculos' %}"
+                       class="btn btn-light btn-lg px-4">
+
+                        <i class="bi bi-arrow-right-circle me-2"></i>
+                        Acessar veículos
+
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</div>
 
 {% endblock %}
