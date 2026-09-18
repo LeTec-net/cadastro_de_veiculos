@@ -6,7 +6,7 @@
 /* Cores */
 
 :root {
-    --fc-fundo: #FBF1E0;
+    --fc-fundo: #A5342A;
     --fc-fundo-secao: #F4E6CC;
     --fc-fundo-card: #FFFFFF;
 
@@ -38,8 +38,8 @@
     --fc-success: #3E7A44;
     --fc-success-rgb: 62, 122, 68;
 
-    --fc-light: #F8F2E7;
-    --fc-dark: #241610;
+    --fc-light: #7a5b22;
+    --fc-dark: #7a2a07;
 
     --fc-fonte-corpo: "Inter", Arial, sans-serif;
     --fc-fonte-display: "Poppins", Arial, sans-serif;
