@@ -434,3 +434,43 @@ document.addEventListener("keydown", evento => {
 
 });
 
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const imagemInput = document.querySelector('input[type="file"]');
+    const previewContainer = document.getElementById("preview-container");
+    const imagemPreview = document.getElementById("imagem-preview");
+
+    if (!imagemInput || !previewContainer || !imagemPreview) {
+        return;
+    }
+
+    imagemInput.addEventListener("change", function () {
+
+        const arquivo = imagemInput.files[0];
+
+        if (arquivo) {
+
+            const leitor = new FileReader();
+
+            leitor.onload = function (evento) {
+
+                imagemPreview.src = evento.target.result;
+
+                previewContainer.classList.remove("d-none");
+
+            };
+
+            leitor.readAsDataURL(arquivo);
+
+        } else {
+
+            imagemPreview.src = "";
+
+            previewContainer.classList.add("d-none");
+
+        }
+
+    });
+
+});

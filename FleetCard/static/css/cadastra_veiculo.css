@@ -1,0 +1,97 @@
+/* =====================================================
+   RESPONSIVIDADE - PÁGINA CADASTRAR VEÍCULO
+   ===================================================== */
+
+/* Formulário */
+form {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Campos do formulário */
+form input,
+form select,
+form textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Upload da imagem */
+form input[type="file"] {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Imagem da prévia */
+#imagem-preview {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =====================================================
+   CELULAR
+   ===================================================== */
+
+@media (max-width: 575.98px) {
+
+    /* Espaçamento do cartão */
+    .card-body {
+        padding: 1rem !important;
+    }
+
+    /* Título */
+    h1.h3 {
+        font-size: 1.35rem;
+    }
+
+    /* Campos */
+    form input,
+    form select,
+    form textarea {
+        font-size: 16px;
+    }
+
+    /* Upload */
+    form input[type="file"] {
+        font-size: 14px;
+    }
+
+    /* Botões */
+    form .btn {
+        width: 100%;
+    }
+
+}
+
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+
+    form input,
+    form select,
+    form textarea {
+        width: 100%;
+    }
+
+}
+
+
+/* =====================================================
+   NOTEBOOK E DESKTOP
+   ===================================================== */
+
+@media (min-width: 992px) {
+
+    form input,
+    form select,
+    form textarea {
+        width: 100%;
+    }
+
+}
