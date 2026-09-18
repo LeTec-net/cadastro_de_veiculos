@@ -6,7 +6,7 @@
 /* Cores */
 
 :root {
-    --fc-fundo: #A5342A;
+    --fc-fundo: #c5716a;
     --fc-fundo-secao: #F4E6CC;
     --fc-fundo-card: #FFFFFF;
 
@@ -132,7 +132,7 @@ html {
 }
 
 body {
-    background: var(--fc-fundo) !important;
+    background-color: var(--fc-primaria-escura) !important;
 
     color: var(--fc-texto);
 
@@ -157,7 +157,7 @@ body {
 main {
     min-height: 60vh;
 
-    background: var(--fc-fundo) !important;
+    background-color: var(--fc-primaria-escura) !important;
 
     margin: 0 !important;
     padding: 0 !important;
@@ -304,10 +304,7 @@ textarea:focus-visible,
 /* Sidebar */
 
 .offcanvas.bg-primary {
-    background: linear-gradient(180deg,
-            var(--fc-primaria-escura) 0%,
-            var(--fc-primaria) 55%,
-            var(--fc-primaria-escura) 100%) !important;
+     background-color: var(--fc-primaria-escura) !important;
 }
 
 .offcanvas .list-group-item-action {
@@ -349,6 +346,7 @@ textarea:focus-visible,
 
 footer {
     margin-top: 0 !important;
+    background-color: var(--fc-primaria-escura) !important;
 }
 
 footer.bg-primary {
