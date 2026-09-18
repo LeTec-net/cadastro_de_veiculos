@@ -292,10 +292,8 @@ textarea:focus-visible,
 
 /* Navbar */
 
-.navbar.bg-primary {
-    background: linear-gradient(180deg,
-            var(--fc-primaria) 0%,
-            var(--fc-primaria-escura) 100%) !important;
+.navbar {
+    background-color: var(--fc-primaria-escura) !important;
 }
 
 .navbar .btn-primary {
