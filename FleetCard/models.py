@@ -1,7 +1,56 @@
 from django.db import models
 
 
+class Cliente(models.Model):
+
+    nome = models.CharField(
+        max_length=100,
+        verbose_name='Nome'
+    )
+
+    cpf_cnpj = models.CharField(
+        max_length=18,
+        unique=True,
+        verbose_name='CPF/CNPJ'
+    )
+
+    telefone = models.CharField(
+        max_length=20,
+        verbose_name='Telefone'
+    )
+
+    email = models.EmailField(
+        blank=True,
+        null=True,
+        verbose_name='E-mail'
+    )
+
+    endereco = models.CharField(
+        max_length=200,
+        blank=True,
+        null=True,
+        verbose_name='Endereço'
+    )
+
+    data_cadastro = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name='Data de cadastro'
+    )
+
+    def __str__(self):
+        return self.nome
+
+
 class Veiculo(models.Model):
+
+    cliente = models.ForeignKey(
+        Cliente,
+        on_delete=models.PROTECT,
+        related_name='veiculos',
+        verbose_name='Cliente',
+        null=True,
+        blank=True
+    )
 
     TIPOS_VEICULO = [
         ('carro', 'Carro'),
@@ -80,7 +129,6 @@ class Veiculo(models.Model):
 
     def __str__(self):
         return f'{self.marca} {self.modelo} - {self.placa}'
-    
 
 
 TIPOS_SERVICO = [
@@ -154,8 +202,6 @@ class OrdemServico(models.Model):
         return f"OS #{self.id} - {self.veiculo}"
 
 
-
-
 class Contato(models.Model):
 
     nome = models.CharField(max_length=100)
@@ -172,9 +218,3 @@ class Contato(models.Model):
 
     def __str__(self):
         return f"{self.nome} - {self.assunto}"
-
-
-
-
-
-  

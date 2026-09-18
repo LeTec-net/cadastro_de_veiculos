@@ -1,0 +1,166 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+Clientes | FleetCard
+{% endblock %}
+
+{% block content %}
+
+<section class="container-fluid py-4 py-md-5">
+
+    <div class="container">
+
+        <!-- CABEÇALHO -->
+        <div class="row align-items-center g-3 mb-4">
+
+            <div class="col-12 col-lg-8">
+
+                <h1 class="h3 fw-bold mb-2">
+                    <i class="bi bi-people-fill text-primary"></i>
+                    Clientes
+                </h1>
+
+                <p class="text-muted mb-0">
+                    Gerencie os clientes cadastrados no FleetCard.
+                </p>
+
+            </div>
+
+
+            <!-- BOTÃO CADASTRAR -->
+            <div class="col-12 col-lg-4">
+
+                <a
+                    href="{% url 'cadastrar_cliente' %}"
+                    class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-2"
+                >
+
+                    <i class="bi bi-person-plus-fill"></i>
+
+                    <span>
+                        Cadastrar cliente
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MENSAGENS -->
+        {% if messages %}
+
+            {% for message in messages %}
+
+                <div
+                    class="alert alert-{{ message.tags }} alert-dismissible fade show"
+                    role="alert"
+                >
+
+                    {{ message }}
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="alert"
+                        aria-label="Fechar"
+                    ></button>
+
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+
+
+
+        <!-- CLIENTES -->
+        {% if clientes %}
+
+            <div class="row g-4">
+
+                {% for cliente in clientes %}
+
+                    <!-- CARD DO CLIENTE -->
+                    <div class="col-12 col-md-6 col-xl-4">
+
+                        <div class="card h-100 shadow-sm">
+
+
+                            <!-- CABEÇALHO -->
+                            <div class="card-header bg-primary text-white">
+
+                                <div class="d-flex align-items-center gap-2">
+
+                                    <i class="bi bi-person-circle fs-4"></i>
+
+                                    <h5 class="mb-0 text-break">
+                                        {{ cliente.nome }}
+                                    </h5>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- CORPO -->
+                            <div class="card-body">
+
+
+                                <!-- CPF/CNPJ -->
+                                <div class="mb-3">
+
+                                    <div class="small text-muted">
+                                        CPF/CNPJ
+                                    </div>
+
+                                    <div class="fw-semibold text-break">
+                                        {{ cliente.cpf_cnpj }}
+                                    </div>
+
+                                </div>
+
+
+                                <!-- TELEFONE -->
+                                <div class="mb-3">
+
+                                    <div class="small text-muted">
+                                        Telefone
+                                    </div>
+
+                                    <div class="text-break">
+                                        {{ cliente.telefone }}
+                                    </div>
+
+                                </div>
+
+
+                                <!-- EMAIL -->
+                                <div class="mb-3">
+
+                                    <div class="small text-muted">
+                                        E-mail
+                                    </div>
+
+                                    {% if cliente.email %}
+
+                                        <div class="text-break">
+                                            {{ cliente.email }}
+                                        </div>
+
+                                    {% else %}
+
+                                        <div class="text-muted">
+                                            Não informado
+                                        </div>
+
+                                    {% endif %}
+
+                                </div>
+
+
+                                <!-- ENDEREÇO -->
+                                <div class="mb-3">
+

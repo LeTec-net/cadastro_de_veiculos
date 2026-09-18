@@ -1,8 +1,7 @@
 from django.contrib import admin
 from django.utils.html import format_html
 
-from .models import Veiculo, OrdemServico,  Contato
-
+from .models import Cliente, Veiculo, OrdemServico, Contato
 
 # Template personalizado da tela de login
 admin.site.login_template = 'admin/custom_login.html'
@@ -13,6 +12,29 @@ class OrdemServicoInline(admin.TabularInline):
 
     model = OrdemServico
     extra = 0
+
+
+
+@admin.register(Cliente)
+class ClienteAdmin(admin.ModelAdmin):
+
+    list_display = (
+        'id',
+        'nome',
+        'cpf_cnpj',
+        'telefone',
+        'email',
+        'data_cadastro',
+    )
+
+    search_fields = (
+        'nome',
+        'cpf_cnpj',
+        'telefone',
+        'email',
+    )
+
+    ordering = ('nome',)
 
 
 # Administração dos veículos

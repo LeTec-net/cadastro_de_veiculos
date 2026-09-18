@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 
-from .models import Veiculo, OrdemServico, Contato
+from .models import Cliente, Veiculo, OrdemServico, Contato
 from .forms import VeiculoForm
 
 from .veiculos_api import (
@@ -14,17 +14,14 @@ from .veiculos_api import (
 )
 
 
-# HOME
+# Páginas
 
 def home(request):
     return render(request, 'home.html')
 
 
-# SOBRE
-
 def sobre(request):
     return render(request, 'sobre.html')
-
 
 
 def contatos(request):
@@ -45,31 +42,26 @@ def contatos(request):
             mensagem=mensagem
         )
 
-        messages.success( 
-            request, 
-            'Sua mensagem foi enviada e salva com sucesso!' 
-            )
+        messages.success(
+            request,
+            'Sua mensagem foi enviada e salva com sucesso!'
+        )
 
         return redirect('contatos')
 
     return render(request, 'contatos.html')
 
 
-
-
-# API DE VEICULOS
+# API de veículos
 
 def pagina_veiculos(request):
 
-    # Veiculos cadastrados no banco pelo Admin
     veiculos = Veiculo.objects.all().order_by('-id')
 
-    # Veiculos recebidos da API
     carros = buscar_carros()[:5]
     motos = buscar_motos()[:5]
     caminhoes = buscar_caminhoes()[:5]
 
-    # Imagens dos carros
     for veiculo in carros:
         veiculo["imagem"] = buscar_imagem(
             veiculo["Make_Name"],
@@ -77,7 +69,6 @@ def pagina_veiculos(request):
             "car"
         )
 
-    # Imagens das motos
     for veiculo in motos:
         veiculo["imagem"] = buscar_imagem(
             veiculo["Make_Name"],
@@ -85,7 +76,6 @@ def pagina_veiculos(request):
             "moto"
         )
 
-    # Imagens dos caminhoes
     for veiculo in caminhoes:
         veiculo["imagem"] = buscar_imagem(
             veiculo["Make_Name"],
@@ -93,7 +83,6 @@ def pagina_veiculos(request):
             "caminhao"
         )
 
-    # Envia os dados para a pagina
     contexto = {
         "veiculos": veiculos,
         "carros": carros,
@@ -108,16 +97,12 @@ def pagina_veiculos(request):
     )
 
 
-# DESLOGAR E VOLTAR PARA HOME
-
 def deslogar(request):
 
     logout(request)
 
     return redirect('home')
 
-
-# DETALHES DO VEICULO DA API
 
 def ver_detalhes(request, tipo, marca, modelo):
 
@@ -127,14 +112,12 @@ def ver_detalhes(request, tipo, marca, modelo):
         "caminhao": "Caminhão",
     }
 
-    # Busca a imagem
     imagem = buscar_imagem(
         marca,
         modelo,
         tipo
     )
 
-    # Dados do veiculo
     veiculo = {
         "marca": marca,
         "modelo": modelo,
@@ -151,10 +134,81 @@ def ver_detalhes(request, tipo, marca, modelo):
     )
 
 
+# CRUD de veículos
+
+@login_required(login_url='/admin/login/')
+def cadastrar_veiculo(request):
+
+    if request.method == 'POST':
+
+        form = VeiculoForm(
+            request.POST,
+            request.FILES
+        )
+
+        if form.is_valid():
+
+            form.save()
+
+            messages.success(
+                request,
+                'Veículo cadastrado com sucesso!'
+            )
+
+            return redirect('lista_veiculos')
+
+    else:
+
+        form = VeiculoForm()
+
+    return render(
+        request,
+        'cadastrar_veiculo.html',
+        {
+            'form': form
+        }
+    )
+
+
+@login_required(login_url='/admin/login/')
+def lista_veiculos(request):
+
+    carros_cadastrados = Veiculo.objects.filter(
+        tipo='carro'
+    ).select_related(
+        'cliente'
+    ).order_by('-id')
+
+    motos_cadastrados = Veiculo.objects.filter(
+        tipo='moto'
+    ).select_related(
+        'cliente'
+    ).order_by('-id')
+
+    caminhoes_cadastrados = Veiculo.objects.filter(
+        tipo='caminhao'
+    ).select_related(
+        'cliente'
+    ).order_by('-id')
+
+    return render(
+        request,
+        'lista_veiculos.html',
+        {
+            'carros_cadastrados': carros_cadastrados,
+            'motos_cadastrados': motos_cadastrados,
+            'caminhoes_cadastrados': caminhoes_cadastrados,
+        }
+    )
+
+
 @login_required(login_url='/admin/login/')
 def editar_veiculo(request, id):
 
-    veiculo = Veiculo.objects.get(id=id)
+    veiculo = get_object_or_404(
+        Veiculo,
+        id=id
+    )
 
     if request.method == 'POST':
 
@@ -167,6 +221,11 @@ def editar_veiculo(request, id):
         if form.is_valid():
 
             form.save()
+
+            messages.success(
+                request,
+                'Veículo atualizado com sucesso!'
+            )
 
             return redirect('lista_veiculos')
 
@@ -198,6 +257,11 @@ def excluir_veiculo(request, id):
 
         veiculo.delete()
 
+        messages.success(
+            request,
+            'Veículo excluído com sucesso!'
+        )
+
         return redirect('lista_veiculos')
 
     return render(
@@ -209,67 +273,133 @@ def excluir_veiculo(request, id):
     )
 
 
+# CRUD de clientes
+
+
 @login_required(login_url='/admin/login/')
-def cadastrar_veiculo(request):
-
+def cadastrar_cliente(request):
     if request.method == 'POST':
+        nome = request.POST.get('nome')
+        cpf_cnpj = request.POST.get('cpf_cnpj')
+        telefone = request.POST.get('telefone')
+        email = request.POST.get('email')
+        endereco = request.POST.get('endereco')
 
-        form = VeiculoForm(
-            request.POST,
-            request.FILES
+        # Verifica se o CPF/CNPJ já está cadastrado
+        if Cliente.objects.filter(cpf_cnpj=cpf_cnpj).exists():
+            messages.error(
+                request,
+                'Já existe um cliente cadastrado com este CPF/CNPJ.'
+            )
+
+            return render(
+                request,
+                'cadastrar_cliente.html'
+            )
+
+        # Cadastra o cliente
+        Cliente.objects.create(
+            nome=nome,
+            cpf_cnpj=cpf_cnpj,
+            telefone=telefone,
+            email=email,
+            endereco=endereco
         )
 
-        if form.is_valid():
-            form.save()
+        messages.success(
+            request,
+            'Cliente cadastrado com sucesso!'
+        )
 
-            return redirect('lista_veiculos')
+        return redirect('lista_clientes')
 
-    else:
-
-        form = VeiculoForm()
-
-    return render(
-        request,
-        'cadastrar_veiculo.html',
-        {
-            'form': form
-        }
-    )
+    return render(request, 'cadastrar_cliente.html')
 
 
-# crud pelo django admin
+
 @login_required(login_url='/admin/login/')
-def lista_veiculos(request):
+def lista_clientes(request):
 
-    # READ - carros cadastrados
-    carros_cadastrados = Veiculo.objects.filter(
-        tipo='carro'
-    ).order_by('-id')
-
-    # READ - motos cadastradas
-    motos_cadastrados = Veiculo.objects.filter(
-        tipo='moto'
-    ).order_by('-id')
-
-    # READ - caminhoes cadastrados
-    caminhoes_cadastrados = Veiculo.objects.filter(
-        tipo='caminhao'
-    ).order_by('-id')
+    clientes = Cliente.objects.all().order_by('nome')
 
     return render(
         request,
-        'lista_veiculos.html',
+        'lista_clientes.html',
         {
-            'carros_cadastrados': carros_cadastrados,
-            'motos_cadastrados': motos_cadastrados,
-            'caminhoes_cadastrados': caminhoes_cadastrados,
+            'clientes': clientes
         }
     )
 
 
-# crud ordem serviço
-def cadastrar_ordem_servico(request):
+@login_required(login_url='/admin/login/')
+def editar_cliente(request, id):
+
+    cliente = get_object_or_404(
+        Cliente,
+        id=id
+    )
+
     if request.method == 'POST':
+
+        cliente.nome = request.POST.get('nome')
+        cliente.cpf_cnpj = request.POST.get('cpf_cnpj')
+        cliente.telefone = request.POST.get('telefone')
+        cliente.email = request.POST.get('email')
+        cliente.endereco = request.POST.get('endereco')
+
+        cliente.save()
+
+        messages.success(
+            request,
+            'Cliente atualizado com sucesso!'
+        )
+
+        return redirect('lista_clientes')
+
+    return render(
+        request,
+        'editar_cliente.html',
+        {
+            'cliente': cliente
+        }
+    )
+
+
+@login_required(login_url='/admin/login/')
+def excluir_cliente(request, id):
+
+    cliente = get_object_or_404(
+        Cliente,
+        id=id
+    )
+
+    if request.method == 'POST':
+
+        cliente.delete()
+
+        messages.success(
+            request,
+            'Cliente excluído com sucesso!'
+        )
+
+        return redirect('lista_clientes')
+
+    return render(
+        request,
+        'excluir_cliente.html',
+        {
+            'cliente': cliente
+        }
+    )
+
+
+# CRUD de ordens de serviço
+
+@login_required(login_url='/admin/login/')
+def cadastrar_ordem_servico(request):
+
+    if request.method == 'POST':
+
         veiculo_id = request.POST.get('veiculo')
         tipo_servico = request.POST.get('tipo_servico')
         descricao = request.POST.get('descricao')
@@ -284,9 +414,16 @@ def cadastrar_ordem_servico(request):
             valor=valor
         )
 
+        messages.success(
+            request,
+            'Ordem de serviço cadastrada com sucesso!'
+        )
+
         return redirect('lista_ordens_servico')
 
-    veiculos = Veiculo.objects.all()
+    veiculos = Veiculo.objects.select_related(
+        'cliente'
+    ).all()
 
     return render(
         request,
@@ -297,9 +434,13 @@ def cadastrar_ordem_servico(request):
     )
 
 
+@login_required(login_url='/admin/login/')
 def cadastrar_ordem_servico_veiculo(request, veiculo_id):
 
-    veiculo = get_object_or_404(Veiculo, id=veiculo_id)
+    veiculo = get_object_or_404(
+        Veiculo,
+        id=veiculo_id
+    )
 
     if request.method == 'POST':
 
@@ -316,6 +457,11 @@ def cadastrar_ordem_servico_veiculo(request, veiculo_id):
             valor=valor
         )
 
+        messages.success(
+            request,
+            'Ordem de serviço cadastrada com sucesso!'
+        )
+
         return redirect('lista_ordens_servico')
 
     return render(
@@ -323,11 +469,14 @@ def cadastrar_ordem_servico_veiculo(request, veiculo_id):
         'cadastrar_ordem_servico.html',
         {
             'veiculo': veiculo,
-            'veiculos': Veiculo.objects.all(),
+            'veiculos': Veiculo.objects.select_related(
+                'cliente'
+            ).all(),
         }
     )
 
 
+@login_required(login_url='/admin/login/')
 def ordens_servico_veiculo(request, veiculo_id):
 
     veiculo = get_object_or_404(
@@ -348,9 +497,14 @@ def ordens_servico_veiculo(request, veiculo_id):
         }
     )
 
+
+@login_required(login_url='/admin/login/')
 def lista_ordens_servico(request):
 
-    ordens = OrdemServico.objects.select_related('veiculo').all().order_by('-id')
+    ordens = OrdemServico.objects.select_related(
+        'veiculo',
+        'veiculo__cliente'
+    ).all().order_by('-id')
 
     return render(
         request,
@@ -361,11 +515,13 @@ def lista_ordens_servico(request):
     )
 
 
-
-
+@login_required(login_url='/admin/login/')
 def editar_ordem_servico(request, id):
 
-    ordem = get_object_or_404(OrdemServico, id=id)
+    ordem = get_object_or_404(
+        OrdemServico,
+        id=id
+    )
 
     if request.method == 'POST':
 
@@ -377,9 +533,16 @@ def editar_ordem_servico(request, id):
 
         ordem.save()
 
+        messages.success(
+            request,
+            'Ordem de serviço atualizada com sucesso!'
+        )
+
         return redirect('lista_ordens_servico')
 
-    veiculos = Veiculo.objects.all()
+    veiculos = Veiculo.objects.select_related(
+        'cliente'
+    ).all()
 
     return render(
         request,
@@ -391,12 +554,23 @@ def editar_ordem_servico(request, id):
     )
 
 
+@login_required(login_url='/admin/login/')
 def excluir_ordem_servico(request, id):
 
-    ordem = get_object_or_404(OrdemServico, id=id)
+    ordem = get_object_or_404(
+        OrdemServico,
+        id=id
+    )
 
     if request.method == 'POST':
+
         ordem.delete()
+
+        messages.success(
+            request,
+            'Ordem de serviço excluída com sucesso!'
+        )
+
         return redirect('lista_ordens_servico')
 
     return render(

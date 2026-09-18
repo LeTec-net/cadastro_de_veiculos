@@ -79,6 +79,15 @@ Veículos Cadastrados | FleetCard
                         </p>
 
                         <p>
+                            <strong>Cliente:</strong>
+                            {% if veiculo.cliente %}
+                            {{ veiculo.cliente.nome }}
+                            {% else %}
+                            <span class="text-muted">Não informado</span>
+                            {% endif %}
+                        </p>
+
+                        <p>
                             <strong>Ano:</strong>
                             {{ veiculo.ano }}
                         </p>
@@ -280,6 +289,16 @@ Veículos Cadastrados | FleetCard
                         <p>
                             <strong>Placa:</strong>
                             {{ veiculo.placa }}
+                        </p>
+
+
+                        <p>
+                            <strong>Cliente:</strong>
+                            {% if veiculo.cliente %}
+                            {{ veiculo.cliente.nome }}
+                            {% else %}
+                            <span class="text-muted">Não informado</span>
+                            {% endif %}
                         </p>
 
                         <p>
@@ -484,6 +503,16 @@ Veículos Cadastrados | FleetCard
                             <strong>Placa:</strong>
                             {{ veiculo.placa }}
                         </p>
+
+                        <p>
+                            <strong>Cliente:</strong>
+                            {% if veiculo.cliente %}
+                            {{ veiculo.cliente.nome }}
+                            {% else %}
+                            <span class="text-muted">Não informado</span>
+                            {% endif %}
+                        </p>
+
 
                         <p>
                             <strong>Ano:</strong>

@@ -15,6 +15,12 @@ urlpatterns = [
     path("veiculos/editar/<int:id>/", views.editar_veiculo, name="editar_veiculo"),
     path("veiculos/excluir/<int:id>/", views.excluir_veiculo, name="excluir_veiculo"),
 
+    # crud clientes
+    path("clientes/", views.lista_clientes, name="lista_clientes"),
+    path("clientes/cadastrar/", views.cadastrar_cliente, name="cadastrar_cliente"),
+    path("clientes/editar/<int:id>/", views.editar_cliente, name="editar_cliente"),
+    path("clientes/excluir/<int:id>/", views.excluir_cliente, name="excluir_cliente"),
+
     # crud ordem de serviço
     path("ordens-servico/cadastrar/", views.cadastrar_ordem_servico, name="cadastrar_ordem_servico"),
     path("ordens-servico/cadastrar/<int:veiculo_id>/", views.cadastrar_ordem_servico_veiculo, name="cadastrar_ordem_servico_veiculo"),
@@ -22,4 +28,4 @@ urlpatterns = [
     path("ordens-servico/", views.lista_ordens_servico, name="lista_ordens_servico"),
     path("ordens-servico/editar/<int:id>/", views.editar_ordem_servico, name="editar_ordem_servico"),
     path("ordens-servico/excluir/<int:id>/", views.excluir_ordem_servico, name="excluir_ordem_servico"),
-    ]
+]
