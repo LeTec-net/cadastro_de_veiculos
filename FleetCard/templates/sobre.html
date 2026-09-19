@@ -30,8 +30,7 @@
                         de veículos de forma simples, organizada e eficiente.
                     </p>
 
-                    <a href="{% url 'pagina_veiculos' %}"
-                       class="btn btn-fleet btn-lg mt-3">
+                    <a href="{% url 'pagina_veiculos' %}" class="btn btn-fleet btn-lg mt-3">
                         <i class="bi bi-car-front-fill me-2"></i>
                         Ver veículos
                     </a>
@@ -40,7 +39,7 @@
                 <div class="col-lg-5">
                     <div class="sobre-logo-card">
                         <img src="{% static 'imagens/ChatGPT Image 14 de set. de 2026, 07_45_43.png' %}"
-                             alt="Logo FleetCard">
+                            alt="Logo FleetCard">
                     </div>
                 </div>
 
@@ -68,9 +67,21 @@
                         O FleetCard foi desenvolvido para facilitar o cadastro,
                         a consulta e o gerenciamento de veículos, permitindo
                         organizar informações de carros, motocicletas e
-                        caminhões em um único ambiente, com uma estrutura
-                        moderna, responsiva e preparada para receber novos
-                        recursos e funcionalidades no futuro.
+                        caminhões em um único ambiente.
+                    </p>
+
+                    <p class="sobre-text">
+                        Além do controle da frota, o sistema integra o
+                        gerenciamento de clientes e o registro de ordens de
+                        serviço, oferecendo uma visão completa de cada veículo
+                        e do seu histórico de manutenções.
+                    </p>
+
+                    <p class="sobre-text">
+                        Com estrutura moderna, responsiva e regras de
+                        integridade bem definidas, o FleetCard garante
+                        organização, praticidade e segurança no dia a dia
+                        da gestão de veículos.
                     </p>
                 </div>
 
@@ -89,8 +100,9 @@
                                         Cadastro de veículos
                                     </h6>
                                     <p>
-                                        Registro das principais informações
-                                        dos veículos.
+                                        Registro completo das informações do veículo,
+                                        incluindo marca, modelo, placa, ano, cor e
+                                        vínculo com o cliente.
                                     </p>
                                 </div>
                             </div>
@@ -99,11 +111,12 @@
                                 <i class="bi bi-search"></i>
                                 <div>
                                     <h6 class="fw-bold">
-                                        Consulta
+                                        Consulta organizada
                                     </h6>
                                     <p>
-                                        Visualização dos veículos cadastrados
-                                        de forma organizada.
+                                        Visualização dos veículos cadastrados em cards,
+                                        com dados do cliente e acesso rápido às
+                                        informações principais.
                                     </p>
                                 </div>
                             </div>
@@ -112,11 +125,50 @@
                                 <i class="bi bi-pencil-square"></i>
                                 <div>
                                     <h6 class="fw-bold">
-                                        Gerenciamento
+                                        Gerenciamento completo
                                     </h6>
                                     <p>
-                                        Edição e exclusão dos registros
-                                        cadastrados.
+                                        Edição e exclusão de registros de forma prática,
+                                        com controle de integridade dos dados.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="sobre-resource">
+                                <i class="bi bi-people-fill"></i>
+                                <div>
+                                    <h6 class="fw-bold">
+                                        Gestão de clientes
+                                    </h6>
+                                    <p>
+                                        Cadastro de clientes com telefone, e-mail e CPF,
+                                        além da vinculação direta aos seus veículos.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="sobre-resource">
+                                <i class="bi bi-tools"></i>
+                                <div>
+                                    <h6 class="fw-bold">
+                                        Ordens de serviço
+                                    </h6>
+                                    <p>
+                                        Registro e acompanhamento de manutenções e
+                                        serviços realizados em cada veículo da frota.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="sobre-resource">
+                                <i class="bi bi-shield-check"></i>
+                                <div>
+                                    <h6 class="fw-bold">
+                                        Segurança dos dados
+                                    </h6>
+                                    <p>
+                                        Regras de integridade que impedem a exclusão
+                                        de clientes com veículos vinculados ao sistema.
                                     </p>
                                 </div>
                             </div>
@@ -126,10 +178,8 @@
                 </div>
 
             </div>
-
         </div>
     </section>
-
 
     <!-- CATEGORIAS -->
     <section class="sobre-dark-section py-5">
@@ -395,8 +445,7 @@
                         as informações disponíveis no FleetCard.
                     </p>
 
-                    <a href="{% url 'pagina_veiculos' %}"
-                       class="btn btn-light btn-lg px-4">
+                    <a href="{% url 'pagina_veiculos' %}" class="btn btn-light btn-lg px-4">
 
                         <i class="bi bi-arrow-right-circle me-2"></i>
                         Acessar veículos
