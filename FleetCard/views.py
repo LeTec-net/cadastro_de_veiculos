@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.db.models import ProtectedError
 
+from django.db.models import Q
 from .models import Cliente, Veiculo, OrdemServico, Contato
 from .forms import VeiculoForm
 
@@ -223,28 +225,45 @@ def cadastrar_veiculo(request, cliente_id=None):
             'cliente': cliente
         }
     )
-
-
 @login_required(login_url='/admin/login/')
 def lista_veiculos(request):
 
-    carros_cadastrados = Veiculo.objects.filter(
+    pesquisa = request.GET.get(
+        'pesquisa',
+        ''
+    ).strip()
+
+    veiculos = Veiculo.objects.select_related(
+        'cliente'
+    )
+
+    if pesquisa:
+
+        veiculos = veiculos.filter(
+
+            Q(cliente__nome__icontains=pesquisa) |
+
+            Q(marca__icontains=pesquisa) |
+
+            Q(modelo__icontains=pesquisa) |
+
+            Q(placa__icontains=pesquisa)
+
+        )
+
+    veiculos = veiculos.order_by('-id')
+
+    carros_cadastrados = veiculos.filter(
         tipo='carro'
-    ).select_related(
-        'cliente'
-    ).order_by('-id')
+    )
 
-    motos_cadastrados = Veiculo.objects.filter(
+    motos_cadastrados = veiculos.filter(
         tipo='moto'
-    ).select_related(
-        'cliente'
-    ).order_by('-id')
+    )
 
-    caminhoes_cadastrados = Veiculo.objects.filter(
+    caminhoes_cadastrados = veiculos.filter(
         tipo='caminhao'
-    ).select_related(
-        'cliente'
-    ).order_by('-id')
+    )
 
     return render(
         request,
@@ -253,6 +272,7 @@ def lista_veiculos(request):
             'carros_cadastrados': carros_cadastrados,
             'motos_cadastrados': motos_cadastrados,
             'caminhoes_cadastrados': caminhoes_cadastrados,
+            'pesquisa': pesquisa,
         }
     )
 
@@ -454,7 +474,6 @@ def editar_cliente(request, id):
         }
     )
 
-
 @login_required(login_url='/admin/login/')
 def excluir_cliente(request, id):
 
@@ -465,14 +484,28 @@ def excluir_cliente(request, id):
 
     if request.method == 'POST':
 
-        cliente.delete()
+        try:
 
-        messages.success(
-            request,
-            'Cliente excluído com sucesso!'
-        )
+            cliente.delete()
 
-        return redirect('lista_clientes')
+            messages.success(
+                request,
+                'Cliente excluído com sucesso!'
+            )
+
+            return redirect('lista_clientes')
+
+        except ProtectedError:
+
+            messages.error(
+                request,
+                'Não é possível excluir este cliente porque existem veículos vinculados a ele.'
+            )
+
+            return redirect(
+                'detalhe_cliente',
+                cliente_id=cliente.id
+            )
 
     return render(
         request,
@@ -481,7 +514,6 @@ def excluir_cliente(request, id):
             'cliente': cliente
         }
     )
-
 
 # ============================================================
 # CRUD DE ORDENS DE SERVIÇO

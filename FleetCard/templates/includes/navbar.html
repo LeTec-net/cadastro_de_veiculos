@@ -5,140 +5,110 @@
 <nav class="navbar navbar-dark shadow-sm sticky-top py-0 border border-white">
 
 
-<div class="container-fluid px-2 px-sm-3" style="min-height: 64px;">
+    <div class="container-fluid px-2 px-sm-3" style="min-height: 64px;">
 
-    <!-- Botão do menu -->
-    <button
-        id="menuFleetCard"
-        class="btn btn-primary border-0 d-flex align-items-center justify-content-center p-2"
-        type="button"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#sidebarFleetCard"
-        aria-controls="sidebarFleetCard"
-        aria-label="Abrir menu"
-    >
-        <i id="menuIconFleetCard" class="bi bi-list fs-3"></i>
-    </button>
+        <!-- Botão do menu -->
+        <button id="menuFleetCard" class="btn btn-primary border-0 d-flex align-items-center justify-content-center p-2"
+            type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarFleetCard" aria-controls="sidebarFleetCard"
+            aria-label="Abrir menu">
+            <i id="menuIconFleetCard" class="bi bi-list fs-3"></i>
+        </button>
 
 
-    <!-- Logo no centro -->
-    <a
-        href="{% url 'home' %}"
-        class="navbar-brand position-absolute top-50 start-50 translate-middle m-0 p-0"
-    >
+        <!-- Logo no centro -->
+        <a href="{% url 'home' %}" class="navbar-brand position-absolute top-50 start-50 translate-middle m-0 p-0">
 
-        <img
-            src="{% static 'imagens/Logo_FleetCard_para_cadastro_de_veículos-removebg-preview.png' %}"
-            alt="FleetCard"
-            class="img-fluid"
-            style="max-height: 190px; width: auto; margin-top: 45px;"
-        >
+            <img src="{% static 'imagens/Logo_FleetCard_para_cadastro_de_veículos-removebg-preview.png' %}"
+                alt="FleetCard" class="img-fluid" style="max-height: 190px; width: auto; margin-top: 45px;">
 
-    </a>
+        </a>
 
 
-    <!-- Botão Tenho Interesse -->
-    <a
-        href="{% url 'contatos' %}"
-        class="btn btn-primary btn-sm d-flex align-items-center justify-content-center gap-2 px-2 px-sm-3 py-2"
-    >
+        <!-- Botão Tenho Interesse -->
+        <a href="{% url 'contatos' %}"
+            class="btn btn-primary btn-sm d-flex align-items-center justify-content-center gap-2 px-2 px-sm-3 py-2">
 
-        <i class="bi bi-hand-index-thumb-fill"></i>
+            <i class="bi bi-hand-index-thumb-fill"></i>
 
-        <span class="d-none d-sm-inline">
-            Tenho Interesse
-        </span>
+            <span class="d-none d-sm-inline">
+                Tenho Interesse
+            </span>
 
-    </a>
+        </a>
 
-</div>
-```
+    </div>
+
 
 </nav>
 
+
 <!-- SIDEBAR -->
-
-<div
-    class="offcanvas offcanvas-start text-white w-100 w-sm-75 w-md-50"
-    tabindex="-1"
-    id="sidebarFleetCard"
-    aria-labelledby="sidebarFleetCardLabel"
-    style="max-width: 500px;"
->
-
-```
-<!-- Cabeçalho -->
-<div class="offcanvas-header border-bottom border-white border-opacity-25 py-3">
-
-    <button
-        id="fecharSidebarFleetCard"
-        type="button"
-        class="btn btn-outline-light btn-sm d-flex align-items-center gap-2 px-3"
-        data-bs-dismiss="offcanvas"
-        aria-label="Fechar menu"
-    >
-
-        <span class="fw-medium">
-            FECHAR
-        </span>
-
-        <i class="bi bi-x-lg"></i>
-
-    </button>
-
-</div>
+<div class="offcanvas offcanvas-start text-white w-100 w-sm-75 w-md-50" tabindex="-1" id="sidebarFleetCard"
+    aria-labelledby="sidebarFleetCardLabel" style="max-width: 500px;">
 
 
+    <!-- Cabeçalho -->
+    <div class="offcanvas-header border-bottom border-white border-opacity-25 py-3">
 
-<!-- Corpo da sidebar -->
-<div class="offcanvas-body p-0 d-flex flex-column">
-
-    <!-- Links principais -->
-    <div class="list-group list-group-flush flex-grow-1 pt-2">
-
-
-        <!-- Home -->
-        <a
-            href="{% url 'home' %}"
-            class="list-group-item list-group-item-action bg-transparent text-white border-0 py-3 px-3 px-sm-4 d-flex align-items-center gap-3"
-        >
-
-            <i class="bi bi-house-fill fs-5"></i>
+        <button id="fecharSidebarFleetCard" type="button"
+            class="btn btn-outline-light btn-sm d-flex align-items-center gap-2 px-3" data-bs-dismiss="offcanvas"
+            aria-label="Fechar menu">
 
             <span class="fw-medium">
-                Home
+                FECHAR
             </span>
 
-        </a>
+            <i class="bi bi-x-lg"></i>
+
+        </button>
+
+    </div>
 
 
 
-        <!-- Veículos -->
-        <a
-            href="{% url 'pagina_veiculos' %}"
-            class="list-group-item list-group-item-action bg-transparent text-white border-0 py-3 px-3 px-sm-4 d-flex align-items-center gap-3"
-        >
+    <!-- Corpo da sidebar -->
+    <div class="offcanvas-body p-0 d-flex flex-column">
 
-            <i class="bi bi-car-front-fill fs-5"></i>
-
-            <span class="fw-medium">
-                Veículos
-            </span>
-
-        </a>
+        <!-- Links principais -->
+        <div class="list-group list-group-flush flex-grow-1 pt-2">
 
 
-        {% if user.is_authenticated %}
+            <!-- Home -->
+            <a href="{% url 'home' %}"
+                class="list-group-item list-group-item-action bg-transparent text-white border-0 py-3 px-3 px-sm-4 d-flex align-items-center gap-3">
+
+                <i class="bi bi-house-fill fs-5"></i>
+
+                <span class="fw-medium">
+                    Home
+                </span>
+
+            </a>
+
+
+
+            <!-- Veículos -->
+            <a href="{% url 'pagina_veiculos' %}"
+                class="list-group-item list-group-item-action bg-transparent text-white border-0 py-3 px-3 px-sm-4 d-flex align-items-center gap-3">
+
+                <i class="bi bi-car-front-fill fs-5"></i>
+
+                <span class="fw-medium">
+                    Veículos
+                </span>
+
+            </a>
+
+
+            {% if user.is_authenticated %}
 
             <!-- Separador -->
             <div class="border-top border-white border-opacity-25 mt-2"></div>
 
 
             <!-- Listar Veículos -->
-            <a
-                href="{% url 'lista_veiculos' %}"
-                class="list-group-item list-group-item-action bg-transparent text-white border-0 py-3 px-3 px-sm-4 d-flex align-items-center gap-3"
-            >
+            <a href="{% url 'lista_veiculos' %}"
+                class="list-group-item list-group-item-action bg-transparent text-white border-0 py-3 px-3 px-sm-4 d-flex align-items-center gap-3">
 
                 <i class="bi bi-list-ul fs-5"></i>
 
@@ -150,10 +120,8 @@
 
 
             <!-- Ordens de Serviço -->
-            <a
-                href="{% url 'lista_ordens_servico' %}"
-                class="list-group-item list-group-item-action bg-transparent text-white border-0 py-3 px-3 px-sm-4 d-flex align-items-center gap-3"
-            >
+            <a href="{% url 'lista_ordens_servico' %}"
+                class="list-group-item list-group-item-action bg-transparent text-white border-0 py-3 px-3 px-sm-4 d-flex align-items-center gap-3">
 
                 <i class="bi bi-tools fs-5"></i>
 
@@ -164,21 +132,19 @@
             </a>
 
 
-        {% endif %}
+            {% endif %}
 
 
 
-        {% if user.is_authenticated and user.is_staff %}
+            {% if user.is_authenticated and user.is_staff %}
 
             <!-- Separador -->
             <div class="border-top border-white border-opacity-25 mt-2"></div>
 
 
             <!-- Clientes -->
-            <a
-                href="{% url 'lista_clientes' %}"
-                class="list-group-item list-group-item-action bg-transparent text-white border-0 py-3 px-3 px-sm-4 d-flex align-items-center gap-3"
-            >
+            <a href="{% url 'lista_clientes' %}"
+                class="list-group-item list-group-item-action bg-transparent text-white border-0 py-3 px-3 px-sm-4 d-flex align-items-center gap-3">
 
                 <i class="bi bi-people-fill fs-5"></i>
 
@@ -188,57 +154,51 @@
 
             </a>
 
-        {% endif %}
+            {% endif %}
 
-    </div>
-
-
-
-    <!-- Links de baixo -->
-    <div class="border-top border-white border-opacity-25 mt-auto">
-
-        <div class="list-group list-group-flush">
-
-
-            <!-- Contatos -->
-            <a
-                href="{% url 'contatos' %}"
-                class="list-group-item list-group-item-action bg-transparent text-white border-0 py-3 px-3 px-sm-4 d-flex align-items-center gap-3"
-            >
-
-                <i class="bi bi-telephone-fill fs-5"></i>
-
-                <span class="fw-medium">
-                    Contatos
-                </span>
-
-            </a>
+        </div>
 
 
 
-            <!-- Sobre -->
-            <a
-                href="{% url 'sobre' %}"
-                class="list-group-item list-group-item-action bg-transparent text-white border-0 py-3 px-3 px-sm-4 d-flex align-items-center gap-3"
-            >
+        <!-- Links de baixo -->
+        <div class="border-top border-white border-opacity-25 mt-auto">
 
-                <i class="bi bi-info-circle-fill fs-5"></i>
-
-                <span class="fw-medium">
-                    Sobre
-                </span>
-
-            </a>
+            <div class="list-group list-group-flush">
 
 
+                <!-- Contatos -->
+                <a href="{% url 'contatos' %}"
+                    class="list-group-item list-group-item-action bg-transparent text-white border-0 py-3 px-3 px-sm-4 d-flex align-items-center gap-3">
 
-            {% if user.is_authenticated %}
+                    <i class="bi bi-telephone-fill fs-5"></i>
+
+                    <span class="fw-medium">
+                        Contatos
+                    </span>
+
+                </a>
+
+
+
+                <!-- Sobre -->
+                <a href="{% url 'sobre' %}"
+                    class="list-group-item list-group-item-action bg-transparent text-white border-0 py-3 px-3 px-sm-4 d-flex align-items-center gap-3">
+
+                    <i class="bi bi-info-circle-fill fs-5"></i>
+
+                    <span class="fw-medium">
+                        Sobre
+                    </span>
+
+                </a>
+
+
+
+                {% if user.is_authenticated %}
 
                 <!-- Deslogar -->
-                <a
-                    href="{% url 'deslogar' %}"
-                    class="list-group-item list-group-item-action bg-transparent text-white border-0 py-3 px-3 px-sm-4 d-flex align-items-center gap-3"
-                >
+                <a href="{% url 'deslogar' %}"
+                    class="list-group-item list-group-item-action bg-transparent text-white border-0 py-3 px-3 px-sm-4 d-flex align-items-center gap-3">
 
                     <i class="bi bi-box-arrow-right fs-5 text-danger"></i>
 
@@ -248,13 +208,11 @@
 
                 </a>
 
-            {% else %}
+                {% else %}
 
                 <!-- Acessar sistema -->
-                <a
-                    href="{% url 'admin:login' %}"
-                    class="list-group-item list-group-item-action bg-transparent text-white border-0 py-3 px-3 px-sm-4 d-flex align-items-center gap-3"
-                >
+                <a href="{% url 'admin:login' %}"
+                    class="list-group-item list-group-item-action bg-transparent text-white border-0 py-3 px-3 px-sm-4 d-flex align-items-center gap-3">
 
                     <i class="bi bi-box-arrow-in-right fs-5"></i>
 
@@ -264,48 +222,41 @@
 
                 </a>
 
-            {% endif %}
+                {% endif %}
+
+            </div>
 
         </div>
 
     </div>
 
-</div>
 
 
-
-<!-- Rodapé -->
-<div class="text-center p-3 p-sm-4 border-top border-white border-opacity-25">
-
-
-    <!-- Logo -->
-    <a
-        href="{% url 'home' %}"
-        class="d-inline-block mb-3 text-decoration-none"
-    >
-
-        <img
-            src="{% static 'imagens/Logo_FleetCard_para_cadastro_de_veículos-removebg-preview.png' %}"
-            alt="FleetCard"
-            class="img-fluid"
-            style="max-width: 160px;"
-        >
-
-    </a>
+    <!-- Rodapé -->
+    <div class="text-center p-3 p-sm-4 border-top border-white border-opacity-25">
 
 
-    <!-- Nome do sistema -->
-    <h6 class="text-white fw-bold mb-1">
-        FleetCard
-    </h6>
+        <!-- Logo -->
+        <a href="{% url 'home' %}" class="d-inline-block mb-3 text-decoration-none">
+
+            <img src="{% static 'imagens/Logo_FleetCard_para_cadastro_de_veículos-removebg-preview.png' %}"
+                alt="FleetCard" class="img-fluid" style="max-width: 160px;">
+
+        </a>
 
 
-    <!-- Descrição -->
-    <p class="text-white-50 small mb-0">
-        Sistema de cadastro e controle de veículos
-    </p>
+        <!-- Nome do sistema -->
+        <h6 class="text-white fw-bold mb-1">
+            FleetCard
+        </h6>
 
-</div>
+
+        <!-- Descrição -->
+        <p class="text-white-50 small mb-0">
+            Sistema de cadastro e controle de veículos
+        </p>
+
+    </div>
 
 
 </div>

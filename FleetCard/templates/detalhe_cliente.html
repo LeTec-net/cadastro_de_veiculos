@@ -8,6 +8,7 @@ Detalhes do Cliente | FleetCard
 
 <section class="container-fluid py-4 py-md-5">
 
+
     <div class="container">
 
         <!-- Cabeçalho -->
@@ -32,14 +33,18 @@ Detalhes do Cliente | FleetCard
 
                     <a href="{% url 'lista_clientes' %}"
                         class="btn btn-outline-secondary w-100 d-flex align-items-center justify-content-center gap-2">
+
                         <i class="bi bi-arrow-left"></i>
                         <span>Voltar</span>
+
                     </a>
 
                     <a href="{% url 'editar_cliente' cliente.id %}"
                         class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-2">
+
                         <i class="bi bi-pencil-fill"></i>
                         <span>Editar cliente</span>
+
                     </a>
 
                 </div>
@@ -81,6 +86,7 @@ Detalhes do Cliente | FleetCard
 
                     </div>
 
+
                     <!-- Telefone -->
                     <div class="col-12 col-md-6 col-xl-3">
 
@@ -93,6 +99,7 @@ Detalhes do Cliente | FleetCard
                         </div>
 
                     </div>
+
 
                     <!-- E-mail -->
                     <div class="col-12 col-md-6 col-xl-3">
@@ -117,6 +124,7 @@ Detalhes do Cliente | FleetCard
 
                     </div>
 
+
                     <!-- Data de cadastro -->
                     <div class="col-12 col-md-6 col-xl-3">
 
@@ -129,6 +137,7 @@ Detalhes do Cliente | FleetCard
                         </div>
 
                     </div>
+
 
                     <!-- Endereço -->
                     <div class="col-12">
@@ -174,19 +183,24 @@ Detalhes do Cliente | FleetCard
                 </h2>
 
                 <p class="text-muted mb-0">
+
                     Veículos relacionados a {{ cliente.nome }}.
+
                 </p>
 
             </div>
 
-            
+
             <a href="{% url 'cadastrar_veiculo_cliente' cliente.id %}"
                 class="btn btn-primary d-flex align-items-center justify-content-center gap-2">
-                <i class="bi bi-plus-circle-fill"></i>
-                <span>Cadastrar veículo</span>
-            </a>
-            
 
+                <i class="bi bi-plus-circle-fill"></i>
+
+                <span>
+                    Cadastrar veículo
+                </span>
+
+            </a>
 
         </div>
 
@@ -201,6 +215,7 @@ Detalhes do Cliente | FleetCard
             <div class="col-12 col-md-6 col-xl-4">
 
                 <div class="card h-100 shadow-sm">
+
 
                     <!-- Cabeçalho veículo -->
                     <div class="card-header bg-primary text-white">
@@ -276,10 +291,13 @@ Detalhes do Cliente | FleetCard
                         <div>
 
                             <div class="small text-muted mb-2">
+
+                                <i class="bi bi-tools"></i>
+
                                 Ordens de Serviço
+
                             </div>
 
-                            {% if veiculo.ordens_servico.all %}
 
                             <div class="list-group">
 
@@ -291,30 +309,37 @@ Detalhes do Cliente | FleetCard
                                         {{ ordem.tipo_servico }}
                                     </div>
 
+                                    {% if ordem.descricao %}
+
                                     <div class="small text-muted text-break">
                                         {{ ordem.descricao }}
                                     </div>
 
+                                    {% endif %}
+
                                     <div class="small mt-1">
+
                                         Status:
+
                                         <strong>
                                             {{ ordem.status }}
                                         </strong>
+
                                     </div>
+
+                                </div>
+
+                                {% empty %}
+
+                                <div class="text-muted small">
+
+                                    Nenhuma ordem de serviço cadastrada.
 
                                 </div>
 
                                 {% endfor %}
 
                             </div>
-
-                            {% else %}
-
-                            <div class="text-muted small">
-                                Nenhuma ordem de serviço cadastrada.
-                            </div>
-
-                            {% endif %}
 
                         </div>
 
@@ -326,13 +351,19 @@ Detalhes do Cliente | FleetCard
 
                         <div class="row g-2">
 
+
                             <!-- Ordens -->
                             <div class="col-12">
 
                                 <a href="{% url 'ordens_servico_veiculo' veiculo.id %}"
                                     class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-2">
+
                                     <i class="bi bi-tools"></i>
-                                    <span>Ver ordens de serviço</span>
+
+                                    <span>
+                                        Ver ordens de serviço
+                                    </span>
+
                                 </a>
 
                             </div>
@@ -343,8 +374,13 @@ Detalhes do Cliente | FleetCard
 
                                 <a href="{% url 'cadastrar_ordem_servico_veiculo' veiculo.id %}"
                                     class="btn btn-outline-success w-100 d-flex align-items-center justify-content-center gap-2">
+
                                     <i class="bi bi-plus-circle"></i>
-                                    <span>Nova ordem de serviço</span>
+
+                                    <span>
+                                        Nova ordem de serviço
+                                    </span>
+
                                 </a>
 
                             </div>
@@ -355,8 +391,13 @@ Detalhes do Cliente | FleetCard
 
                                 <a href="{% url 'editar_veiculo' veiculo.id %}"
                                     class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-center gap-2">
+
                                     <i class="bi bi-pencil-fill"></i>
-                                    <span>Editar</span>
+
+                                    <span>
+                                        Editar
+                                    </span>
+
                                 </a>
 
                             </div>
@@ -367,8 +408,13 @@ Detalhes do Cliente | FleetCard
 
                                 <a href="{% url 'excluir_veiculo' veiculo.id %}"
                                     class="btn btn-outline-danger w-100 d-flex align-items-center justify-content-center gap-2">
+
                                     <i class="bi bi-trash-fill"></i>
-                                    <span>Excluir</span>
+
+                                    <span>
+                                        Excluir
+                                    </span>
+
                                 </a>
 
                             </div>
@@ -384,6 +430,7 @@ Detalhes do Cliente | FleetCard
             {% endfor %}
 
         </div>
+
 
         {% else %}
 
@@ -402,9 +449,15 @@ Detalhes do Cliente | FleetCard
                     Este cliente ainda não possui veículos relacionados.
                 </p>
 
-                <a href="{% url 'cadastrar_veiculo_cliente' cliente.id %}" class="btn btn-primary d-inline-flex align-items-center gap-2">
+                <a href="{% url 'cadastrar_veiculo_cliente' cliente.id %}"
+                    class="btn btn-primary d-inline-flex align-items-center gap-2">
+
                     <i class="bi bi-plus-circle-fill"></i>
-                    <span>Cadastrar veículo</span>
+
+                    <span>
+                        Cadastrar veículo
+                    </span>
+
                 </a>
 
             </div>
@@ -414,6 +467,7 @@ Detalhes do Cliente | FleetCard
         {% endif %}
 
     </div>
+
 
 </section>
 

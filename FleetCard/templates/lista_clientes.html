@@ -24,6 +24,34 @@ Clientes | FleetCard
                     Gerencie os clientes cadastrados no FleetCard.
                 </p>
 
+
+
+                <!-- Pesquisa -->
+                <div class="row mt-4">
+
+                    <div class="col-12 col-lg-8">
+
+                        <div class="input-group">
+
+                            <span class="input-group-text">
+                                <i class="bi bi-search"></i>
+                            </span>
+
+                            <input type="text" id="pesquisaClientes" class="form-control"
+                                placeholder="Pesquisar nome, CPF/CNPJ, telefone ou e-mail..." autocomplete="off">
+
+                            <button type="button" id="limparPesquisa" class="btn btn-outline-secondary">
+                                Limpar
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
             </div>
 
             <!-- Botão cadastrar -->
@@ -31,11 +59,13 @@ Clientes | FleetCard
 
                 <a href="{% url 'cadastrar_cliente' %}"
                     class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-2">
+
                     <i class="bi bi-person-plus-fill"></i>
 
                     <span>
                         Cadastrar cliente
                     </span>
+
                 </a>
 
             </div>
@@ -52,7 +82,8 @@ Clientes | FleetCard
 
             {{ message }}
 
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar">
+            </button>
 
         </div>
 
@@ -69,10 +100,9 @@ Clientes | FleetCard
             {% for cliente in clientes %}
 
             <!-- Card do cliente -->
-            <div class="col-12 col-md-6 col-xl-4">
+            <div class="col-12 col-md-6 col-xl-4 card-cliente">
 
                 <div class="card h-100 shadow-sm">
-
 
                     <!-- Cabeçalho do card -->
                     <div class="card-header bg-primary text-white">
@@ -92,6 +122,16 @@ Clientes | FleetCard
 
                     <!-- Informações do cliente -->
                     <div class="card-body">
+
+
+                        <div class="d-none dados-pesquisa">
+
+                            {{ cliente.nome }}
+
+                            {{ cliente.cpf_cnpj }}
+
+                        </div>
+
 
                         <!-- CPF/CNPJ -->
                         <div class="mb-3">
@@ -196,16 +236,30 @@ Clientes | FleetCard
                                 <a href="{% url 'detalhe_cliente' cliente.id %}"
                                     class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-2">
 
-                                    
                                     <i class="bi bi-eye-fill"></i>
-                                    
 
-                                
-                                    <span>Ver cliente</span>
-                                    
+                                    <span>
+                                        Ver cliente
+                                    </span>
 
                                 </a>
 
+                            </div>
+
+
+                            <!-- Cadastrar veículo -->
+                            <div class="col-12">
+
+                                <a href="{% url 'cadastrar_veiculo_cliente' cliente.id %}"
+                                    class="btn btn-success w-100 d-flex align-items-center justify-content-center gap-2">
+
+                                    <i class="bi bi-car-front-fill"></i>
+
+                                    <span>
+                                        Cadastrar veículo
+                                    </span>
+
+                                </a>
 
                             </div>
 
@@ -272,16 +326,16 @@ Clientes | FleetCard
                     Cadastre o primeiro cliente para começar.
                 </p>
 
-
                 <a href="{% url 'cadastrar_cliente' %}"
                     class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-2">
+
                     <i class="bi bi-person-plus-fill"></i>
 
                     <span>
                         Cadastrar novo cliente
                     </span>
-                </a>
 
+                </a>
 
             </div>
 
@@ -292,5 +346,82 @@ Clientes | FleetCard
     </div>
 
 </section>
+
+
+<script>
+
+    const campoPesquisa = document.getElementById(
+        'pesquisaClientes'
+    );
+
+
+    const limparPesquisa = document.getElementById(
+        'limparPesquisa'
+    );
+
+
+    const cards = document.querySelectorAll(
+        '.card-cliente'
+    );
+
+
+    campoPesquisa.addEventListener(
+        'input',
+        function () {
+
+            const pesquisa = campoPesquisa.value
+                .toLowerCase()
+                .trim();
+
+
+            cards.forEach(
+                function (card) {
+
+                    const dados = card
+                        .querySelector('.dados-pesquisa')
+                        .textContent
+                        .toLowerCase();
+
+
+                    if (dados.includes(pesquisa)) {
+
+                        card.style.display = '';
+
+                    } else {
+
+                        card.style.display = 'none';
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+    limparPesquisa.addEventListener(
+        'click',
+        function () {
+
+            campoPesquisa.value = '';
+
+
+            cards.forEach(
+                function (card) {
+
+                    card.style.display = '';
+
+                }
+            );
+
+
+            campoPesquisa.focus();
+
+        }
+    );
+
+</script>
+
 
 {% endblock %}
