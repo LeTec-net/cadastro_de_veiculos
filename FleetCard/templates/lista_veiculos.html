@@ -24,20 +24,51 @@ Veículos Cadastrados | FleetCard
 
     </div>
 
+    <!-- Pesquisa -->
+
+    <div class="row justify-content-center mt-4">
+
+        <div class="col-12 col-md-8 col-lg-6">
+
+            <form method="GET">
+
+                <div class="input-group">
+
+                    <span class="input-group-text">
+                        <i class="bi bi-search"></i>
+                    </span>
+
+                    <input type="text" name="pesquisa" class="form-control"
+                        placeholder="Pesquisar cliente, marca, modelo ou placa..." value="{{ pesquisa }}">
+
+                    <button type="submit" class="btn btn-primary">
+                        Pesquisar
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
 
     <!-- CARROS -->
 
-    <section class="mb-5">
+    <section id="carros">
 
         <h2 class="fw-bold mb-4">
             🚗 Carros
         </h2>
 
+
+
         <div class="row g-4">
 
             {% for veiculo in carros_cadastrados %}
 
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4 card-veiculo">
 
                 <div class="card h-100 shadow-sm border-0">
 
@@ -63,6 +94,13 @@ Veículos Cadastrados | FleetCard
 
                     <div class="card-body">
 
+                        <div class="d-none dados-pesquisa">
+                            {{ veiculo.cliente.nome }}
+                            {{ veiculo.marca }}
+                            {{ veiculo.modelo }}
+                            {{ veiculo.placa }}
+                        </div>
+
                         <span class="badge bg-primary mb-2">
                             {{ veiculo.get_tipo_display }}
                         </span>
@@ -76,6 +114,15 @@ Veículos Cadastrados | FleetCard
                         <p>
                             <strong>Placa:</strong>
                             {{ veiculo.placa }}
+                        </p>
+
+                        <p>
+                            <strong>Cliente:</strong>
+                            {% if veiculo.cliente %}
+                            {{ veiculo.cliente.nome }}
+                            {% else %}
+                            <span class="text-muted">Não informado</span>
+                            {% endif %}
                         </p>
 
                         <p>
@@ -235,7 +282,7 @@ Veículos Cadastrados | FleetCard
 
     <!-- MOTOS -->
 
-    <section class="mb-5">
+    <section id="motos">
 
         <h2 class="fw-bold mb-4">
             🏍️ Motos
@@ -245,7 +292,7 @@ Veículos Cadastrados | FleetCard
 
             {% for veiculo in motos_cadastrados %}
 
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4 card-veiculo">
 
                 <div class="card h-100 shadow-sm border-0">
 
@@ -267,6 +314,13 @@ Veículos Cadastrados | FleetCard
 
                     <div class="card-body">
 
+                        <div class="d-none dados-pesquisa">
+                            {{ veiculo.cliente.nome }}
+                            {{ veiculo.marca }}
+                            {{ veiculo.modelo }}
+                            {{ veiculo.placa }}
+                        </div>
+
                         <span class="badge bg-primary mb-2">
                             {{ veiculo.get_tipo_display }}
                         </span>
@@ -280,6 +334,16 @@ Veículos Cadastrados | FleetCard
                         <p>
                             <strong>Placa:</strong>
                             {{ veiculo.placa }}
+                        </p>
+
+
+                        <p>
+                            <strong>Cliente:</strong>
+                            {% if veiculo.cliente %}
+                            {{ veiculo.cliente.nome }}
+                            {% else %}
+                            <span class="text-muted">Não informado</span>
+                            {% endif %}
                         </p>
 
                         <p>
@@ -438,7 +502,7 @@ Veículos Cadastrados | FleetCard
 
     <!-- CAMINHÕES -->
 
-    <section class="mb-5">
+    <section id="caminhoes">
 
         <h2 class="fw-bold mb-4">
             🚛 Caminhões
@@ -448,7 +512,7 @@ Veículos Cadastrados | FleetCard
 
             {% for veiculo in caminhoes_cadastrados %}
 
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4 card-veiculo">
 
                 <div class="card h-100 shadow-sm border-0">
 
@@ -470,6 +534,13 @@ Veículos Cadastrados | FleetCard
 
                     <div class="card-body">
 
+                        <div class="d-none dados-pesquisa">
+                            {{ veiculo.cliente.nome }}
+                            {{ veiculo.marca }}
+                            {{ veiculo.modelo }}
+                            {{ veiculo.placa }}
+                        </div>
+
                         <span class="badge bg-primary mb-2">
                             {{ veiculo.get_tipo_display }}
                         </span>
@@ -484,6 +555,16 @@ Veículos Cadastrados | FleetCard
                             <strong>Placa:</strong>
                             {{ veiculo.placa }}
                         </p>
+
+                        <p>
+                            <strong>Cliente:</strong>
+                            {% if veiculo.cliente %}
+                            {{ veiculo.cliente.nome }}
+                            {% else %}
+                            <span class="text-muted">Não informado</span>
+                            {% endif %}
+                        </p>
+
 
                         <p>
                             <strong>Ano:</strong>
@@ -641,5 +722,55 @@ Veículos Cadastrados | FleetCard
 
 
 </div>
+
+
+
+
+<script>
+
+    const campoPesquisa = document.querySelector(
+        'input[name="pesquisa"]'
+    );
+
+    const cards = document.querySelectorAll(
+        '.card-veiculo'
+    );
+
+
+    campoPesquisa.addEventListener(
+        'input',
+        function () {
+
+            const pesquisa = campoPesquisa.value
+                .toLowerCase()
+                .trim();
+
+
+            cards.forEach(
+                function (card) {
+
+                    const dados = card
+                        .querySelector('.dados-pesquisa')
+                        .textContent
+                        .toLowerCase();
+
+
+                    if (dados.includes(pesquisa)) {
+
+                        card.style.display = '';
+
+                    } else {
+
+                        card.style.display = 'none';
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+</script>
 
 {% endblock %}
