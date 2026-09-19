@@ -1,0 +1,1855 @@
+[
+{
+  "model": "auth.group",
+  "fields": {
+    "name": "Vendedores",
+    "permissions": [
+      [
+        "add_veiculo",
+        "FleetCard",
+        "veiculo"
+      ],
+      [
+        "view_veiculo",
+        "FleetCard",
+        "veiculo"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$Lc0Gp4LXwj5Gvl2uzLyvGI$9uxPNoqpJh36q7J19mM3Ud7dGFo2IHciPKlymlco1iI=",
+    "last_login": "2026-09-19T05:41:47.814Z",
+    "is_superuser": true,
+    "username": "grupo3",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-09-12T12:40:59.531Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$iiLTwZ0r7Nc4uHz6co7NcF$xcLNZ9lSi2yQKHmxxGDaYIi6yLVwenE7Ggs1gBGRUbY=",
+    "last_login": "2026-09-14T19:19:27.282Z",
+    "is_superuser": false,
+    "username": "Vender1",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-09-14T19:18:08Z",
+    "groups": [
+      [
+        "Vendedores"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "4fx97bcuklazhjp10my39qytupf7emth",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlle_9ampM8ZLH8WHEC2FCcV4u4QKQW0b2bei4W4rTVsg5YwF3ZmwE6_W4r5QW0H5R7brfPc27rMie8KP-jgUy_0vBzu30GNo35rBSJqC9Zrn4uUmtBhtt4Kq51DQjAUE-VyNUmL7NALlD4ByKSEVt6w9we0XjaQ:1x7FLy:B_QcphrEKOhqg9j0JYpQwM_5pwbL_YrQuVAuKxtIKEY",
+    "expire_date": "2026-10-01T16:52:54.690Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "85jzn3qn6iv8hs5nort4b2ydw45m19yn",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlle_9ampM8ZLH8WHEC2FCcV4u4QKQW0b2bei4W4rTVsg5YwF3ZmwE6_W4r5QW0H5R7brfPc27rMie8KP-jgUy_0vBzu30GNo35rBSJqC9Zrn4uUmtBhtt4Kq51DQjAUE-VyNUmL7NALlD4ByKSEVt6w9we0XjaQ:1x5ZEa:fO5l66oLSZb8UuY76psayZ4T3RS-juuNi0f_9a-sCRw",
+    "expire_date": "2026-09-27T01:42:20.294Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "dkbw4j60hyy2c048bti15dq1vqc9jc9q",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlle_9ampM8ZLH8WHEC2FCcV4u4QKQW0b2bei4W4rTVsg5YwF3ZmwE6_W4r5QW0H5R7brfPc27rMie8KP-jgUy_0vBzu30GNo35rBSJqC9Zrn4uUmtBhtt4Kq51DQjAUE-VyNUmL7NALlD4ByKSEVt6w9we0XjaQ:1x7OqB:SF9lOYhk-b-5Lf8kpSaw1ZutFoBtI7UPhlCyx3RAYw4",
+    "expire_date": "2026-10-02T03:00:43.925Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "mgsxggljue96mlfqc87vop2kallrs8uh",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlle_9ampM8ZLH8WHEC2FCcV4u4QKQW0b2bei4W4rTVsg5YwF3ZmwE6_W4r5QW0H5R7brfPc27rMie8KP-jgUy_0vBzu30GNo35rBSJqC9Zrn4uUmtBhtt4Kq51DQjAUE-VyNUmL7NALlD4ByKSEVt6w9we0XjaQ:1x6b92:qPrwumZ_1xCzI3GSgACMEXNsccMCG5opbbCYyNwrQRg",
+    "expire_date": "2026-09-29T21:56:52.236Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "mj4n2unf4sak65x52g7l6jkqgmov8pc5",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlle_9ampM8ZLH8WHEC2FCcV4u4QKQW0b2bei4W4rTVsg5YwF3ZmwE6_W4r5QW0H5R7brfPc27rMie8KP-jgUy_0vBzu30GNo35rBSJqC9Zrn4uUmtBhtt4Kq51DQjAUE-VyNUmL7NALlD4ByKSEVt6w9we0XjaQ:1x7OM5:UViZcZ1fEOJWkILOL7zEdQPfrsNzvORCp71wk8asPfE",
+    "expire_date": "2026-10-02T02:29:37.208Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "sb7klz6adi4qplqeh9tneqj1qc4lmxoj",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlle_9ampM8ZLH8WHEC2FCcV4u4QKQW0b2bei4W4rTVsg5YwF3ZmwE6_W4r5QW0H5R7brfPc27rMie8KP-jgUy_0vBzu30GNo35rBSJqC9Zrn4uUmtBhtt4Kq51DQjAUE-VyNUmL7NALlD4ByKSEVt6w9we0XjaQ:1x7baz:FA2n_nmnwXvapms9xwyXRk9zmkTqRn6Q9NduXPhDriE",
+    "expire_date": "2026-10-02T16:37:53.183Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "wokacfe6k98gtqx0rh3w8l4q8xxu9r0c",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlle_9ampM8ZLH8WHEC2FCcV4u4QKQW0b2bei4W4rTVsg5YwF3ZmwE6_W4r5QW0H5R7brfPc27rMie8KP-jgUy_0vBzu30GNo35rBSJqC9Zrn4uUmtBhtt4Kq51DQjAUE-VyNUmL7NALlD4ByKSEVt6w9we0XjaQ:1x7npb:aMzer9066pLNqkOKbeeIjmmG0T2iXuqVSflmOZmxWPw",
+    "expire_date": "2026-10-03T05:41:47.822Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "xmrsnzj87xcys4baky1peiy89b8h56ds",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pCBlgAu3XsGMgODVA0kpV013t2QdKHb_977hwi4byXsndewJHEVk7j8boTxxXWA9MT6aDK2uq0LyaHIk3Z5b4nft9P9OyjYy6gJCA2SBUBjOSpFWaEHh8Zx1MTsowcDOUenUCUGbRlRz5OZIWUWny8P4Dj7:1x6CD9:WFQ1DmFQq-ink5uO8OGMOGsDv2LuHHjlx2-G3If37Hs",
+    "expire_date": "2026-09-28T19:19:27.287Z"
+  }
+},
+{
+  "model": "FleetCard.cliente",
+  "pk": 6,
+  "fields": {
+    "nome": "Roberto Alves Pereira",
+    "cpf_cnpj": "384.729.156-80384.",
+    "telefone": "(11) 98765-4321",
+    "email": "roberto.alves@email.com",
+    "endereco": "Rua das Flores, 245 - São Paulo/SP",
+    "data_cadastro": "2026-09-19T00:57:09.038Z"
+  }
+},
+{
+  "model": "FleetCard.cliente",
+  "pk": 7,
+  "fields": {
+    "nome": "Fernanda Lima Santos",
+    "cpf_cnpj": "291.847.563-12",
+    "telefone": "(21) 99876-5432",
+    "email": "fernanda.lima@email.com",
+    "endereco": "Av. Atlântica, 1500 - Rio de Janeiro/RJ",
+    "data_cadastro": "2026-09-19T01:09:36.852Z"
+  }
+},
+{
+  "model": "FleetCard.cliente",
+  "pk": 8,
+  "fields": {
+    "nome": "Marcelo Costa Oliveira",
+    "cpf_cnpj": "507.392.841-65",
+    "telefone": "(31) 98765-1234",
+    "email": "marcelo.costa@email.com",
+    "endereco": "Rua das Palmeiras, 89 - Belo Horizonte/MG",
+    "data_cadastro": "2026-09-19T01:14:51.706Z"
+  }
+},
+{
+  "model": "FleetCard.cliente",
+  "pk": 9,
+  "fields": {
+    "nome": "Juliana Rocha Mendes",
+    "cpf_cnpj": "648.215.937-04",
+    "telefone": "(41) 99988-7766",
+    "email": "juliana.rocha@email.com",
+    "endereco": "Rua XV de Novembro, 320 - Curitiba/PR",
+    "data_cadastro": "2026-09-19T01:20:56.190Z"
+  }
+},
+{
+  "model": "FleetCard.cliente",
+  "pk": 10,
+  "fields": {
+    "nome": "André Souza Barbosa",
+    "cpf_cnpj": "173.584.629-91",
+    "telefone": "(61) 98123-4567",
+    "email": "andre.souza@email.com",
+    "endereco": "SQN 305 Bloco A - Brasília/DF",
+    "data_cadastro": "2026-09-19T01:28:33.288Z"
+  }
+},
+{
+  "model": "FleetCard.cliente",
+  "pk": 11,
+  "fields": {
+    "nome": "Pedro Henrique Silva",
+    "cpf_cnpj": "456.789.123-70",
+    "telefone": "Av. Beira Mar, 1200 ",
+    "email": "pedro.henrique@email.com",
+    "endereco": "(85) 98877-6655",
+    "data_cadastro": "2026-09-19T01:40:14.002Z"
+  }
+},
+{
+  "model": "FleetCard.cliente",
+  "pk": 12,
+  "fields": {
+    "nome": "Larissa Mendes Costa",
+    "cpf_cnpj": "392.618.547-29",
+    "telefone": "(47) 99123-4567Rua d",
+    "email": "larissa.mendes@email.com",
+    "endereco": "Rua das Araucárias, 78 - Blumenau/SC",
+    "data_cadastro": "2026-09-19T01:48:01.140Z"
+  }
+},
+{
+  "model": "FleetCard.cliente",
+  "pk": 13,
+  "fields": {
+    "nome": "Thiago Oliveira Lima",
+    "cpf_cnpj": "715.284.936-51",
+    "telefone": "(62) 98654-3210",
+    "email": "thiago.oliveira@email.com",
+    "endereco": "Rua 7, Qd. 15 Lt. 8 - Goiânia/GO",
+    "data_cadastro": "2026-09-19T01:53:50.134Z"
+  }
+},
+{
+  "model": "FleetCard.veiculo",
+  "pk": 28,
+  "fields": {
+    "cliente": 6,
+    "tipo": "caminhao",
+    "marca": "Ford",
+    "modelo": "Cargo 2042",
+    "placa": "RBT1A42",
+    "ano": 2025,
+    "cor": "Preto",
+    "combustivel": "diesel",
+    "quilometragem": 87,
+    "observacoes": "Cavalo mecânico - revisões em dia",
+    "imagem": "veiculos/Inserir_um_título_4xJa0jw.png",
+    "data_cadastro": "2026-09-19T01:01:07.935Z"
+  }
+},
+{
+  "model": "FleetCard.veiculo",
+  "pk": 29,
+  "fields": {
+    "cliente": 7,
+    "tipo": "caminhao",
+    "marca": "Volvo",
+    "modelo": "FH 460",
+    "placa": "FLS2B43",
+    "ano": 2018,
+    "cor": "Branco",
+    "combustivel": "diesel",
+    "quilometragem": 112,
+    "observacoes": "Cavalo + carreta - em ótimo estado",
+    "imagem": "veiculos/grande-caminhao-semi-reboque-moderno-branco-em-um-fundo-branco-com-sombra_943642-9630.jpg",
+    "data_cadastro": "2026-09-19T01:12:33.505Z"
+  }
+},
+{
+  "model": "FleetCard.veiculo",
+  "pk": 30,
+  "fields": {
+    "cliente": 7,
+    "tipo": "caminhao",
+    "marca": "Scania",
+    "modelo": "R 440 Streamli",
+    "placa": "MCO3C44",
+    "ano": 2020,
+    "cor": "Azul",
+    "combustivel": "diesel",
+    "quilometragem": 154,
+    "observacoes": "Cavalo mecânico - cabine leito",
+    "imagem": "veiculos/Kamaz-PNG-Images-HD.png",
+    "data_cadastro": "2026-09-19T01:18:02.550Z"
+  }
+},
+{
+  "model": "FleetCard.veiculo",
+  "pk": 31,
+  "fields": {
+    "cliente": 9,
+    "tipo": "carro",
+    "marca": "Audi",
+    "modelo": "A1",
+    "placa": "JRM4D45",
+    "ano": 2019,
+    "cor": "Preto",
+    "combustivel": "flex",
+    "quilometragem": 78,
+    "observacoes": "Hatch esportivo - único dono",
+    "imagem": "veiculos/car-604019_1280.jpg",
+    "data_cadastro": "2026-09-19T01:23:59.369Z"
+  }
+},
+{
+  "model": "FleetCard.veiculo",
+  "pk": 32,
+  "fields": {
+    "cliente": 10,
+    "tipo": "carro",
+    "marca": "Toyota",
+    "modelo": "Land Cruiser",
+    "placa": "ASB5E46",
+    "ano": 2021,
+    "cor": "Vinho",
+    "combustivel": "diesel",
+    "quilometragem": 45,
+    "observacoes": "4x4 - veículo de luxo bem conservado",
+    "imagem": "veiculos/pexels-safi-erneste-18029616.jpg",
+    "data_cadastro": "2026-09-19T01:31:53.136Z"
+  }
+},
+{
+  "model": "FleetCard.veiculo",
+  "pk": 33,
+  "fields": {
+    "cliente": 8,
+    "tipo": "carro",
+    "marca": "BYD",
+    "modelo": "Yuan Plus",
+    "placa": "CFN6F47",
+    "ano": 2023,
+    "cor": "Azul",
+    "combustivel": "eletrico",
+    "quilometragem": 18,
+    "observacoes": "Elétrico - autonomia alta - seminovo",
+    "imagem": "veiculos/yuanplus1_17112022_72592_1280_960.jpg",
+    "data_cadastro": "2026-09-19T01:38:05.865Z"
+  }
+},
+{
+  "model": "FleetCard.veiculo",
+  "pk": 34,
+  "fields": {
+    "cliente": 11,
+    "tipo": "moto",
+    "marca": "Honda",
+    "modelo": "CG 160 Fan",
+    "placa": "PHS7G48",
+    "ano": 2022,
+    "cor": "Vermelho",
+    "combustivel": "flex",
+    "quilometragem": 12,
+    "observacoes": "Moto urbana - em ótimo estado",
+    "imagem": "veiculos/png-transparent-red-honda-motocycle_BMnPkTB.png",
+    "data_cadastro": "2026-09-19T01:42:55.477Z"
+  }
+},
+{
+  "model": "FleetCard.veiculo",
+  "pk": 35,
+  "fields": {
+    "cliente": 12,
+    "tipo": "moto",
+    "marca": "Kawasaki",
+    "modelo": "Z800",
+    "placa": "LMC8H49",
+    "ano": 2021,
+    "cor": "Verde",
+    "combustivel": "gasolina",
+    "quilometragem": 23,
+    "observacoes": "Naked esportiva - bem conservada",
+    "imagem": "veiculos/motorcycle_PNG3178.png",
+    "data_cadastro": "2026-09-19T01:51:29.847Z"
+  }
+},
+{
+  "model": "FleetCard.veiculo",
+  "pk": 36,
+  "fields": {
+    "cliente": 13,
+    "tipo": "moto",
+    "marca": "Kawasaki",
+    "modelo": "ZX-12R",
+    "placa": "TOL9I50",
+    "ano": 2018,
+    "cor": "Azul",
+    "combustivel": "gasolina",
+    "quilometragem": 32,
+    "observacoes": "Esportiva de alta performance",
+    "imagem": "veiculos/Sports-Bike-00.jpg",
+    "data_cadastro": "2026-09-19T01:57:06.143Z"
+  }
+},
+{
+  "model": "FleetCard.ordemservico",
+  "pk": 21,
+  "fields": {
+    "veiculo": 33,
+    "tipo_servico": "troca_oleo",
+    "descricao": "l,l",
+    "status": "aguardando",
+    "valor": "200.00",
+    "data_entrada": "2026-09-19T03:24:11.180Z",
+    "data_conclusao": null
+  }
+},
+{
+  "model": "FleetCard.ordemservico",
+  "pk": 22,
+  "fields": {
+    "veiculo": 29,
+    "tipo_servico": "revisao",
+    "descricao": "LPÇL",
+    "status": "andamento",
+    "valor": "200.00",
+    "data_entrada": "2026-09-19T03:28:58.540Z",
+    "data_conclusao": null
+  }
+},
+{
+  "model": "FleetCard.ordemservico",
+  "pk": 23,
+  "fields": {
+    "veiculo": 30,
+    "tipo_servico": "revisao",
+    "descricao": "LÇÇL,",
+    "status": "concluido",
+    "valor": "200.00",
+    "data_entrada": "2026-09-19T03:29:13.542Z",
+    "data_conclusao": "2026-09-19T03:29:13.542Z"
+  }
+},
+{
+  "model": "FleetCard.ordemservico",
+  "pk": 24,
+  "fields": {
+    "veiculo": 29,
+    "tipo_servico": "revisao",
+    "descricao": "OLKLOK",
+    "status": "cancelado",
+    "valor": "100.00",
+    "data_entrada": "2026-09-19T03:29:30.533Z",
+    "data_conclusao": null
+  }
+},
+{
+  "model": "FleetCard.ordemservico",
+  "pk": 25,
+  "fields": {
+    "veiculo": 28,
+    "tipo_servico": "revisao",
+    "descricao": ",LÇ",
+    "status": "aguardando",
+    "valor": "20.00",
+    "data_entrada": "2026-09-19T03:30:22.644Z",
+    "data_conclusao": null
+  }
+},
+{
+  "model": "FleetCard.contato",
+  "pk": 11,
+  "fields": {
+    "nome": "Fabiano Chavier Dos Santos",
+    "email": "chaviersantos70@gmail.com",
+    "telefone": "(21) 96806-1820",
+    "assunto": "fff",
+    "mensagem": "JBJHBBH",
+    "data_envio": "2026-09-19T03:36:58.325Z"
+  }
+},
+{
+  "model": "FleetCard.contato",
+  "pk": 12,
+  "fields": {
+    "nome": "Fabiano Chavier Dos Santos",
+    "email": "chaviersantos70@gmail.com",
+    "telefone": "21968061820",
+    "assunto": "fff",
+    "mensagem": "Ç´LPOK",
+    "data_envio": "2026-09-19T03:45:57.755Z"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2026-09-12T20:21:28.787Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "2",
+    "object_repr": "huhuee eeeeeeeeeeeeeeee - eeeeeeeeee",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2026-09-12T22:18:10.882Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "3",
+    "object_repr": "ppp ooo - 8888888888",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2026-09-12T23:40:42.032Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "3",
+    "object_repr": "ppp ooo - 8888888888",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2026-09-12T23:41:00.130Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "2",
+    "object_repr": "huhuee eeeeeeeeeeeeeeee - eeeeeeeeee",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2026-09-12T23:41:00.130Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "1",
+    "object_repr": "huhu ko - 22222",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2026-09-13T01:43:02.998Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "4",
+    "object_repr": "fgtgtf uiygiuo - 111111111",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2026-09-13T02:47:09.012Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "5",
+    "object_repr": "Renault Fluence GT Line - Placa (fic",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2026-09-13T02:47:34.907Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "4",
+    "object_repr": "fgtgtf uiygiuo - 111111111",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2026-09-13T02:48:52.423Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "5",
+    "object_repr": "Renault Fluence GT Line - Placa (fic",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Imagem do ve\\u00edculo\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2026-09-13T02:50:52.719Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "5",
+    "object_repr": "Renault Fluence GT Line - Placa (fic",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Imagem do ve\\u00edculo\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2026-09-13T02:54:05.104Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "6",
+    "object_repr": "Honda Honda Acty Truck - (fictícia)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2026-09-13T03:00:25.412Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "7",
+    "object_repr": "Suzuki Suzuki Intruder 125 - SZK-2C91",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2026-09-13T16:56:09.875Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "8",
+    "object_repr": "Toyota Toyota Corolla - TYT-3F52",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2026-09-13T16:59:12.894Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "9",
+    "object_repr": "Volvo Volvo FH - VLV-9K17",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2026-09-13T17:02:17.584Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "10",
+    "object_repr": "Honda Honda CG 160 Cargo - HND-6C82",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2026-09-13T17:03:13.102Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "10",
+    "object_repr": "Honda Honda CG 160 Cargo - HND-6C82",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Imagem do ve\\u00edculo\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2026-09-13T17:58:27.997Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "11",
+    "object_repr": "DOCO DOCO Cargo Truck - DCO-5T31",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2026-09-13T18:00:55.910Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "12",
+    "object_repr": "Fiat Fiat Uno - FTU-7L20",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2026-09-13T18:03:00.941Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "13",
+    "object_repr": "Kawasaki Kawasaki KX 250 - KWK-1M45",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2026-09-13T18:06:23.751Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "12",
+    "object_repr": "Fiat Fiat Uno - FTU-7L20",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Imagem do ve\\u00edculo\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2026-09-14T19:12:34.659Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "2",
+    "object_repr": "vendendor1",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2026-09-14T19:13:06.283Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "1",
+    "object_repr": "Vendedores",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2026-09-14T19:13:36.706Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "2",
+    "object_repr": "vendendor1",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2026-09-14T19:15:22.340Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "2",
+    "object_repr": "vendendor1",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2026-09-14T19:15:28.396Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "2",
+    "object_repr": "vendendor1",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2026-09-14T19:16:17.223Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "2",
+    "object_repr": "vendendor1",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2026-09-14T19:18:08.655Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "3",
+    "object_repr": "Vender1",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2026-09-14T19:19:18.082Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "3",
+    "object_repr": "Vender1",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"Groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2026-09-15T21:58:35.929Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "11",
+    "object_repr": "DOCO DOCO Cargo Truck - DCO-5T31",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2026-09-15T21:59:32.188Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "ordemservico"
+    ],
+    "object_id": "1",
+    "object_repr": "OS #1 - DOCO DOCO Cargo Truck - DCO-5T31",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2026-09-15T22:13:51.514Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "ordemservico"
+    ],
+    "object_id": "1",
+    "object_repr": "OS #1 - DOCO DOCO Cargo Truck - DCO-5T31",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2026-09-15T22:20:49.957Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "11",
+    "object_repr": "DOCO DOCO Cargo Truck - DCO-5T31",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"ordem servico\", \"object\": \"OS #1 - DOCO DOCO Cargo Truck - DCO-5T31\", \"fields\": [\"Status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2026-09-15T22:21:15.587Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "11",
+    "object_repr": "DOCO DOCO Cargo Truck - DCO-5T31",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"ordem servico\", \"object\": \"OS #1 - DOCO DOCO Cargo Truck - DCO-5T31\", \"fields\": [\"Status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2026-09-15T22:26:53.115Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "11",
+    "object_repr": "DOCO DOCO Cargo Truck - DCO-5T31",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2026-09-15T22:32:26.857Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "ordemservico"
+    ],
+    "object_id": "1",
+    "object_repr": "OS #1 - DOCO DOCO Cargo Truck - DCO-5T31",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2026-09-15T22:51:27.434Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "ordemservico"
+    ],
+    "object_id": "1",
+    "object_repr": "OS #1 - DOCO DOCO Cargo Truck - DCO-5T31",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tipo servico\", \"Status\", \"Data conclusao\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2026-09-15T23:05:14.172Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "ordemservico"
+    ],
+    "object_id": "2",
+    "object_repr": "OS #2 - Toyota Toyota Corolla - TYT-3F52",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2026-09-16T04:20:20.769Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "10",
+    "object_repr": "Honda Honda CG 160 Cargo - HND-6C82",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"ordem servico\", \"object\": \"OS #3 - Honda Honda CG 160 Cargo - HND-6C82\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2026-09-16T04:21:03.389Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "1",
+    "object_repr": "Vendedores",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2026-09-16T04:21:39.200Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "1",
+    "object_repr": "Vendedores",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2026-09-16T05:08:51.435Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "ordemservico"
+    ],
+    "object_id": "3",
+    "object_repr": "OS #3 - Suzuki Suzuki Intruder 125 - SZK-2C91",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Veiculo\", \"Descricao\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2026-09-16T05:34:38.531Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "ordemservico"
+    ],
+    "object_id": "3",
+    "object_repr": "OS #3 - Suzuki Suzuki Intruder 125 - SZK-2C91",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2026-09-16T05:34:46.671Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "ordemservico"
+    ],
+    "object_id": "2",
+    "object_repr": "OS #2 - Toyota Toyota Corolla - TYT-3F52",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2026-09-16T05:34:53.822Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "ordemservico"
+    ],
+    "object_id": "1",
+    "object_repr": "OS #1 - DOCO DOCO Cargo Truck - DCO-5T31",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2026-09-17T16:41:40.263Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "14",
+    "object_repr": "Renault Fluence GT Line - 1252463",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2026-09-17T20:38:52.964Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "contato"
+    ],
+    "object_id": "9",
+    "object_repr": "Fabiano Chavier Dos Santos - fff",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2026-09-17T20:38:52.964Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "contato"
+    ],
+    "object_id": "8",
+    "object_repr": "Fabiano Chavier Dos Santos - fff",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2026-09-17T20:38:52.964Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "contato"
+    ],
+    "object_id": "7",
+    "object_repr": "Fabiano Chavier Dos Santos - fff",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2026-09-17T20:38:52.964Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "contato"
+    ],
+    "object_id": "6",
+    "object_repr": "Fabiano Chavier Dos Santos - fff",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 50,
+  "fields": {
+    "action_time": "2026-09-17T20:38:52.964Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "contato"
+    ],
+    "object_id": "5",
+    "object_repr": "Fabiano Chavier Dos Santos - fff",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2026-09-17T20:38:52.964Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "contato"
+    ],
+    "object_id": "4",
+    "object_repr": "Fabiano Chavier Dos Santos - fff",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 52,
+  "fields": {
+    "action_time": "2026-09-17T20:38:52.964Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "contato"
+    ],
+    "object_id": "3",
+    "object_repr": "Fabiano Chavier Dos Santos - fff",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 53,
+  "fields": {
+    "action_time": "2026-09-17T20:38:52.964Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "contato"
+    ],
+    "object_id": "2",
+    "object_repr": "Fabiano Chavier Dos Santos - fff",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 54,
+  "fields": {
+    "action_time": "2026-09-17T20:38:52.964Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "contato"
+    ],
+    "object_id": "1",
+    "object_repr": "Fabiano Chavier Dos Santos - fff",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 55,
+  "fields": {
+    "action_time": "2026-09-18T04:22:44.496Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "contato"
+    ],
+    "object_id": "10",
+    "object_repr": "Fabiano Chavier Dos Santos - fff",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 56,
+  "fields": {
+    "action_time": "2026-09-18T04:22:58.491Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "ordemservico"
+    ],
+    "object_id": "10",
+    "object_repr": "OS #10 - Fiat Fiat Uno - FTU-7L20",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 57,
+  "fields": {
+    "action_time": "2026-09-18T04:22:58.492Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "ordemservico"
+    ],
+    "object_id": "7",
+    "object_repr": "OS #7 - Toyota Toyota Corolla - TYT-3F52",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 58,
+  "fields": {
+    "action_time": "2026-09-18T04:22:58.492Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "ordemservico"
+    ],
+    "object_id": "6",
+    "object_repr": "OS #6 - Fiat Fiat Uno - FTU-7L20",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 59,
+  "fields": {
+    "action_time": "2026-09-18T04:22:58.492Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "ordemservico"
+    ],
+    "object_id": "5",
+    "object_repr": "OS #5 - Fiat Fiat Uno - FTU-7L20",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 60,
+  "fields": {
+    "action_time": "2026-09-18T13:47:31.555Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "cliente"
+    ],
+    "object_id": "1",
+    "object_repr": "Fabiano Chavier Dos Santos",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 61,
+  "fields": {
+    "action_time": "2026-09-18T23:52:58.169Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "21",
+    "object_repr": "DOCO Fiat Uno - HND-6C8222",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 62,
+  "fields": {
+    "action_time": "2026-09-18T23:52:58.169Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "20",
+    "object_repr": "honda 55858585 - 5885858585",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 63,
+  "fields": {
+    "action_time": "2026-09-18T23:52:58.169Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "19",
+    "object_repr": "honda 451235 - 1234569444",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 64,
+  "fields": {
+    "action_time": "2026-09-18T23:52:58.169Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "18",
+    "object_repr": "honda dddddddddddd - 45124512",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 65,
+  "fields": {
+    "action_time": "2026-09-18T23:52:58.169Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "17",
+    "object_repr": "honda ssss - 1234569555",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 66,
+  "fields": {
+    "action_time": "2026-09-18T23:52:58.169Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "16",
+    "object_repr": "honda ssss - 1234569",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 67,
+  "fields": {
+    "action_time": "2026-09-18T23:52:58.169Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "13",
+    "object_repr": "Kawasaki Kawasaki KX 250 - KWK-1M45",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 68,
+  "fields": {
+    "action_time": "2026-09-18T23:52:58.169Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "12",
+    "object_repr": "Fiat Fiat Uno - FTU-7L20",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 69,
+  "fields": {
+    "action_time": "2026-09-18T23:52:58.169Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "11",
+    "object_repr": "DOCO DOCO Cargo Truck - DCO-5T31",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 70,
+  "fields": {
+    "action_time": "2026-09-18T23:52:58.169Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "10",
+    "object_repr": "Honda Honda CG 160 Cargo - HND-6C82",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 71,
+  "fields": {
+    "action_time": "2026-09-18T23:52:58.169Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "9",
+    "object_repr": "Volvo Volvo FH - VLV-9K17",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 72,
+  "fields": {
+    "action_time": "2026-09-18T23:52:58.169Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "8",
+    "object_repr": "Toyota Toyota Corolla - TYT-3F52",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 73,
+  "fields": {
+    "action_time": "2026-09-18T23:52:58.169Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "7",
+    "object_repr": "Suzuki Suzuki Intruder 125 - SZK-2C91",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 74,
+  "fields": {
+    "action_time": "2026-09-18T23:52:58.169Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "6",
+    "object_repr": "Honda Honda Acty Truck - (fictícia)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 75,
+  "fields": {
+    "action_time": "2026-09-18T23:52:58.169Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "5",
+    "object_repr": "Renault Fluence GT Line - Placa (fic",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 76,
+  "fields": {
+    "action_time": "2026-09-19T00:17:46.590Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "26",
+    "object_repr": "Fiat Fiat Uno - FTU-7L20",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"ordem servico\", \"object\": \"OS #20 - Fiat Fiat Uno - FTU-7L20\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 77,
+  "fields": {
+    "action_time": "2026-09-19T00:18:41.313Z",
+    "user": [
+      "grupo3"
+    ],
+    "content_type": [
+      "FleetCard",
+      "veiculo"
+    ],
+    "object_id": "26",
+    "object_repr": "Fiat Fiat Uno - FTU-7L20",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Imagem do ve\\u00edculo\"]}}]"
+  }
+}
+]
