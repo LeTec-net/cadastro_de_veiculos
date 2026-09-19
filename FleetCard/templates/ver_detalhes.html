@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block title %}
-Detalhes do Veículo | FleetCard
+    Detalhes do Veículo | FleetCard
 {% endblock %}
 
 
@@ -40,28 +40,31 @@ Detalhes do Veículo | FleetCard
 
                         {% if veiculo.imagem %}
 
-                        <img src="{{ veiculo.imagem }}" class="img-fluid w-100 h-100 vehicle-detail-image"
-                            alt="{{ veiculo.marca }} {{ veiculo.modelo }}">
+                            <img
+                                src="{{ veiculo.imagem }}"
+                                class="img-fluid w-100 h-100 vehicle-detail-image"
+                                alt="{{ veiculo.marca }} {{ veiculo.modelo }}"
+                            >
 
                         {% else %}
 
-                        <div class="vehicle-detail-placeholder
+                            <div class="vehicle-detail-placeholder
                                         d-flex
                                         align-items-center
                                         justify-content-center
                                         h-100">
 
-                            {% if veiculo.tipo == "Moto" %}
-                            <span class="display-1">🏍️</span>
+                                {% if veiculo.tipo == "Moto" %}
+                                    <span class="display-1">🏍️</span>
 
-                            {% elif veiculo.tipo == "Caminhão" %}
-                            <span class="display-1">🚛</span>
+                                {% elif veiculo.tipo == "Caminhão" %}
+                                    <span class="display-1">🚛</span>
 
-                            {% else %}
-                            <span class="display-1">🚗</span>
-                            {% endif %}
+                                {% else %}
+                                    <span class="display-1">🚗</span>
+                                {% endif %}
 
-                        </div>
+                            </div>
 
                         {% endif %}
 
@@ -76,21 +79,21 @@ Detalhes do Veículo | FleetCard
                             <!-- CATEGORIA -->
                             {% if veiculo.tipo == "Carro" %}
 
-                            <span class="badge bg-danger mb-3">
-                                🚗 Carro
-                            </span>
+                                <span class="badge bg-danger mb-3">
+                                    🚗 Carro
+                                </span>
 
                             {% elif veiculo.tipo == "Moto" %}
 
-                            <span class="badge bg-warning text-dark mb-3">
-                                🏍️ Moto
-                            </span>
+                                <span class="badge bg-warning text-dark mb-3">
+                                    🏍️ Moto
+                                </span>
 
                             {% else %}
 
-                            <span class="badge bg-secondary mb-3">
-                                🚛 Caminhão
-                            </span>
+                                <span class="badge bg-secondary mb-3">
+                                    🚛 Caminhão
+                                </span>
 
                             {% endif %}
 
@@ -144,7 +147,10 @@ Detalhes do Veículo | FleetCard
 
 
                             <!-- BOTÃO VOLTAR -->
-                            <a href="{% url 'pagina_veiculos' %}" class="btn btn-outline-danger">
+                            <a
+                                href="{% url 'pagina_veiculos' %}"
+                                class="btn btn-outline-danger"
+                            >
                                 ← Voltar para veículos
                             </a>
 
