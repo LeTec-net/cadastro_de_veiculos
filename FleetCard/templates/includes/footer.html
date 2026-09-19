@@ -9,7 +9,7 @@
     <div class="container py-5">
 
         <div class="row g-4">
-            
+
 
             <!-- Identidade -->
             <div class="col-12 col-md-5 text-center text-md-start">
@@ -74,27 +74,32 @@
 
             </div>
 
-
             <!-- Categorias -->
             <div class="col-6 col-md-4">
 
-                <h6 class="text-primary mb-3">
+                <h6 class="mb-3">
                     Categorias
                 </h6>
 
-                <p class="mb-2 text-white">
-                    <i class="bi bi-car-front-fill me-2"></i>
-                    Carros
+                <p class="mb-2">
+                    <a href="{% url 'lista_veiculos' %}#carros" class="text-white text-decoration-none">
+                        <i class="bi bi-car-front-fill me-2"></i>
+                        Carros
+                    </a>
                 </p>
 
-                <p class="mb-2 text-white">
-                    <i class="bi bi-bicycle me-2"></i>
-                    Motocicletas
+                <p class="mb-2">
+                    <a href="{% url 'lista_veiculos' %}#motos" class="text-white text-decoration-none">
+                        <i class="bi bi-bicycle me-2"></i>
+                        Motocicletas
+                    </a>
                 </p>
 
-                <p class="mb-2 text-white">
-                    <i class="bi bi-truck-front-fill me-2"></i>
-                    Caminhões
+                <p class="mb-2">
+                    <a href="{% url 'lista_veiculos' %}#caminhoes" class="text-white text-decoration-none">
+                        <i class="bi bi-truck-front-fill me-2"></i>
+                        Caminhões
+                    </a>
                 </p>
 
                 <p class="small text-info mb-0 mt-3">
