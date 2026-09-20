@@ -16,9 +16,9 @@ from .veiculos_api import (
 )
 
 
-# ============================================================
+
 # PÁGINAS
-# ============================================================
+
 
 def home(request):
     return render(request, 'home.html')
@@ -59,9 +59,9 @@ def contatos(request):
     )
 
 
-# ============================================================
+
 # API DE VEÍCULOS
-# ============================================================
+
 
 def pagina_veiculos(request):
 
@@ -111,9 +111,8 @@ def pagina_veiculos(request):
     )
 
 
-# ============================================================
 # LOGOUT
-# ============================================================
+
 
 def deslogar(request):
 
@@ -122,9 +121,9 @@ def deslogar(request):
     return redirect('home')
 
 
-# ============================================================
+
 # DETALHES DO VEÍCULO DA API
-# ============================================================
+
 
 def ver_detalhes(request, tipo, marca, modelo):
 
@@ -156,9 +155,9 @@ def ver_detalhes(request, tipo, marca, modelo):
     )
 
 
-# ============================================================
+
 # CRUD DE VEÍCULOS
-# ============================================================
+
 
 @login_required(login_url='/admin/login/')
 def cadastrar_veiculo(request, cliente_id=None):
@@ -348,9 +347,9 @@ def excluir_veiculo(request, id):
     )
 
 
-# ============================================================
+
 # CRUD DE CLIENTES
-# ============================================================
+
 
 @login_required(login_url='/admin/login/')
 def cadastrar_cliente(request):
@@ -515,9 +514,9 @@ def excluir_cliente(request, id):
         }
     )
 
-# ============================================================
+
 # CRUD DE ORDENS DE SERVIÇO
-# ============================================================
+
 
 @login_required(login_url='/admin/login/')
 def cadastrar_ordem_servico(request):
