@@ -62,7 +62,6 @@ def contatos(request):
 
 # API DE VEÍCULOS
 
-
 def pagina_veiculos(request):
 
     # Veículos cadastrados no banco de dados

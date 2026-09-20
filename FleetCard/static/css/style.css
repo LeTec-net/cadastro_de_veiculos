@@ -541,7 +541,6 @@ form select[multiple] {
 /* Carousel */
 
 .carousel-inner {
-    border-radius: var(--fc-raio);
 
     overflow: hidden;
 }

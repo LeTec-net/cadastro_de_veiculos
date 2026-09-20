@@ -8,7 +8,7 @@ BASE_URL = "https://vpic.nhtsa.dot.gov/api"
 def buscar_carros():
     url = f"{BASE_URL}/vehicles/GetModelsForMake/honda?format=json"
 
-    resposta = requests.get(url, timeout=10)
+    resposta = requests.get(url, timeout=1)
 
     resposta.raise_for_status()
 
@@ -20,7 +20,7 @@ def buscar_carros():
 def buscar_motos():
     url = f"{BASE_URL}/vehicles/GetModelsForMake/honda?format=json"
 
-    resposta = requests.get(url, timeout=10)
+    resposta = requests.get(url, timeout=1)
 
     resposta.raise_for_status()
 
@@ -52,7 +52,7 @@ def buscar_motos():
 def buscar_caminhoes():
     url = f"{BASE_URL}/vehicles/GetModelsForMake/ford?format=json"
 
-    resposta = requests.get(url, timeout=10)
+    resposta = requests.get(url, timeout=1)
 
     resposta.raise_for_status()
 
@@ -104,9 +104,7 @@ if __name__ == "__main__":
         print(veiculo["Make_Name"], "-", veiculo["Model_Name"])
 
 
-# ==============================
-# BUSCAR IMAGEM
-# ==============================
+
 # ==============================
 # BUSCAR IMAGEM
 # ==============================
@@ -153,7 +151,7 @@ def buscar_imagem(marca, modelo, tipo="car"):
         "generator": "search",
         "gsrsearch": termo_busca,
         "gsrnamespace": 6,
-        "gsrlimit": 1,
+        "gsrlimit": 5,
         "prop": "imageinfo",
         "iiprop": "url",
         "iiurlwidth": 600,
